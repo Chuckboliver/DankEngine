@@ -118,8 +118,22 @@ def staticSearch(board:chess.Board, color:chess.Color) -> tuple[chess.Move, int]
         elif evaluation == bestScore:
             bestMove.append(move)
     return (choice(bestMove), bestScore)
+def generateLegalCaptures(board:chess.Board) -> list[chess.Move]:
+    return [move for move in board.generate_legal_captures()]
 def getCaptureSequences(cap_moves:list[chess.Move], board:chess.Board, targetedSquare:chess.Square):
-    pass
+    targetedCaptures:list[chess.Move] = []
+    allCaptures = generateLegalCaptures(board)
+    for capture_move in allCaptures:
+        if capture_move.to_square == targetedSquare:
+            targetedCaptures.append(capture_move)
+    for i in range(len(targetedCaptures)):
+        swapped = False
+        piece_value = PIECE_VALUES[board.piece_at(targetedCaptures[i].from_square)]
+        for j in range(i):
+            sorted_piece_value = PIECE_VALUES[board.piece_at(cap_moves[j].from_square)]
+            if piece_value < sorted_piece_value:
+                swapped = True
+                #HERE!!!!!!!!
 def StaticExchangeEvaluation(board:chess.Board, targetedSquare:chess.Square) -> int:
     captureMoves = []
     attackCount = getCaptureSequences(captureMoves, board, targetedSquare)
@@ -129,8 +143,6 @@ def StaticExchangeEvaluation(board:chess.Board, targetedSquare:chess.Square) -> 
         piece_value = PIECE_VALUES[board.piece_at(targetedSquare)]
         value = piece_value - StaticExchangeEvaluation(newBoard, targetedSquare)
     return value if value > 0 else 0
-def generateLegalCaptures(board:chess.Board) -> list[chess.Move]:
-    return [move for move in board.generate_legal_captures()]
 def quiescenceEvaluation(board:chess.Board) -> int:
     staticScore = staticEvaluation(board)
     if board.is_game_over():
