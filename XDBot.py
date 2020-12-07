@@ -11,17 +11,18 @@ class ChessBot:
         self.Color = Color
         self.playedBoard = botBoard
     def getMove(self, depth:int = 2) -> chess.Move:
-        with chess.polyglot.open_reader("poly16/books/elo-3300.bin") as books:
-            listEntry = []
-            for entry in books.find_all(self.playedBoard):
-                listEntry.append(entry)
-            if listEntry:
-                entry = choice(listEntry)
-                move = entry.move
-                print(f"Book move : {move}")
-            else:
-                print("AlphaBeta!")
-                move = alphabeta(self.playedBoard, self.Color, depth)[0]
+        # with chess.polyglot.open_reader("poly16/books/elo-3300.bin") as books:
+        #     listEntry = []
+        #     for entry in books.find_all(self.playedBoard):
+        #         listEntry.append(entry)
+        #     if listEntry:
+        #         entry = choice(listEntry)
+        #         move = entry.move
+        #         print(f"Book move : {move}")
+        #     else:
+        #print("AlphaBeta!")
+        move = alphabeta(self.playedBoard, self.Color, depth)[0]
+        #move = QuiescentSearch(self.playedBoard, self.Color)[0]
         return move
 def makeMove(board:chess.Board, move:chess.Move) -> chess.Board:
     newBoard = deepcopy(board)
@@ -99,16 +100,15 @@ def evalEndNode(board:chess.Board):
          board.is_insufficient_material() or \
          board.is_seventyfive_moves():
          return 0
-def evalGame(board:chess.Board) -> int:
+def staticEvaluation(board:chess.Board) -> int:
     if board.is_game_over():
         return evalEndNode(board)
     return materialBalance(board) + positionalBalance(board)
-
-def evalMove(board:chess.Board, color:chess.Color) -> tuple[chess.Move, int]:
+def staticSearch(board:chess.Board, color:chess.Color) -> tuple[chess.Move, int]:
     bestScore = winScore(color)
     bestMove = []
     for move in board.legal_moves:
-        evaluation = evalGame(makeMove(board, move))
+        evaluation = staticEvaluation(makeMove(board, move))
         if makeMove(board, move).is_checkmate():
             return (move, evaluation)
         if color == chess.WHITE and evaluation > bestScore or \
@@ -118,63 +118,102 @@ def evalMove(board:chess.Board, color:chess.Color) -> tuple[chess.Move, int]:
         elif evaluation == bestScore:
             bestMove.append(move)
     return (choice(bestMove), bestScore)
-#Alpha Beta pruning algorithm for bruteforce search best move
-def alphabeta(board:chess.Board, color:chess.Color, depth:int, alpha = -float('inf'), beta = float('inf')) :
+def getCaptureSequences(cap_moves:list[chess.Move], board:chess.Board, targetedSquare:chess.Square):
+    pass
+def StaticExchangeEvaluation(board:chess.Board, targetedSquare:chess.Square) -> int:
+    captureMoves = []
+    attackCount = getCaptureSequences(captureMoves, board, targetedSquare)
+    value = 0
+    if attackCount > 0:
+        newBoard = makeMove(board, captureMoves[0])
+        piece_value = PIECE_VALUES[board.piece_at(targetedSquare)]
+        value = piece_value - StaticExchangeEvaluation(newBoard, targetedSquare)
+    return value if value > 0 else 0
+def generateLegalCaptures(board:chess.Board) -> list[chess.Move]:
+    return [move for move in board.generate_legal_captures()]
+def quiescenceEvaluation(board:chess.Board) -> int:
+    staticScore = staticEvaluation(board)
+    if board.is_game_over():
+        return staticScore
+    captureMoves = generateLegalCaptures(board)
+    if len(captureMoves) == 0:
+        return staticScore
+    else:
+        bestScore = staticScore
+        for move in captureMoves:
+            if StaticExchangeEvaluation(board, move.to_square) <= 0:
+                continue
+            newBoard = makeMove(board, move)
+            score = quiescenceEvaluation(newBoard)
+            if board.turn == chess.WHITE and score > bestScore or\
+                board.turn == chess.BLACK and score < bestScore:
+                bestScore = score
+        return bestScore
+        
+def alphabeta(board:chess.Board, color:chess.Color, depth:int, alpha:float = -float('inf'), beta:float = float('inf')) :
+    #Alpha Beta pruning algorithm for bruteforce search best move
     """
     alpha : Best value that maximizer can guarantee at that level or above
     beta : Best value that minimizer can guarantee at that level or above
     """
+    FoundPV = False
     #game over
     if board.is_game_over():
-        return (None, evalGame(board))
-    (simpleMove, simpleEval) = evalMove(board, color)#get move
+        return (None, staticEvaluation(board))
+    (simpleMove, simpleEval) = staticSearch(board, color)#get move
     #Base case if Winned move or at maximum depth
     if depth == 1 or \
        simpleEval == winScore(not color):
         return (simpleMove, simpleEval)
     bestMove = []
-    #Maximizing player
-    if color == chess.WHITE:
-        for move in board.legal_moves:
-            newBoard = makeMove(board, move)#Move in simulation board
-            (_, score) = alphabeta(newBoard, not color, depth - 1, alpha, beta)#get score of each move
-            #WIN!!!
-            if score == winScore(not color):
-                return (move, score)
-            #Score equal to alpha -> Have many best move
-            if score == alpha:
-                bestMove.append(move)
-            #Score greater than alpha -> Have new best move
-            if score > alpha:
-                alpha = score
-                bestMove = [move]
-                if alpha > beta:
-                    break
-        if bestMove:
-            return (choice(bestMove), alpha) 
+    for move in board.legal_moves:
+        newBoard = makeMove(board, move)#Move in simulation board
+        if FoundPV:
+            moveAndScore = alphabeta(newBoard, not color, depth - 1, -alpha - 1, -alpha)
+            (_, score) = moveAndScore[0], -moveAndScore[1]
+            if alpha < score < beta :#check for failure
+                moveAndScore = alphabeta(newBoard, not color, depth - 1, -beta, -alpha)
+                (_, score) = moveAndScore[0], -moveAndScore[1]
         else:
-            return (None, alpha)
-    #Minimizing player
-    if color == chess.BLACK:
-        for move in board.legal_moves:
-            newBoard = makeMove(board, move)#Move in simulation board
-            (_, score) = alphabeta(newBoard, not color, depth - 1, alpha, beta)#get score of each move
-             #WIN!!!
-            if score == winScore(not color):
-                return (move, score)
-            #Score equal to beta -> Have many best move
-            if score == beta:
-                bestMove.append(move)
-            #Score smaller than beta -> Have new best move
-            if score < beta:
-                beta = score
-                bestMove = [move]
-                if alpha > beta:
-                    break
-        if bestMove:
-            return (choice(bestMove), beta)
-        else:
+            moveAndScore = alphabeta(newBoard, not color, depth - 1, -beta, -alpha)#get score of each move
+            (_, score) = moveAndScore[0], -moveAndScore[1]
+        if score >= beta:
             return (None, beta)
+        if score > alpha:
+            alpha = score
+            bestMove = [move]
+            FoundPV = True
+    if bestMove:
+        return (choice(bestMove), alpha)
+    else:
+        return (None, alpha)
+
+def QuiescentSearch(board:chess.Board, color:chess.Color, alpha:float = -float("inf"), beta:float = float("inf")):
+    if board.is_check():
+        return alphabeta(board, 1, alpha, beta)
+    (SimpleMove, SimpleEval) = staticSearch(board, color)
+    if SimpleEval >= beta:
+        return (SimpleMove, beta)
+    if SimpleEval > alpha:
+        alpha = SimpleEval
+    captureMoves = [move for move in board.legal_moves if board.is_capture(move)]#Generate capture move
+    if len(captureMoves) < 1:
+        captureMoves = [move for move in board.legal_moves]
+    print(captureMoves)
+    bestMove = []
+    for move in captureMoves:
+        newBoard = makeMove(board, move)
+        moveAndScore = QuiescentSearch(newBoard, not color, -beta, -alpha)
+        (_, score) = moveAndScore[0], -moveAndScore[1]
+        if score >= beta:
+            return (None, beta)
+        if score > alpha:
+            alpha = score
+            bestMove = [move]
+    if bestMove:
+        return (choice(bestMove), alpha )
+    else:
+        return (None, alpha)
 
 
 
