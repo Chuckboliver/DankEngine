@@ -4,7 +4,7 @@ import chess.polyglot
 from POVScore import *
 from copy import deepcopy
 from random import choice
-
+import sys
 class ChessBot:
     def __init__(self, botBoard:chess.Board, level:int = 1, Color:chess.Color = chess.BLACK) -> None:
         self.level = level
@@ -21,8 +21,8 @@ class ChessBot:
         #         print(f"Book move : {move}")
         #     else:
         #print("AlphaBeta!")
-        move = alphabeta(self.playedBoard, self.Color, depth)[0]
-        #move = QuiescentSearch(self.playedBoard, self.Color)[0]
+        #move = alphabeta(self.playedBoard, self.Color, depth)[0]
+        move = quiesenceSearch(self.playedBoard)[0]
         return move
 def makeMove(board:chess.Board, move:chess.Move) -> chess.Board:
     newBoard = deepcopy(board)
@@ -42,13 +42,13 @@ def materialBalance(board:chess.Board) -> int:
     return materialSum(board, chess.WHITE) - materialSum(board, chess.BLACK)
 def isOpenFile(board:chess.Board, file:int) -> bool:
     for rank in range(8):
-        if board.piece_at(chess.square(file, rank)) == chess.PAWN:
+        if board.piece_type_at(chess.square(file, rank)) == chess.PAWN:
             return False
     return True
 def isSemiOpenFile(board:chess.Board, file:int) -> bool:
     count = 0
     for rank in range(8):
-        if board.piece_at(chess.square(file, rank)) == chess.PAWN:
+        if board.piece_type_at(chess.square(file, rank)) == chess.PAWN:
             if count < 1:
                 count += 1
             else:
@@ -120,7 +120,7 @@ def staticSearch(board:chess.Board, color:chess.Color) -> tuple[chess.Move, int]
     return (choice(bestMove), bestScore)
 def generateLegalCaptures(board:chess.Board) -> list[chess.Move]:
     return [move for move in board.generate_legal_captures()]
-def getCaptureSequences(cap_moves:list[chess.Move], board:chess.Board, targetedSquare:chess.Square):
+def getCaptureSequences(cap_moves:list[chess.Move], board:chess.Board, targetedSquare:chess.Square) -> int:
     targetedCaptures:list[chess.Move] = []
     allCaptures = generateLegalCaptures(board)
     for capture_move in allCaptures:
@@ -128,19 +128,23 @@ def getCaptureSequences(cap_moves:list[chess.Move], board:chess.Board, targetedS
             targetedCaptures.append(capture_move)
     for i in range(len(targetedCaptures)):
         swapped = False
-        piece_value = PIECE_VALUES[board.piece_at(targetedCaptures[i].from_square)]
+        piece_value = PIECE_VALUES[board.piece_type_at(targetedCaptures[i].from_square)]
         for j in range(i):
-            sorted_piece_value = PIECE_VALUES[board.piece_at(cap_moves[j].from_square)]
+            sorted_piece_value = PIECE_VALUES[board.piece_type_at(cap_moves[j].from_square)]
             if piece_value < sorted_piece_value:
                 swapped = True
-                #HERE!!!!!!!!
+                cap_moves.insert(j, targetedCaptures[i])
+                break
+        if not swapped:
+            cap_moves.insert(i, targetedCaptures[i])
+    return  len(targetedCaptures)
 def StaticExchangeEvaluation(board:chess.Board, targetedSquare:chess.Square) -> int:
     captureMoves = []
     attackCount = getCaptureSequences(captureMoves, board, targetedSquare)
     value = 0
     if attackCount > 0:
         newBoard = makeMove(board, captureMoves[0])
-        piece_value = PIECE_VALUES[board.piece_at(targetedSquare)]
+        piece_value = PIECE_VALUES[board.piece_type_at(targetedSquare)]
         value = piece_value - StaticExchangeEvaluation(newBoard, targetedSquare)
     return value if value > 0 else 0
 def quiescenceEvaluation(board:chess.Board) -> int:
@@ -161,7 +165,20 @@ def quiescenceEvaluation(board:chess.Board) -> int:
                 board.turn == chess.BLACK and score < bestScore:
                 bestScore = score
         return bestScore
-        
+def quiesenceSearch(board:chess.Board) -> tuple[chess.Move, int]:
+    bestScore = -sys.maxsize if board.turn == chess.WHITE else sys.maxsize
+    bestMove = None
+    legalMove = board.legal_moves
+    for move in legalMove:
+        newBoard = makeMove(board, move)
+        score = quiescenceEvaluation(newBoard)
+        if score == winScore(board.turn):
+            return (move, score)
+        if board.turn == chess.WHITE and score > bestScore or\
+            board.turn == chess.BLACK and score < bestScore:
+            bestScore = score
+            bestMove = move
+    return (bestMove, bestScore)
 def alphabeta(board:chess.Board, color:chess.Color, depth:int, alpha:float = -float('inf'), beta:float = float('inf')) :
     #Alpha Beta pruning algorithm for bruteforce search best move
     """
@@ -200,32 +217,6 @@ def alphabeta(board:chess.Board, color:chess.Color, depth:int, alpha:float = -fl
     else:
         return (None, alpha)
 
-def QuiescentSearch(board:chess.Board, color:chess.Color, alpha:float = -float("inf"), beta:float = float("inf")):
-    if board.is_check():
-        return alphabeta(board, 1, alpha, beta)
-    (SimpleMove, SimpleEval) = staticSearch(board, color)
-    if SimpleEval >= beta:
-        return (SimpleMove, beta)
-    if SimpleEval > alpha:
-        alpha = SimpleEval
-    captureMoves = [move for move in board.legal_moves if board.is_capture(move)]#Generate capture move
-    if len(captureMoves) < 1:
-        captureMoves = [move for move in board.legal_moves]
-    print(captureMoves)
-    bestMove = []
-    for move in captureMoves:
-        newBoard = makeMove(board, move)
-        moveAndScore = QuiescentSearch(newBoard, not color, -beta, -alpha)
-        (_, score) = moveAndScore[0], -moveAndScore[1]
-        if score >= beta:
-            return (None, beta)
-        if score > alpha:
-            alpha = score
-            bestMove = [move]
-    if bestMove:
-        return (choice(bestMove), alpha )
-    else:
-        return (None, alpha)
 
 
 

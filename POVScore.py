@@ -53,5 +53,11 @@ KING_ENDGAME_BONUS = [ 0,  10,  20,  30,  30,  20,  10,   0,
                        0,  10,  20,  30,  30,  20,  10,   0]
 
 
-PIECE_VALUES = {chess.PAWN:100, chess.KNIGHT:300, chess.BISHOP:300, chess.ROOK:500, chess.QUEEN:900, chess.KING:42000 }
+PIECE_VALUES = {None:0, 
+                chess.PAWN:100, 
+                chess.KNIGHT:300, 
+                chess.BISHOP:300, 
+                chess.ROOK:500, 
+                chess.QUEEN:900, 
+                chess.KING:42000 }
 ENDGAME_PIECE_COUNT = 7
