@@ -104,15 +104,15 @@ def staticEvaluation(board:chess.Board) -> int:
     if board.is_game_over():
         return evalEndNode(board)
     return materialBalance(board) + positionalBalance(board)
-def staticSearch(board:chess.Board, color:chess.Color) -> tuple[chess.Move, int]:
-    bestScore = winScore(color)
+def staticSearch(board:chess.Board) -> tuple[chess.Move, int]:
+    bestScore = winScore(board.turn)
     bestMove = []
     for move in board.legal_moves:
         evaluation = staticEvaluation(makeMove(board, move))
         if makeMove(board, move).is_checkmate():
             return (move, evaluation)
-        if color == chess.WHITE and evaluation > bestScore or \
-            color == chess.BLACK and evaluation < bestScore :
+        if board.turn == chess.WHITE and evaluation > bestScore or \
+            board.turn == chess.BLACK and evaluation < bestScore :
             bestScore = evaluation
             bestMove = [move]
         elif evaluation == bestScore:
@@ -179,6 +179,40 @@ def quiesenceSearch(board:chess.Board) -> tuple[chess.Move, int]:
             bestScore = score
             bestMove = move
     return (bestMove, bestScore)
+def iterativeDeepeningAlphaBeta(board:chess.Board, depth:int, alpha:int, beta:int):
+    if board.is_game_over():
+        return (None, staticEvaluation(board))
+    if depth == 1:
+        return quiesenceSearch(board)
+    (static_move, static_score) = staticSearch(board)
+    if static_score == winScore(board.turn):
+        return (static_move, static_score)
+def staticOrderedLegalMove():
+    pass
+def alphaBeta(board:chess.Board, depth:int, alpha:int, beta:int):
+    if board.is_game_over():
+        return (None, staticEvaluation(board))
+    if depth == 1:
+        return staticSearch(board)
+    (static_move, static_score) = staticSearch(board)
+    if static_score == winScore(board.turn):
+        return (static_move, static_score)
+    moveList = staticOrderedLegalMove(board, board.turn)
+    bestMove = None
+    for move in moveList:
+        newBoard = makeMove(board, move)
+        (_, score) = alphaBeta(newBoard, depth - 1, alpha, beta)
+        if score == winScore(board.turn):
+            return (move, score)
+        if board.turn == chess.WHITE and score > alpha :
+            alpha = score
+            bestMove = move
+        elif board.turn == chess.BLACK and score <beta :
+            beta = score
+            bestMove = move
+        if alpha > beta:
+            break
+    return (bestMove, alpha if board.turn == chess.chess.WHITE else beta)
 def alphabeta(board:chess.Board, color:chess.Color, depth:int, alpha:float = -float('inf'), beta:float = float('inf')) :
     #Alpha Beta pruning algorithm for bruteforce search best move
     """
