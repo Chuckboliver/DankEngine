@@ -187,8 +187,16 @@ def iterativeDeepeningAlphaBeta(board:chess.Board, depth:int, alpha:int, beta:in
     (static_move, static_score) = staticSearch(board)
     if static_score == winScore(board.turn):
         return (static_move, static_score)
-def staticOrderedLegalMove():
+def sortMove(moves:list[tuple[chess.Move, int]], color:chess.Color) -> list[tuple[chess.Move, int]]:
     pass
+def staticOrderedLegalMove(board:chess.Board, color:chess.Color):
+    legal_moves = board.legal_moves
+    node:list[tuple[chess.Move, int]] = []
+    for move in legal_moves:
+        newBoard = makeMove(board, move)
+        node.append(move, staticEvaluation(newBoard))
+    orderedLegalMoves = [node[0] for node in sortMove(node, color)]
+    return orderedLegalMoves
 def alphaBeta(board:chess.Board, depth:int, alpha:int, beta:int):
     if board.is_game_over():
         return (None, staticEvaluation(board))
