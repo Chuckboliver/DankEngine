@@ -90,12 +90,12 @@ def positionalBalance(board:chess.Board) -> int:
     return positionalBonus(board, chess.WHITE) - positionalBonus(board, chess.BLACK)
 def winScore(color:chess.Color) -> int:
     if color == chess.WHITE:
-        return -10 * PIECE_VALUES[chess.KING]
-    else:
         return 10 * PIECE_VALUES[chess.KING]
+    else:
+        return -10 * PIECE_VALUES[chess.KING]
 def evalEndNode(board:chess.Board):
     if board.is_checkmate():
-        return winScore(board.turn)
+        return winScore(not board.turn)
     elif board.is_stalemate() or \
          board.is_insufficient_material() or \
          board.is_seventyfive_moves():
@@ -188,7 +188,7 @@ def iterativeDeepeningAlphaBeta(board:chess.Board, depth:int, alpha:int, beta:in
     if static_score == winScore(board.turn):
         return (static_move, static_score)
 def sortMove(moves:list[tuple[chess.Move, int]], color:chess.Color) -> list[tuple[chess.Move, int]]:
-    pass
+    return sorted(moves, key = lambda x: x[1], reverse = color == chess.BLACK)
 def staticOrderedLegalMove(board:chess.Board, color:chess.Color):
     legal_moves = board.legal_moves
     node:list[tuple[chess.Move, int]] = []
