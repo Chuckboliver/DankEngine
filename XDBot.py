@@ -22,7 +22,8 @@ class ChessBot:
         #     else:
         #print("AlphaBeta!")
         #move = alphabeta(self.playedBoard, self.Color, depth)[0]
-        move = quiesenceSearch(self.playedBoard)[0]
+        #move = quiesenceSearch(self.playedBoard)[0]
+        move = iterativeDeepeningAlphaBeta(self.playedBoard, depth , -sys.maxsize, sys.maxsize)[0]
         return move
 def makeMove(board:chess.Board, move:chess.Move) -> chess.Board:
     newBoard = deepcopy(board)
@@ -105,19 +106,19 @@ def staticEvaluation(board:chess.Board) -> int:
         return evalEndNode(board)
     return materialBalance(board) + positionalBalance(board)
 def staticSearch(board:chess.Board) -> tuple[chess.Move, int]:
-    bestScore = winScore(board.turn)
-    bestMove = []
-    for move in board.legal_moves:
-        evaluation = staticEvaluation(makeMove(board, move))
-        if makeMove(board, move).is_checkmate():
-            return (move, evaluation)
-        if board.turn == chess.WHITE and evaluation > bestScore or \
-            board.turn == chess.BLACK and evaluation < bestScore :
-            bestScore = evaluation
-            bestMove = [move]
-        elif evaluation == bestScore:
-            bestMove.append(move)
-    return (choice(bestMove), bestScore)
+    bestScore = -sys.maxsize if board.turn == chess.WHITE else sys.maxsize
+    legal_moves = board.legal_moves
+    bestMove = None
+    for move in legal_moves:
+        newBoard = makeMove(board, move)
+        score = staticEvaluation(newBoard)
+        if score == winScore(board.turn):
+            return (move, score)
+        if board.turn == chess.WHITE and score > bestScore or\
+            board.turn == chess.BLACK and score < bestScore:
+            bestScore = score
+            bestMove = move
+    return (bestMove, bestScore)
 def generateLegalCaptures(board:chess.Board) -> list[chess.Move]:
     return [move for move in board.generate_legal_captures()]
 def getCaptureSequences(cap_moves:list[chess.Move], board:chess.Board, targetedSquare:chess.Square) -> int:
@@ -179,14 +180,7 @@ def quiesenceSearch(board:chess.Board) -> tuple[chess.Move, int]:
             bestScore = score
             bestMove = move
     return (bestMove, bestScore)
-def iterativeDeepeningAlphaBeta(board:chess.Board, depth:int, alpha:int, beta:int):
-    if board.is_game_over():
-        return (None, staticEvaluation(board))
-    if depth == 1:
-        return quiesenceSearch(board)
-    (static_move, static_score) = staticSearch(board)
-    if static_score == winScore(board.turn):
-        return (static_move, static_score)
+
 def sortMove(moves:list[tuple[chess.Move, int]], color:chess.Color) -> list[tuple[chess.Move, int]]:
     return sorted(moves, key = lambda x: x[1], reverse = color == chess.BLACK)
 def staticOrderedLegalMove(board:chess.Board, color:chess.Color):
@@ -194,9 +188,17 @@ def staticOrderedLegalMove(board:chess.Board, color:chess.Color):
     node:list[tuple[chess.Move, int]] = []
     for move in legal_moves:
         newBoard = makeMove(board, move)
-        node.append(move, staticEvaluation(newBoard))
+        node.append((move, staticEvaluation(newBoard)))
     orderedLegalMoves = [node[0] for node in sortMove(node, color)]
     return orderedLegalMoves
+def alphaBetaNodes(board:chess.Board, depth:int) -> list[tuple[chess.Move, int]]:
+    legal_moves = board.legal_moves
+    nodes = []
+    for move in legal_moves:
+        newBoard = makeMove(board, move)
+        nodes.append((move, alphaBeta(newBoard, depth - 1, -sys.maxsize, sys.maxsize)[1] if depth > 1 else staticEvaluation(newBoard)))
+    sortedNode = sortMove(nodes, board.turn)
+    return sortedNode
 def alphaBeta(board:chess.Board, depth:int, alpha:int, beta:int):
     if board.is_game_over():
         return (None, staticEvaluation(board))
@@ -220,7 +222,31 @@ def alphaBeta(board:chess.Board, depth:int, alpha:int, beta:int):
             bestMove = move
         if alpha > beta:
             break
-    return (bestMove, alpha if board.turn == chess.chess.WHITE else beta)
+    return (bestMove, alpha if board.turn == chess.WHITE else beta)
+def iterativeDeepeningAlphaBeta(board:chess.Board, depth:int, alpha:int, beta:int) -> tuple[chess.Move, int]:
+    if board.is_game_over():
+        return (None, staticEvaluation(board))
+    if depth == 1:
+        return quiesenceSearch(board)
+    (static_move, static_score) = staticSearch(board)
+    if static_score == winScore(board.turn):
+        return (static_move, static_score)
+    moveNode = alphaBetaNodes(board, depth - 1)
+    bestMove = None
+    for move, move_score in moveNode:
+        newBoard = makeMove(board, move)
+        (_, score) = iterativeDeepeningAlphaBeta(newBoard, depth - 1, alpha, beta)
+        if score == winScore(board.turn):
+            return (move, score)
+        if board.turn == chess.WHITE and score > alpha:
+            alpha = score
+            bestMove = move
+        elif board.turn == chess.BLACK and score < beta:
+            beta = score
+            bestMove = move
+        if alpha > beta:
+            break
+    return (bestMove, alpha if board.turn == chess.WHITE else beta)
 def alphabeta(board:chess.Board, color:chess.Color, depth:int, alpha:float = -float('inf'), beta:float = float('inf')) :
     #Alpha Beta pruning algorithm for bruteforce search best move
     """
