@@ -1,3 +1,4 @@
+from os import device_encoding
 import chess
 import chess.syzygy
 import chess.polyglot
@@ -11,19 +12,18 @@ class ChessBot:
         self.Color = Color
         self.playedBoard = botBoard
     def getMove(self, depth:int = 2) -> chess.Move:
-        # with chess.polyglot.open_reader("poly16/books/elo-3300.bin") as books:
-        #     listEntry = []
-        #     for entry in books.find_all(self.playedBoard):
-        #         listEntry.append(entry)
-        #     if listEntry:
-        #         entry = choice(listEntry)
-        #         move = entry.move
-        #         print(f"Book move : {move}")
-        #     else:
+        with chess.polyglot.open_reader("poly16/books/elo-3300.bin") as books:
+            listEntry = []
+            for entry in books.find_all(self.playedBoard):
+                listEntry.append(entry)
+            if listEntry:
+                entry = choice(listEntry)
+                move = entry.move
+            else:
         #print("AlphaBeta!")
         #move = alphabeta(self.playedBoard, self.Color, depth)[0]
         #move = quiesenceSearch(self.playedBoard)[0]
-        move = iterativeDeepeningAlphaBeta(self.playedBoard, depth , -sys.maxsize, sys.maxsize)[0]
+                move = iterativeDeepeningAlphaBeta(self.playedBoard, depth , -sys.maxsize, sys.maxsize)[0]
         return move
 def makeMove(board:chess.Board, move:chess.Move) -> chess.Board:
     #newBoard = deepcopy(board)
