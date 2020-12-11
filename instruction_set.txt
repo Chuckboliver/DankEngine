@@ -1,0 +1,41 @@
+Position(Rank and File) | Numeric:
+    A - 000 - 1
+    B - 001 - 2
+    C - 010 - 3
+    D - 011 - 4
+    E - 100 - 5
+    F - 101 - 6
+    G - 110 - 7
+    H - 111 - 8
+Piece:
+    R (ROOK)    - 00
+    N (Knight)  - 01
+    B (Bishop)  - 10
+    Q (Queen)   - 11
+
+Color:
+    WHITE - 0
+    BLACK - 1
+
+Instruction header:
+    New game    - 000
+    Choose side - 001
+    Undo move   - 010
+    Set level   - 011
+    Move        - 100
+    Piece       - 101
+    Error       - 111 //Ex. Rpi detect illegal move from FPGA then send -> Send(111 1) = Send(0x0F) ** RPI -> FPGA ** then FPGA must show Error by LED
+Send Data Format:
+    Data = <instruction header><pay_load>
+Example:
+    1.) Choose side(WHITE) -> Send(001 0) = Send(0x02) **FPGA -> RPI**
+    2.) New game -> Send(000 1) = Send(0x01) **FPGA -> RPI**
+    3.) User Move {e2e4} -> Send(100 100 001 100 011 ) = Send(0x4863) **FPGA -> RPI**
+    4.) Rpi respond : Move {e7e5} -> Send(100 100 110 100 100) = Send(0x49A4) **RPI -> FPGA**
+    5.) User confirm bot move by : Move {e7e5} -> Send(100 100 110 100 100) = Send(0x49A4) **FPGA -> RPI**
+    6.) User want to increase bot difficulty level by : Set Level {2} -> Send(011 001) = Send(0x19) **FPGA -> RPI**
+    7.) User Move {g1f3} -> Send(100 110 000 101 010) = Send(0x4C2A) **FPGA -> RPI**
+    8.) Rpi respond : Move {b8c6} -> Send(100 001 111 010 101) = Send(0x43D5) **RPI -> FPGA**
+    9.) User confirm bot move by : Move {b8c6} -> Send(100 001 111 010 101) = Send(0x43D5) **FPGA -> RPI**
+    10.) User want to Undo move by : Send(010 1) = Send(0x05) **FPGA -> RPI**
+    11.) After undo move user do a next move...
