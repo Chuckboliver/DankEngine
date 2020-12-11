@@ -33,8 +33,25 @@ class Stockfish:
         print(f"Nodes : {info['nodes']}")
         print(f"NPS : {info['nps']}")
         print(f"FEN : {self.board.fen()}")
-    def set_level(self, level:int):
+    def set_level(self, level:int) -> None:
         if 1 <= level <= 5:
             self.level = level
         else:
             print(f"Error : level not in range.")
+class Comm:
+    def __init__(self) -> None:
+        self.__ser = serial.Serial(
+                port = "/dev/serial0",
+                baudrate = 115200,
+                bytesize = serial.EIGHTBITS,
+                parity = serial.PARITY_NONE,
+                timeout = None
+            )
+    def _send_TX(self, data:bytearray) -> int:
+        return self.__ser.write(data)
+    def _read_RX(self):
+        if self.ser.in_waiting:
+            return self.__ser.read(self.ser.in_waiting)
+        return None
+    def decode_data(data:bytearray) -> str:
+        pass
