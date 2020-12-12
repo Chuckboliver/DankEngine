@@ -105,7 +105,7 @@ class Comm:
     def encode_move(uci:str) -> int:
         file = dict(zip("abcdefgh", range(8)))
         rank = dict(zip(range(1,9), range(8)))
-        from_file, from_rank, to_file, to_rank = *uci
+        from_file, from_rank, to_file, to_rank = uci
         from_file, from_rank, to_file, to_rank  = file[from_file], rank[from_rank], file[to_file], rank[to_rank]
         data = 0
         for i in range(4):
