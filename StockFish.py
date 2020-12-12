@@ -1,6 +1,18 @@
 import chess
 import chess.engine
 import serial
+#Const instruction header
+NEW_GAME = 0
+CHOOSE_SIDE = 1
+UNDO_MOVE = 2
+SET_LEVEL = 3
+MOVE = 4
+PIECE = 5
+ERROR = 7
+FILE = dict(zip(range(8), "ABCDEFGH"))
+RANK = dict(zip(range(8), range(1,9)))
+COLOR = {0:"WHITE", 1:"BLACK"}
+PROMOTE_PIECE = {0:"ROOK", 1:"KNIGHT", 2:"Bishop", 3:"QUEEN"}
 class Stockfish:
     def __init__(self) -> None:
         self.engine = chess.engine.SimpleEngine.popen_uci("stockfish.exe")
@@ -53,5 +65,45 @@ class Comm:
         if self.ser.in_waiting:
             return self.__ser.read(self.ser.in_waiting)
         return None
-    def decode_data(data:bytearray) -> str:
+    def decode_data(self, data:bytes) -> str:
+        print(f"DECODED : {data}")
+        bin_word = [bin(int(b))[2:] for b in data]
+        print(bin_word)
+
+def decode_data( received_data:bytes) -> str:
+    data = 0
+    if len(received_data) > 1:#16 bits
+        data |= received_data[0] <<  8
+        data |= received_data[1]
+        instruction_header = (data >> 13) & 7
+        pay_load = data & 8191
+    else:#8 bits
+        data |= received_data[0]
+        data = 108
+        instruction_header = (data >> 5) & 7
+        pay_load = data & 31
+    print(f"instruction : {bin(instruction_header)[2:]}")
+    print(f"pay_load : {bin(pay_load)[2:]}")
+    if instruction_header == MOVE:
+        from_file = (pay_load & 7168) >> 10
+        from_rank = (pay_load & 896) >> 7
+        to_file = (pay_load & 112) >> 4
+        to_rank = (pay_load & 14) >> 1
+        print(bin(from_file), bin(from_rank), bin(to_file), bin(to_rank))
+        print(FILE[from_file], RANK[from_rank], FILE[to_file], RANK[to_rank])
+    
+    elif instruction_header == NEW_GAME:
+        #NEW GAME
         pass
+    elif instruction_header == CHOOSE_SIDE:
+        side = (pay_load >> 4) & 1
+        print(f"Select {COLOR[side]}")
+    elif instruction_header == SET_LEVEL:
+        level = (pay_load >> 2) & 7
+        print(f"Bot level : {level + 1}")
+    elif instruction_header == PIECE:
+        piece = (pay_load >> 3) & 3
+        print(f"Select piece : {PROMOTE_PIECE[piece]}")
+    elif instruction_header == ERROR:
+        print("ERROR!!!")
+decode_data(input().encode('utf-8'))
