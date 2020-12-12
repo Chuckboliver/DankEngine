@@ -20,11 +20,18 @@ Color:
 Instruction header:
     New game    - 000
     Choose side - 001
-    Undo move   - 010
     Set level   - 011
     Move        - 100
     Piece       - 101
     Error       - 111 //Ex. Rpi detect illegal move from FPGA then send -> Send(111 1) = Send(0x0F) ** RPI -> FPGA ** then FPGA must show Error by LED
+Error Type:
+    New game    - 000
+    Choose side - 001
+    Set level   - 011
+    Move        - 100
+    Piece       - 101
+    Error       - 111
+    Ex. <Error><ErrorType> -> <111><101> (Promote Error)
 Send Data Format:
     Data = <instruction header><pay_load>
 Example:
