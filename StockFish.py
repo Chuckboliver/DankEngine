@@ -26,8 +26,8 @@ class Stockfish:
         return self.board.turn == self.side
     def set_side(self, color:chess.Color) -> None:
         self.choosed_side = color
-    def new_game(self, fen:str = "" )-> None:
-        self.board = chess.Board(fen)
+    def new_game(self, fen:str = None )-> None:
+        self.board = chess.Board(fen) if fen is not None else chess.Board()
         self.side = self.choosed_side
     def _isPromotedMove(self, move_uci:str) -> bool:
         return any([move_uci + pr in self.board.legal_moves for pr in ['q', 'r', 'n', 'b']])
@@ -44,12 +44,11 @@ class Stockfish:
         with self.engine.analysis(self.board, chess.engine.Limit(mate = 10)) as analysis:
             for info in analysis:
                 #print(info.get('score'), info.get('pv'))
-                temp = info.get('pv')[0]
+                if info.get('pv') is not None:
+                    temp = info.get('pv')[0]
                 if info.get('seldepth', 0) > depth:
                     return temp
         return temp 
-    def check_move(self, move:chess.Move) -> bool:
-        return move in self.board.legal_moves
     def analysis(self, depth:int) -> None:
         info =  self.engine.analyse(self.board, chess.engine.Limit(depth = depth))
         print(f"Color : {'WHITE' if info['score'].turn else 'BLACK'}")
@@ -68,7 +67,8 @@ class Stockfish:
 class Comm:
     def __init__(self) -> None:
         self.__ser = serial.Serial(
-                port = "/dev/serial0",
+                #port = "/dev/serial0",
+                port = "COM3",
                 baudrate = 115200,
                 bytesize = serial.EIGHTBITS,
                 parity = serial.PARITY_NONE,
@@ -80,9 +80,10 @@ class Comm:
     def send_TX(self, data) -> int:
         return self.__ser.write(data)
     def read_RX(self) -> bytes:
-        if self.ser.in_waiting:
-            return self.__ser.read(self.ser.in_waiting)
-        return None
+        if self.__ser.in_waiting == 1:
+            return self.__ser.read(1)
+        else:
+            return self.__ser.read(2)
     def in_waiting(self) -> int:
         return self.__ser.in_waiting
     @staticmethod
@@ -104,14 +105,15 @@ class Comm:
     @staticmethod
     def encode_move(uci:str) -> int:
         file = dict(zip("abcdefgh", range(8)))
-        rank = dict(zip(range(1,9), range(8)))
+        rank = dict(zip("12345678", range(8)))
         from_file, from_rank, to_file, to_rank = uci
         from_file, from_rank, to_file, to_rank  = file[from_file], rank[from_rank], file[to_file], rank[to_rank]
         data = 0
         for i in range(4):
             data |= [from_file, from_rank, to_file, to_rank][i] << (10 - 3 * i)
         return data
-    def decode_data(self, received_data:bytes) -> tuple[int, Any]:
+    @staticmethod
+    def decode_data(received_data:bytes):
         data = 0
         if len(received_data) > 1:#16 bits
             data |= received_data[0] <<  8
@@ -137,8 +139,8 @@ class Comm:
             return (NEW_GAME, None)
         elif instruction_header == CHOOSE_SIDE:
             side = (pay_load >> 4) & 1
-            print(f"Select {COLOR[side]}")
-            return (CHOOSE_SIDE, COLOR[side])
+            print(f"Select {'WHITE' if COLOR[side] else 'BLACK'}")
+            return (CHOOSE_SIDE, not COLOR[side])
         elif instruction_header == SET_LEVEL:
             level = (pay_load >> 2) & 7
             print(f"Bot level : {level + 1}")
@@ -149,11 +151,13 @@ class Comm:
             return (PIECE, PROMOTE_PIECE[piece])
         elif instruction_header == ERROR:
             error_code = (pay_load >> 2) & 7
+            print(f"Error : {error_code}")
             return (ERROR, error_code)
 
 game = Comm()
 engine = game.get_engine()
 bot_move = None
+print("-----------------------------------------")
 while True:
     if game.in_waiting():
         data = game.read_RX()
@@ -162,8 +166,9 @@ while True:
         if header == NEW_GAME:
             engine.new_game()
             if engine.is_engine_turn():
-                bot_move = engine.get_move().uci()
+                bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
                 send_data = game.make_data(MOVE, game.encode_move(bot_move))  
+                print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                 game.send_TX(send_data)
         elif header == MOVE:
             if engine.is_engine_turn():
@@ -171,12 +176,14 @@ while True:
                     engine.make_move(inside_data)
                 else:
                     send_data = game.make_data(ERROR, ERROR)
+                    print("Error move")
                     game.send_TX(send_data)
             else:
                 try:
                     engine.make_move(inside_data)
-                    bot_move = engine.get_move().uci()
+                    bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
                     send_data = game.make_data(MOVE, game.encode_move(bot_move))  
+                    print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                     game.send_TX(send_data)
                 except ValueError:
                     if engine._isPromotedMove(inside_data):
@@ -208,3 +215,4 @@ while True:
                 game.send_TX(send_data)
         elif header == ERROR:
             print(f"ERROR : {inside_data}")
+        print("-----------------------------------------")
