@@ -10,54 +10,35 @@
         <signal name="XLXN_17" />
         <signal name="XLXN_18" />
         <signal name="X" />
-        <signal name="B" />
-        <signal name="XLXN_54" />
-        <signal name="XLXN_55" />
         <signal name="E" />
         <signal name="XLXN_58" />
         <signal name="Y" />
         <signal name="XLXN_62" />
-        <signal name="XLXN_63" />
         <signal name="D" />
-        <signal name="XLXN_68" />
         <signal name="C" />
-        <signal name="XLXN_70" />
-        <signal name="XLXN_71" />
-        <signal name="XLXN_72" />
         <signal name="XLXN_73" />
-        <signal name="XLXN_74" />
-        <signal name="XLXN_75" />
-        <signal name="XLXN_77" />
-        <signal name="XLXN_78" />
-        <signal name="XLXN_79" />
-        <signal name="XLXN_82" />
         <signal name="XLXN_83" />
-        <signal name="XLXN_87" />
-        <signal name="XLXN_88" />
-        <signal name="XLXN_90" />
-        <signal name="XLXN_92" />
-        <signal name="XLXN_94" />
         <signal name="Z" />
-        <signal name="XLXN_101" />
         <signal name="XLXN_89" />
-        <signal name="XLXN_103" />
         <signal name="XLXN_91" />
-        <signal name="XLXN_105" />
         <signal name="XLXN_95" />
         <signal name="XLXN_96" />
         <signal name="XLXN_97" />
         <signal name="XLXN_98" />
         <signal name="NOT_EQ" />
-        <signal name="XLXN_111" />
+        <signal name="XLXN_112" />
+        <signal name="XLXN_113" />
+        <signal name="XLXN_114" />
+        <signal name="B" />
         <port polarity="Input" name="A" />
         <port polarity="Output" name="X" />
-        <port polarity="Input" name="B" />
         <port polarity="Input" name="E" />
         <port polarity="Output" name="Y" />
         <port polarity="Input" name="D" />
         <port polarity="Input" name="C" />
         <port polarity="Output" name="Z" />
         <port polarity="Output" name="NOT_EQ" />
+        <port polarity="Input" name="B" />
         <blockdef name="and2">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="64" y1="-64" y2="-64" x1="0" />
@@ -285,20 +266,9 @@
         <branch name="X">
             <wire x2="1680" y1="208" y2="208" x1="1632" />
         </branch>
-        <branch name="B">
-            <wire x2="688" y1="176" y2="176" x1="96" />
-            <wire x2="704" y1="176" y2="176" x1="688" />
-            <wire x2="688" y1="176" y2="432" x1="688" />
-            <wire x2="1008" y1="432" y2="432" x1="688" />
-            <wire x2="1008" y1="128" y2="128" x1="688" />
-            <wire x2="1008" y1="128" y2="656" x1="1008" />
-            <wire x2="1040" y1="656" y2="656" x1="1008" />
-            <wire x2="688" y1="128" y2="176" x1="688" />
-        </branch>
         <iomarker fontsize="28" x="96" y="48" name="A" orien="R180" />
         <iomarker fontsize="28" x="96" y="304" name="D" orien="R180" />
         <iomarker fontsize="28" x="96" y="240" name="C" orien="R180" />
-        <iomarker fontsize="28" x="96" y="176" name="B" orien="R180" />
         <branch name="Y">
             <wire x2="1680" y1="448" y2="448" x1="1632" />
         </branch>
@@ -306,8 +276,7 @@
             <wire x2="1376" y1="512" y2="512" x1="1008" />
         </branch>
         <branch name="XLXN_62">
-            <wire x2="1232" y1="432" y2="448" x1="1232" />
-            <wire x2="1376" y1="448" y2="448" x1="1232" />
+            <wire x2="1376" y1="448" y2="448" x1="1264" />
         </branch>
         <branch name="XLXN_17">
             <wire x2="1280" y1="48" y2="48" x1="432" />
@@ -340,16 +309,14 @@
         </branch>
         <instance x="1040" y="784" name="XLXI_27" orien="R0" />
         <branch name="E">
-            <wire x2="544" y1="368" y2="368" x1="96" />
-            <wire x2="544" y1="368" y2="576" x1="544" />
-            <wire x2="752" y1="576" y2="576" x1="544" />
+            <wire x2="112" y1="368" y2="368" x1="96" />
+            <wire x2="112" y1="368" y2="576" x1="112" />
+            <wire x2="752" y1="576" y2="576" x1="112" />
         </branch>
         <instance x="1376" y="304" name="XLXI_5" orien="R0" />
         <instance x="1376" y="576" name="XLXI_24" orien="R0" />
         <iomarker fontsize="28" x="1680" y="448" name="Y" orien="R0" />
         <iomarker fontsize="28" x="1680" y="208" name="X" orien="R0" />
-        <instance x="1008" y="464" name="XLXI_25" orien="R0" />
-        <instance x="752" y="640" name="XLXI_23" orien="R0" />
         <instance x="752" y="816" name="XLXI_28" orien="R0" />
         <instance x="704" y="368" name="XLXI_29" orien="R0" />
         <instance x="1376" y="752" name="XLXI_30" orien="R0" />
@@ -357,8 +324,7 @@
             <wire x2="1376" y1="688" y2="688" x1="1296" />
         </branch>
         <branch name="Z">
-            <wire x2="1648" y1="656" y2="656" x1="1632" />
-            <wire x2="1680" y1="656" y2="656" x1="1648" />
+            <wire x2="1680" y1="656" y2="656" x1="1632" />
         </branch>
         <instance x="2192" y="1120" name="XLXI_35" orien="R0" />
         <instance x="2192" y="1776" name="XLXI_37" orien="R0" />
@@ -416,5 +382,18 @@
         </branch>
         <iomarker fontsize="28" x="3008" y="1424" name="NOT_EQ" orien="R0" />
         <iomarker fontsize="28" x="1680" y="656" name="Z" orien="R0" />
+        <instance x="752" y="640" name="XLXI_23" orien="R0" />
+        <branch name="B">
+            <wire x2="688" y1="176" y2="176" x1="96" />
+            <wire x2="704" y1="176" y2="176" x1="688" />
+            <wire x2="688" y1="176" y2="384" x1="688" />
+            <wire x2="1024" y1="384" y2="384" x1="688" />
+            <wire x2="1024" y1="384" y2="448" x1="1024" />
+            <wire x2="1024" y1="448" y2="656" x1="1024" />
+            <wire x2="1040" y1="656" y2="656" x1="1024" />
+            <wire x2="1040" y1="448" y2="448" x1="1024" />
+        </branch>
+        <iomarker fontsize="28" x="96" y="176" name="B" orien="R180" />
+        <instance x="1040" y="480" name="XLXI_25" orien="R0" />
     </sheet>
 </drawing>
