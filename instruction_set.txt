@@ -24,7 +24,15 @@ Instruction header:
     Move        - 011
     Piece       - 100
     Error       - 101 //Ex. Rpi detect illegal move from FPGA then send -> Send(111 1) = Send(0x0F) ** RPI -> FPGA ** then FPGA must show Error by LED
-    Score       - 110
+    Game over   - 110
+Game over type:
+    Check mate              - 00
+    Stale mate              - 01
+    Insufficient material   - 10
+Win side:
+    None    - 00
+    WHITE   - 01
+    BLACK   - 10
 Error Type:
     New game    - 000
     Choose side - 001

@@ -8,6 +8,16 @@ SET_LEVEL = 2
 MOVE = 3
 PIECE = 4
 ERROR = 5
+GAME_OVER = 6
+CHECK_MATE = 0
+STALE_MATE = 1
+NONE = 0
+WHITE = 1
+BLACK  = 2
+ROOK = 0
+KNIGHT = 1
+BISHOP = 2
+QUEEN = 3
 FILE = dict(zip(range(8), "abcdefgh"))
 RANK = dict(zip(range(8), range(1,9)))
 COLOR = {0:chess.WHITE, 1:chess.BLACK}
@@ -24,17 +34,26 @@ class Stockfish:
         return self.board.turn == self.side
     def set_side(self, color:chess.Color) -> None:
         self.choosed_side = color
-    def new_game(self, fen:str = None )-> None:
+    def new_game(self, fen:str = "r3k1nr/pp3ppp/n7/4p3/2p3b1/2N2p2/PPPPN2q/R1BQK3 w kq - 0 14" )-> None:
         self.board = chess.Board(fen) if fen is not None else chess.Board()
         self.side = self.choosed_side
     def _isPromotedMove(self, move_uci:str) -> bool:
-        return any([self.board.parse_uci(move_uci + pr) in self.board.legal_moves for pr in ['q', 'r', 'n', 'b']])
+        if len(move_uci) == 4:
+            return any([chess.Move.from_uci(move_uci + pr) in self.board.legal_moves for pr in ['q', 'r', 'n', 'b']])
+        elif len(move_uci) == 5:
+            return self._isPromotedMove(move_uci[:5]) and move_uci[4] in {'q', 'r', 'n', 'b'}
     def make_move(self, move_uci:str) -> None:
-        move = self.board.parse_uci(move_uci)
+        move = chess.Move.from_uci(move_uci)
         if move in self.board.legal_moves:
             self.board.push(move)
         else:
             raise ValueError("Illegal move.")
+    def is_mate(self) -> bool:
+        return self.board.is_checkmate()
+    def is_stale(self) -> bool:
+        return self.board.is_stalemate()
+    def is_game_over(self) -> bool:
+        return self.is_mate() or self.is_stale()
     def undo_move(self) -> chess.Move:
         return self.board.pop()
     def get_move(self, depth:int) -> chess.Move:
@@ -83,6 +102,8 @@ class Comm:
     def read_RX(self) -> bytes:
         if self.__ser.in_waiting:
             return self.__ser.read(1)
+    def flush(self):
+        self.__ser.flush()
     def in_waiting(self) -> int:
         return self.__ser.in_waiting
     @staticmethod
@@ -92,7 +113,7 @@ class Comm:
             data |= header << 5
             pay_load <<= 4
             data |= pay_load
-        elif header == ERROR:
+        elif header == ERROR or header == GAME_OVER:
             data |= header << 5
             pay_load <<= 2
             data |= pay_load
@@ -164,6 +185,13 @@ class Comm:
             return (ERROR, error_code)
         else:
             return (ERROR, ERROR)
+    def game_over(self) -> int:
+        send_data = None
+        if self.__engine.is_stale():
+            send_data = game.make_data(GAME_OVER, (STALE_MATE << 2) | NONE )
+        elif self.__engine.is_mate():
+            send_data = game.make_data(GAME_OVER, (CHECK_MATE << 2 ) | (WHITE if engine.side == chess.WHITE else BLACK) )
+        return send_data
 if __name__ == "__main__":
     try:
         game = Comm()
@@ -175,6 +203,7 @@ if __name__ == "__main__":
                 data = game.read_RX()
                 print(f"Read : {data}")
                 header, inside_data = game.decode_data(data)
+                game.flush()
                 if header == NEW_GAME:
                     engine.new_game()
                     if engine.is_engine_turn():
@@ -186,6 +215,9 @@ if __name__ == "__main__":
                     if engine.is_engine_turn():
                         if inside_data == bot_move:
                             engine.make_move(inside_data)
+                            if engine.is_game_over():
+                                send_data = game.game_over()
+                                game.send_TX(send_data)
                         else:
                             send_data = game.make_data(ERROR, ERROR)
                             print("Error move")
@@ -193,10 +225,20 @@ if __name__ == "__main__":
                     else:
                         try:
                             engine.make_move(inside_data)
-                            bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
-                            send_data = game.make_data(MOVE, game.encode_move(bot_move))
-                            print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
-                            game.send_TX(send_data)
+                            if not engine.is_game_over():
+                                bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
+                                second_send_data = None
+                                if engine._isPromotedMove(bot_move):
+                                    which_piece = {'q':QUEEN, 'r':ROOK, 'n':KNIGHT, 'b':BISHOP}
+                                    second_send_data = game.make_data(PIECE, which_piece[bot_move[4]])
+                                send_data = game.make_data(MOVE, game.encode_move(bot_move))
+                                print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
+                                game.send_TX(send_data)
+                                if second_send_data is not None:
+                                    game.send_TX(second_send_data)
+                            else:
+                                send_data = game.game_over()
+                                game.send_TX(send_data)
                         except (ValueError, AttributeError):
                             if engine._isPromotedMove(inside_data):
                                 bot_move = inside_data
@@ -230,5 +272,5 @@ if __name__ == "__main__":
                 print("-----------------------------------------")
     except KeyboardInterrupt:
         print("END PROGRAM.")
-    except serial.SerialException:
-        print("Cannot open port.")
+    except serial.SerialException as exc:
+        print(f"Cannot open port {exc}.") 
