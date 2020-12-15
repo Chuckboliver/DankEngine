@@ -1,0 +1,10 @@
+[Inputs]
+clock
+=first_Move_IN[2:0]=
+=second_Move_IN[2:0]=
+=third_Move_IN[2:0]=
+=forth_Move_IN[2:0]=
+[Outputs]
+=out_7seg[6:0]=
+=common[3:0]=
+[BiDir]

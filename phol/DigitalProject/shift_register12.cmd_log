@@ -1,0 +1,2 @@
+vhdtdtfi -lib work reg_12bits.vhd -prj DigitalProject -o shift_register12.spl -module shift_register12 -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 shift_register12.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/shift_register12.sym} 

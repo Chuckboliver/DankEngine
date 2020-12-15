@@ -1,0 +1,95 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Mon Dec 14 00:39:03 2020
+# Process ID: 15796
+# Log file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P112 [get_ports {data[15]}]
+endgroup
+startgroup
+set_property package_pin P111 [get_ports {data[14]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {data[13]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {data[12]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {data[11]}]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports {data[10]}]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports {data[9]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {data[8]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[7]}]]
+startgroup
+set_property package_pin P99 [get_ports {data[8]}]
+endgroup
+startgroup
+set_property package_pin P55 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports {data[6]}]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports {data[5]}]
+endgroup
+startgroup
+set_property package_pin P58 [get_ports {data[4]}]
+endgroup
+startgroup
+set_property package_pin P59 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin P66 [get_ports {data[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {data[0]}]]
+set_property is_loc_fixed true [get_ports [list  {data[0]}]]
+startgroup
+set_property package_pin P123 [get_ports clock]
+endgroup
+set_property is_loc_fixed false [get_ports [list  clock]]
+startgroup
+set_property package_pin P45 [get_ports start]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports tx]
+endgroup
+set_property is_loc_fixed false [get_ports [list  tx]]
+set_property is_loc_fixed true [get_ports [list  tx]]
+save_constraints
+set_property is_loc_fixed true [get_ports [list  clock]]
+save_constraints
+startgroup
+set_property package_pin P51 [get_ports start]
+endgroup
+save_constraints
+set_property is_loc_fixed false [get_ports [list  start]]
+set_property is_loc_fixed true [get_ports [list  start]]
+save_constraints
+refresh_design
+startgroup
+set_property package_pin P45 [get_ports start]
+endgroup
+startgroup
+set_property package_pin P45 [get_ports start]
+endgroup
+save_constraints

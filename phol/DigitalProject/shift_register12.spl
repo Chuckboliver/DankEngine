@@ -1,0 +1,7 @@
+[Inputs]
+CLR
+CLK
+=reg_in[11:0]=
+[Outputs]
+=reg_out[11:0]=
+[BiDir]
