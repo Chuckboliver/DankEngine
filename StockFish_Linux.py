@@ -110,24 +110,24 @@ class Comm:
     def make_data( header:int, pay_load:int) -> int:
         data = 0
         if header == NEW_GAME or header == CHOOSE_SIDE:
-            data |= header << 5
-            pay_load <<= 4
+            data |= header << (5 + 8)
+            pay_load <<= (4 + 8)
             data |= pay_load
         elif header == ERROR or header == GAME_OVER:
-            data |= header << 5
-            pay_load <<= 2
+            data |= header << (5 + 8)
+            pay_load <<= (2 + 8)
             data |= pay_load
         elif header  == SET_LEVEL:
-            data |= header << 5
-            pay_load <<= 2
+            data |= header << (5 + 8)
+            pay_load <<= (2 + 8)
             data |= pay_load
         elif header == MOVE:
             data |= header << 13
             pay_load <<= 1
             data |= pay_load
         elif header == PIECE:
-            data |= header << 5
-            pay_load <<= 3
+            data |= header << (5 + 8)
+            pay_load <<= (3 + 8)
             data |= pay_load
         return data
     @staticmethod
@@ -237,7 +237,6 @@ if __name__ == "__main__":
                                     print("BOT PROMOTED")
                                     which_piece = {'q':QUEEN, 'r':ROOK, 'n':KNIGHT, 'b':BISHOP}
                                     second_send_data = game.make_data(PIECE, which_piece[bot_move[4]])
-                                    print(f"sc dt {second_send_data}")
                                 send_data = game.make_data(MOVE, game.encode_move(bot_move[:4]))
                                 print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                                 game.send_TX(send_data)
