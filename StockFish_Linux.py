@@ -28,7 +28,7 @@ class Stockfish:
         self.board = chess.Board(fen) if fen is not None else chess.Board()
         self.side = self.choosed_side
     def _isPromotedMove(self, move_uci:str) -> bool:
-        return any([move_uci + pr in self.board.legal_moves for pr in ['q', 'r', 'n', 'b']])
+        return any([self.board.parse_uci(move_uci + pr) in self.board.legal_moves for pr in ['q', 'r', 'n', 'b']])
     def make_move(self, move_uci:str) -> None:
         move = self.board.parse_uci(move_uci)
         if move in self.board.legal_moves:
@@ -65,7 +65,7 @@ class Stockfish:
 class Comm:
     def __init__(self) -> None:
         self.__ser = serial.Serial(
-                port = "/dev/serial0",
+                port = "/dev/ttyACM0",
                 baudrate = 9600,
                 bytesize = serial.EIGHTBITS,
                 parity = serial.PARITY_NONE,
@@ -74,9 +74,12 @@ class Comm:
         self.__engine = Stockfish()
     def get_engine(self) -> Stockfish:
         return self.__engine
-    def send_TX(self, data) -> int:
+    def send_TX(self, data:int) -> int:
         print(f"Send : {data}")
-        return self.__ser.write(data)
+        if data >> 8 == 0:
+            return self.__ser.write(data.to_bytes(1, 'big', signed=False))
+        else:
+            return self.__ser.write(data.to_bytes(2, 'big', signed=False))
     def read_RX(self) -> bytes:
         if self.__ser.in_waiting:
             return self.__ser.read(1)
@@ -85,9 +88,13 @@ class Comm:
     @staticmethod
     def make_data( header:int, pay_load:int) -> int:
         data = 0
-        if header == ERROR or header == NEW_GAME or header == CHOOSE_SIDE:
+        if header == NEW_GAME or header == CHOOSE_SIDE:
             data |= header << 5
             pay_load <<= 4
+            data |= pay_load
+        elif header == ERROR:
+            data |= header << 5
+            pay_load <<= 2
             data |= pay_load
         elif header  == SET_LEVEL:
             data |= header << 5
@@ -172,7 +179,7 @@ if __name__ == "__main__":
                     engine.new_game()
                     if engine.is_engine_turn():
                         bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
-                        send_data = game.make_data(MOVE, game.encode_move(bot_move)).to_bytes(2, 'big', signed=False)
+                        send_data = game.make_data(MOVE, game.encode_move(bot_move))
                         print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                         game.send_TX(send_data)
                 elif header == MOVE:
@@ -187,10 +194,9 @@ if __name__ == "__main__":
                         try:
                             engine.make_move(inside_data)
                             bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
-                            send_data = game.make_data(MOVE, game.encode_move(bot_move)).to_bytes(2, 'big', signed=False)
+                            send_data = game.make_data(MOVE, game.encode_move(bot_move))
                             print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                             game.send_TX(send_data)
-                            print("Finish send")
                         except (ValueError, AttributeError):
                             if engine._isPromotedMove(inside_data):
                                 bot_move = inside_data
