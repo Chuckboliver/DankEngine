@@ -34,14 +34,14 @@ class Stockfish:
         return self.board.turn == self.side
     def set_side(self, color:chess.Color) -> None:
         self.choosed_side = color
-    def new_game(self, fen:str = "r3k1nr/pp3ppp/n7/4p3/2p3b1/2N2p2/PPPPN2q/R1BQK3 w kq - 0 14" )-> None:
+    def new_game(self, fen:str = None )-> None:
         self.board = chess.Board(fen) if fen is not None else chess.Board()
         self.side = self.choosed_side
     def _isPromotedMove(self, move_uci:str) -> bool:
         if len(move_uci) == 4:
             return any([chess.Move.from_uci(move_uci + pr) in self.board.legal_moves for pr in ['q', 'r', 'n', 'b']])
         elif len(move_uci) == 5:
-            return self._isPromotedMove(move_uci[:5]) and move_uci[4] in {'q', 'r', 'n', 'b'}
+            return self._isPromotedMove(move_uci[:4]) and move_uci[4] in {'q', 'r', 'n', 'b'}
     def make_move(self, move_uci:str) -> None:
         move = chess.Move.from_uci(move_uci)
         if move in self.board.legal_moves:
@@ -125,6 +125,10 @@ class Comm:
             data |= header << 13
             pay_load <<= 1
             data |= pay_load
+        elif header == PIECE:
+            data |= header << 5
+            pay_load <<= 3
+            data |= pay_load
         return data
     @staticmethod
     def encode_move(uci:str) -> int:
@@ -139,7 +143,7 @@ class Comm:
     @staticmethod
     def decode_data(received_data:bytes):
         data = 0
-        print(f"Data size : {len(received_data)} byte")
+        #print(f"Data size : {len(received_data)} byte")
         if len(received_data) > 1:#16 bits
             data |= received_data[0] <<  8
             data |= received_data[1]
@@ -177,6 +181,7 @@ class Comm:
             return (SET_LEVEL, level + 1)
         elif instruction_header == PIECE:
             piece = (pay_load >> 3) & 3
+            print(piece)
             print(f"Select piece : {PROMOTE_PIECE[piece]}")
             return (PIECE, PROMOTE_PIECE[piece])
         elif instruction_header == ERROR:
@@ -185,12 +190,12 @@ class Comm:
             return (ERROR, error_code)
         else:
             return (ERROR, ERROR)
-    def game_over(self) -> int:
+    def game_over(self, turn:chess.Color) -> int:
         send_data = None
         if self.__engine.is_stale():
             send_data = game.make_data(GAME_OVER, (STALE_MATE << 2) | NONE )
         elif self.__engine.is_mate():
-            send_data = game.make_data(GAME_OVER, (CHECK_MATE << 2 ) | (WHITE if engine.side == chess.WHITE else BLACK) )
+            send_data = game.make_data(GAME_OVER, (CHECK_MATE << 2 ) | (WHITE if turn == chess.WHITE else BLACK) )
         return send_data
 if __name__ == "__main__":
     try:
@@ -211,33 +216,35 @@ if __name__ == "__main__":
                         send_data = game.make_data(MOVE, game.encode_move(bot_move))
                         print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                         game.send_TX(send_data)
-                elif header == MOVE:
-                    if engine.is_engine_turn():
-                        if inside_data == bot_move:
-                            engine.make_move(inside_data)
+                elif header == MOVE:#if header is Move
+                    if engine.is_engine_turn():# Engine turn
+                        if inside_data == bot_move[:4]:
+                            engine.make_move(bot_move)
                             if engine.is_game_over():
-                                send_data = game.game_over()
+                                send_data = game.game_over(engine.side)
                                 game.send_TX(send_data)
                         else:
                             send_data = game.make_data(ERROR, ERROR)
                             print("Error move")
                             game.send_TX(send_data)
-                    else:
+                    else:#Player turn
                         try:
                             engine.make_move(inside_data)
                             if not engine.is_game_over():
                                 bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
                                 second_send_data = None
                                 if engine._isPromotedMove(bot_move):
+                                    print("BOT PROMOTED")
                                     which_piece = {'q':QUEEN, 'r':ROOK, 'n':KNIGHT, 'b':BISHOP}
                                     second_send_data = game.make_data(PIECE, which_piece[bot_move[4]])
-                                send_data = game.make_data(MOVE, game.encode_move(bot_move))
+                                    print(f"sc dt {second_send_data}")
+                                send_data = game.make_data(MOVE, game.encode_move(bot_move[:4]))
                                 print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
                                 game.send_TX(send_data)
                                 if second_send_data is not None:
                                     game.send_TX(second_send_data)
                             else:
-                                send_data = game.game_over()
+                                send_data = game.game_over(not engine.side)
                                 game.send_TX(send_data)
                         except (ValueError, AttributeError):
                             if engine._isPromotedMove(inside_data):
@@ -262,9 +269,24 @@ if __name__ == "__main__":
                 elif header == PIECE:
                     promote = {chess.ROOK:'r', chess.KNIGHT:'n', chess.BISHOP:'b', chess.QUEEN:'q'}
                     move = bot_move + promote[inside_data]
+
                     try:
                         engine.make_move(move)
-                    except ValueError:
+                        if not engine.is_game_over():
+                            bot_move = engine.get_move(engine.difficulty[engine.level]).uci()
+                            second_send_data = None
+                            if engine._isPromotedMove(bot_move):
+                                which_piece = {'q':QUEEN, 'r':ROOK, 'n':KNIGHT, 'b':BISHOP}
+                                second_send_data = game.make_data(PIECE, which_piece[bot_move[4]])
+                            send_data = game.make_data(MOVE, game.encode_move(bot_move))
+                            print(f"Bot<{'WHITE' if engine.side == 1 else 'BLACK'}> want to move : {bot_move}")
+                            game.send_TX(send_data)
+                            if second_send_data is not None:
+                                game.send_TX(second_send_data)
+                        else:
+                            send_data = game.game_over(not engine.side)
+                            game.send_TX(send_data)
+                    except (ValueError, AttributeError):
                         send_data = game.make_data(ERROR, PIECE)
                         game.send_TX(send_data)
                 elif header == ERROR:
@@ -273,4 +295,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("END PROGRAM.")
     except serial.SerialException as exc:
-        print(f"Cannot open port {exc}.") 
+        print(f"Cannot open port : {exc}.") 
