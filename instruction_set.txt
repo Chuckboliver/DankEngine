@@ -26,9 +26,8 @@ Instruction header:
     Error       - 101 //Ex. Rpi detect illegal move from FPGA then send -> Send(111 1) = Send(0x0F) ** RPI -> FPGA ** then FPGA must show Error by LED
     Game over   - 110
 Game over type:
-    Check mate              - 00
-    Stale mate              - 01
-    Insufficient material   - 10
+    Check mate              - 0
+    Stale mate              - 1
 Win side:
     None    - 00
     WHITE   - 01
