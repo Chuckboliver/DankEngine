@@ -1,0 +1,10 @@
+[Inputs]
+S0
+S1
+S2
+=demux_in[11:0]=
+[Outputs]
+=Move[11:0]=
+=Error[5:0]=
+=Promote[4:0]=
+[BiDir]
