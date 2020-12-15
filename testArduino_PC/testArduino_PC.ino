@@ -22,10 +22,10 @@ uint16_t decode_command(String command){
   else if(cmd.equals("cs")){
     arg = command[3];
     if(arg.equals("w")){
-      data = 32;
+      data = 32 << 8;
     }
     else{
-      data = 48;
+      data = 48 << 8;
     }
   }
   else if(cmd.equals("sl")){
@@ -34,6 +34,7 @@ uint16_t decode_command(String command){
     Serial.println(level);
     data = 2 << 5;
     data |= (level - 1) << 2;
+    data <<= 8;
   }
   else if(cmd.equals("pc")){
     arg = (String)command[3];
@@ -50,9 +51,12 @@ uint16_t decode_command(String command){
     else if(arg.equals("q")){
       data |= 3 << 3;
     }
+    data <<= 8;
   }
   else if(cmd.equals("er")){
-    data = 180;
+    arg = (String)command[3];
+    if(arg.equals("e"))data = 180 << 8;
+    else if(arg.equals("p"))data = 176 << 8;
   }
   return data;
 }
@@ -68,7 +72,7 @@ void TX(uint16_t data) {
     myserial.write(data);
   }
   else {
-    myserial.write(0xCC);
+    
     uint8_t buf[2];
     buf[0] = (data >> 8) & 0xFF;
     buf[1] = data & 0xFF;
@@ -78,7 +82,7 @@ void TX(uint16_t data) {
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  myserial.begin(57600);
+  myserial.begin(9600);
 }
 
 void loop() {

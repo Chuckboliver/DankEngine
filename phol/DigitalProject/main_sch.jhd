@@ -1,0 +1,9 @@
+MODULE main_sch
+	SUBMODULE serial_rx
+		INSTANCE XLXI_1
+	SUBMODULE demux1_3
+		INSTANCE XLXI_2
+	SUBMODULE shift_register12
+		INSTANCE XLXI_3
+	SUBMODULE move_12bits_to_7seg
+		INSTANCE XLXI_4

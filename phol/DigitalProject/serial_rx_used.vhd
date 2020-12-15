@@ -9,8 +9,10 @@ entity serial_rx is
     port (
         clock:in std_logic;
         rx:in std_logic;
-        data: inout std_logic_vector(15 downto 0);
+		  header:out std_logic_vector(2 downto 0);
+        data: out std_logic_vector(11 downto 0);
         data_done: out std_logic
+
         );
 end serial_rx;
 
@@ -24,7 +26,8 @@ architecture Behavioral of serial_rx is
     signal Bit_Index : integer range 0 to 15 := 0;
     signal RX_Data_Output: std_logic_vector(15 downto 0) := (others => '0');
     signal rx_data_done:std_logic:='0';
-    signal intruc_set:std_logic_vector(2 downto 0):=data(7)&data(5)&data(6);
+
+	 
 begin
     p_SAMPLE : process (clock)
     begin
@@ -35,9 +38,10 @@ begin
     end process p_SAMPLE;
 
     UART_RX:process(clock)
+	 
     begin 
         if rising_edge(clock) then
-            if intruc_set="011" then
+
                 case state is 
                 when Idle=>
                     rx_data_done<='0';
@@ -91,66 +95,76 @@ begin
                     else
                         rx_data_done<='1';
                         Clk_Count<=0;
-                        state<=Idle;
+                        state<=Cleanup;
 							end if;
+					when Cleanup=>
+						state<=Idle;
+						rx_data_done<='0';
                 when others=>
                     state<=Idle;
                 end case;
-            else
-                case state is 
-                when Idle=>
-                    rx_data_done<='0';
-                    Clk_Count<=0;
-                    Bit_Index<=0;
-                    if RX_Data='0' then
-                        state<=RX_Start_Bit;
-                    else
-                        state<=Idle;
-                    end if;
-
-                when RX_Start_Bit=>
-                    if Clk_Count=(CLKS_PER_BIT-1)/2 then
-                        if RX_Data='0' then
-                            Clk_Count<=0;
-                            state<=RX_Data_Bits;
-                        else
-                            state<=Idle;
-								end if;
-                    else
-                        Clk_Count<=Clk_Count+1;
-                        state<=RX_Start_Bit;
-                    end if;
-                when RX_Data_Bits=>
-                    if Clk_Count<= CLKS_PER_BIT-1 then
-                        Clk_Count<=Clk_Count + 1;
-                        state<=RX_Data_Bits;
-                    else
-                        Clk_Count<=0;
-                        RX_Data_Output(Bit_Index)<=RX_Data;
-                        if Bit_Index<7 then
-                            Bit_Index<=Bit_Index+1;
-                            state<=RX_Data_Bits;
-                        else
-                            Bit_Index<=0;
-                            state<=RX_Stop_Bit;
-                        end if;
-                    end if;
-                when RX_Stop_Bit=>
-                    if Clk_Count<CLKS_PER_BIT-1 then
-                        Clk_Count<=Clk_Count+1;
-                        state<=RX_Stop_Bit;
-                    else
-                        rx_data_done<='1';
-                        Clk_Count<=0;
-                        state<=Idle;
-							end if;
-                when others=>
-                    state<=Idle;
-                end case;
-            end if;
+--            else
+--                case state is 
+--                when Idle=>
+--                    rx_data_done<='0';
+--                    Clk_Count<=0;
+--                    Bit_Index<=0;
+--                    if RX_Data='0' then
+--                        state<=RX_Start_Bit;
+--                    else
+--                        state<=Idle;
+--                    end if;
+--
+--                when RX_Start_Bit=>
+--                    if Clk_Count=(CLKS_PER_BIT-1)/2 then
+--                        if RX_Data='0' then
+--                            Clk_Count<=0;
+--                            state<=RX_Data_Bits;
+--                        else
+--                            state<=Idle;
+--								end if;
+--                    else
+--                        Clk_Count<=Clk_Count+1;
+--                        state<=RX_Start_Bit;
+--                    end if;
+--                when RX_Data_Bits=>
+--                    if Clk_Count<= CLKS_PER_BIT-1 then
+--                        Clk_Count<=Clk_Count + 1;
+--                        state<=RX_Data_Bits;
+--                    else
+--                        Clk_Count<=0;
+--                        RX_Data_Output(Bit_Index)<=RX_Data;
+--                        if Bit_Index<7 then
+--                            Bit_Index<=Bit_Index+1;
+--                            state<=RX_Data_Bits;
+--                        else
+--                            Bit_Index<=0;
+--                            state<=RX_Stop_Bit;
+--                        end if;
+--                    end if;
+--                when RX_Stop_Bit=>
+--                    if Clk_Count<CLKS_PER_BIT-1 then
+--                        Clk_Count<=Clk_Count+1;
+--                        state<=RX_Stop_Bit;
+--                    else
+--                        rx_data_done<='1';
+--                        Clk_Count<=0;
+--                        state<=Cleanup;
+--							end if;
+--					when Cleanup=>
+--						state<=Idle;
+--						rx_data_done<='0';
+--                when others=>
+--                    state<=Idle;
+--                end case;
+--            end if;
             end if;
         end process UART_RX;
-        data<=RX_Data_Output;
+		  
+		  header<=RX_Data_Output(7 downto 5);
+		  
+		  data<=RX_Data_Output(4 downto 0)&RX_Data_Output(15 downto 9);
+		  
         data_done<=rx_data_done;
     end Behavioral;
 

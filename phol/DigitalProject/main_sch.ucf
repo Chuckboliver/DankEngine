@@ -1,0 +1,19 @@
+
+
+NET "common[3]" LOC = P30;
+NET "common[2]" LOC = P33;
+NET "common[1]" LOC = P43;
+NET "common[0]" LOC = P44;
+NET "seg7[6]" LOC = P41;
+NET "seg7[5]" LOC = P40;
+NET "seg7[4]" LOC = P35;
+NET "seg7[3]" LOC = P34;
+NET "seg7[2]" LOC = P32;
+NET "seg7[1]" LOC = P29;
+NET "seg7[0]" LOC = P27;
+NET "clk_P123" LOC = P123;
+NET "rx_P97" LOC = P97;
+
+# PlanAhead Generated physical constraints 
+
+

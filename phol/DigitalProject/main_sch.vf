@@ -1,0 +1,73 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : main_sch.vf
+// /___/   /\     Timestamp : 12/16/2020 02:43:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/main_sch.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/main_sch.sch"
+//Design Name: main_sch
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module main_sch(clk_P123, 
+                rx_P97, 
+                common, 
+                seg7);
+
+    input clk_P123;
+    input rx_P97;
+   output [3:0] common;
+   output [6:0] seg7;
+   
+   wire XLXN_20;
+   wire XLXN_22;
+   wire [11:0] XLXN_23;
+   wire XLXN_25;
+   wire [2:0] XLXN_59;
+   wire [11:0] XLXN_60;
+   wire [2:0] XLXN_61;
+   wire [2:0] XLXN_62;
+   wire [2:0] XLXN_63;
+   wire [2:0] XLXN_64;
+   
+   serial_rx  XLXI_1 (.clock(clk_P123), 
+                     .rx(rx_P97), 
+                     .data(XLXN_60[11:0]), 
+                     .data_done(XLXN_20), 
+                     .header(XLXN_59[2:0]));
+   demux1_3  XLXI_2 (.data_done(XLXN_20), 
+                    .demux_in(XLXN_60[11:0]), 
+                    .Selector(XLXN_59[2:0]), 
+                    .clk_Error_reg(), 
+                    .clk_Move_reg(XLXN_25), 
+                    .clk_Promote_reg(), 
+                    .Error(), 
+                    .Move(XLXN_23[11:0]), 
+                    .Promote());
+   shift_register12  XLXI_3 (.CLK(XLXN_25), 
+                            .CLR(XLXN_22), 
+                            .reg_in(XLXN_23[11:0]), 
+                            .first_reg_out(XLXN_61[2:0]), 
+                            .forth_reg_out(XLXN_64[2:0]), 
+                            .second_reg_out(XLXN_62[2:0]), 
+                            .third_reg_out(XLXN_63[2:0]));
+   move_12bits_to_7seg  XLXI_4 (.clock(clk_P123), 
+                               .first_Move_IN(XLXN_61[2:0]), 
+                               .forth_Move_IN(XLXN_64[2:0]), 
+                               .second_Move_IN(XLXN_62[2:0]), 
+                               .third_Move_IN(XLXN_63[2:0]), 
+                               .common(common[3:0]), 
+                               .out_7seg(seg7[6:0]));
+   GND  XLXI_5 (.G(XLXN_22));
+endmodule

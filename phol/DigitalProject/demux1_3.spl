@@ -1,9 +1,11 @@
 [Inputs]
-S0
-S1
-S2
+data_done
 =demux_in[11:0]=
+=Selector[2:0]=
 [Outputs]
+clk_Move_reg
+clk_Error_reg
+clk_Promote_reg
 =Move[11:0]=
 =Error[5:0]=
 =Promote[4:0]=

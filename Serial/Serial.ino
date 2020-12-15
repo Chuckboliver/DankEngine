@@ -18,22 +18,20 @@ uint16_t move_to_bytes(String move_uci) {
 void TX(uint16_t data) {
   if (data >> 8 == 0) {
     Serial.write(data);
-    delay(10);
   }
   else {
     Serial.write((data >> 8) & 0xFF);
     Serial.write(data & 0xFF);
-    delay(10);
   }
 }
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  TX(B00010000);//new game
-  TX(B01101100);//bot level 4
-  TX(B01101000); //bot level 3
-  TX(B00100000); //choose WHITE
-  TX(B00010000);//new game
+//  TX(B00010000);//new game
+//  TX(B01101100);//bot level 4
+//  TX(B01101000); //bot level 3
+//  TX(B00100000); //choose WHITE
+//  TX(B00010000);//new game
   //TX(0x90C6);//e2e4
   //TX(0x9348);//e7e5
   //TX(0x9854);//g1f3
@@ -48,9 +46,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  TX(move_to_bytes("d1d5"));
+  TX(move_to_bytes("e5c4"));
+  delay(1000);
 
-  TX(move_to_bytes("d1"));
-
-  TX(move_to_bytes("d5"));
 }
