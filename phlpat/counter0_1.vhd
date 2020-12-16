@@ -1,7 +1,8 @@
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
+library ieee;
+use ieee. std_logic_1164.all;
+use ieee. std_logic_arith.all;
+use ieee. std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 entity counter0_1 is
 port(---for counter
@@ -66,16 +67,7 @@ begin
 	 end if;    
 	end process;
 
-	process (alphabet_data,sel_alp) is
-	begin
-		 if (sel_alp ='0') then
-			alphabet_sent1 <= alphabet_data;
-		 elsif (sel_alp ='1' ) then
-			alphabet_sent2 <= alphabet_data;
-		 else
-			alphabet_sent1 <= alphabet_data;
-		 end if;
-	end process;
+
 
 	process(ready_alp1, ready_alp2, alphabet_data, clock_alp, clear)
 	begin
@@ -115,17 +107,6 @@ begin
 	 end if;    
 	end process;
 
-	process (number_data,sel_num) is
-	begin
-		 if (sel_num ='0') then
-			number_sent1 <= number_data;
-		 elsif (sel_num ='1' ) then
-			number_sent2 <= number_data;
-		 else
-			number_sent1 <= number_data;
-		 end if;
-	end process;
-
 	process(ready_num1, ready_num2, number_data, clock_num, clear)
 	begin
 		if(sel_num = '0') then
@@ -151,4 +132,3 @@ begin
 	end process;
 end Behavioral;
 
-		
