@@ -5,31 +5,31 @@ use ieee.std_logic_unsigned.all;
 entity addHeader is
     Port(
         newgame_switch :  in std_logic;
-        choose_side_switch : in  STD_LOGIC_VECTOR (1 downto 0);
-        set_level_switch : in  STD_LOGIC_VECTOR (1 downto 0);
-        alp : in  STD_LOGIC_VECTOR (7 downto 0);
-        num : in  STD_LOGIC_VECTOR (7 downto 0);
-        piece_switch : in  STD_LOGIC_VECTOR (3 downto 0);
+        choose_side_switch : in  STD_LOGIC_VECTOR (1 downto 0):=(others=>'0');
+        set_level_switch : in  STD_LOGIC_VECTOR (1 downto 0):=(others=>'0');
+        alp : in  STD_LOGIC_VECTOR (7 downto 0):=(others=>'0');
+        num : in  STD_LOGIC_VECTOR (7 downto 0):=(others=>'0');
+        piece_switch : in  STD_LOGIC_VECTOR (3 downto 0):=(others=>'0');
 
-        data : out STD_LOGIC_VECTOR(15 downto 0);
+        data : out STD_LOGIC_VECTOR(15 downto 0):=(others=>'0');
         debug_led : out std_logic;
-        trigger : out std_logic;
+        trigger : out std_logic := '0';
 
-        choose_side_LED : out STD_LOGIC_VECTOR(1 downto 0);
-        set_level_LED : out STD_LOGIC_VECTOR(6 downto 0)
+        choose_side_LED : out STD_LOGIC_VECTOR(1 downto 0):=(others=>'0');
+        set_level_LED : out STD_LOGIC_VECTOR(6 downto 0):=(others=>'0')
     );
-end addHeader
+end addHeader;
 
 architecture Behavioral of addHeader is
-    signal set_level : STD_LOGIC_VECTOR(2 downto 0);
+    signal set_level : STD_LOGIC_VECTOR(2 downto 0):=(others=>'0');
     signal count : integer range 0 to 4 := 0;
     
     -- move --
-    signal temp : STD_LOGIC_VECTOR(2 downto 0);
-    signal from_file : STD_LOGIC_VECTOR(2 downto 0);
-    signal from_rank : STD_LOGIC_VECTOR(2 downto 0);
-    signal to_file : STD_LOGIC_VECTOR(2 downto 0);
-    signal to_rank : STD_LOGIC_VECTOR(2 downto 0);
+    signal temp : STD_LOGIC_VECTOR(2 downto 0):=(others=>'0');
+    signal from_file : STD_LOGIC_VECTOR(2 downto 0):=(others=>'0');
+    signal from_rank : STD_LOGIC_VECTOR(2 downto 0):=(others=>'0');
+    signal to_file : STD_LOGIC_VECTOR(2 downto 0):=(others=>'0');
+    signal to_rank : STD_LOGIC_VECTOR(2 downto 0):=(others=>'0');
     -- move --
 begin
     -- new game --
@@ -56,7 +56,9 @@ begin
                 trigger <= '0';
             else
                 set_level <= set_level - 1;
+                data <= "010" & set_level & "0000000000";
                 trigger <= '1';
+            end if;
         elsif set_level_switch(1) = '1' then
             debug_led <= '1';
             if set_level = "100" then
@@ -64,8 +66,9 @@ begin
                 trigger <= '0';
             else
                 set_level <= set_level + 1;
+                data <= "010" & set_level & "0000000000";
                 trigger <= '1';
-        
+            end if;
         elsif alp /= "00000000" or num /= "00000000"then
             debug_led <= '1';
             if alp /= "00000000" then
@@ -128,15 +131,15 @@ begin
             debug_led <= '1';
             case(piece_switch) is
                 when "1000" =>
-                    data <= "10000000";
+                    data <= "1000000000000000";
                 when "0100" =>
-                    data <= "10001000";
+                    data <= "1000100000000000";
                 when "0010" =>
-                    data <= "10010000";
+                    data <= "1001000000000000";
                 when "0001" =>
-                    data <= "10011000";
+                    data <= "1001100000000000";
                 when others => 
-                   data <= "10000000";
+                   data <=  "1000000000000000";
             end case;
             trigger <= '1';
         else
