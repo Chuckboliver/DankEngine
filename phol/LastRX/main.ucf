@@ -1,0 +1,55 @@
+
+
+NET "alpha_mv_P5toP23[7]" LOC = P5;
+NET "alpha_mv_P5toP23[6]" LOC = P7;
+NET "alpha_mv_P5toP23[5]" LOC = P9;
+NET "alpha_mv_P5toP23[4]" LOC = P11;
+NET "alpha_mv_P5toP23[3]" LOC = P14;
+NET "alpha_mv_P5toP23[2]" LOC = P16;
+NET "alpha_mv_P5toP23[1]" LOC = P21;
+NET "alpha_mv_P5toP23[0]" LOC = P23;
+NET "common_seg_FPGA[2]" LOC = P33;
+NET "common_seg_FPGA[3]" LOC = P30;
+NET "common_seg_FPGA[1]" LOC = P43;
+NET "common_seg_FPGA[0]" LOC = P44;
+NET "cs_SW_P1_P142[1]" LOC = P1;
+NET "cs_SW_P1_P142[0]" LOC = P142;
+NET "error_LED[0]" LOC = P74;
+NET "error_LED[1]" LOC = P67;
+NET "num_mv_P6toP24[7]" LOC = P6;
+NET "num_mv_P6toP24[6]" LOC = P8;
+NET "num_mv_P6toP24[5]" LOC = P10;
+NET "num_mv_P6toP24[4]" LOC = P12;
+NET "num_mv_P6toP24[3]" LOC = P15;
+NET "num_mv_P6toP24[2]" LOC = P17;
+NET "num_mv_P6toP24[1]" LOC = P22;
+NET "num_mv_P6toP24[0]" LOC = P24;
+NET "promote_sw[3]" LOC = P120;
+NET "promote_sw[2]" LOC = P119;
+NET "promote_sw[1]" LOC = P118;
+NET "promote_sw[0]" LOC = P117;
+NET "seg7_FPGA[6]" LOC = P41;
+NET "seg7_FPGA[5]" LOC = P40;
+NET "seg7_FPGA[4]" LOC = P35;
+NET "seg7_FPGA[3]" LOC = P34;
+NET "seg7_FPGA[2]" LOC = P32;
+NET "seg7_FPGA[1]" LOC = P29;
+NET "seg7_FPGA[0]" LOC = P27;
+NET "up_down_P140_P138[1]" LOC = P140;
+NET "up_down_P140_P138[0]" LOC = P138;
+NET "whoWin_P88_P92[1]" LOC = P88;
+NET "whoWin_P88_P92[0]" LOC = P92;
+NET "promote_LED[1]" LOC = P79;
+NET "promote_LED[2]" LOC = P78;
+NET "promote_LED[3]" LOC = P75;
+NET "promote_LED[0]" LOC = P80;
+NET "winTypeP80_P81[1]" LOC = P81;
+NET "winTypeP80_P81[0]" LOC = P82;
+NET "clk_P123" LOC = P123;
+NET "ng_SW_P121" LOC = P121;
+NET "rx_P97" LOC = P97;
+NET "tx_P98" LOC = P98;
+
+# PlanAhead Generated physical constraints 
+
+NET "MN0_P95" LOC = P95;

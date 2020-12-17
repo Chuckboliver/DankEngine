@@ -1,0 +1,2 @@
+vhdtdtfi -lib work decoder2to4_promote.vhd -prj DigitalProject -o decoder2to4_promote.spl -module decoder2to4_promote -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 decoder2to4_promote.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.sym} 

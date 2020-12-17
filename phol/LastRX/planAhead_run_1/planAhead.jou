@@ -1,0 +1,196 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Thu Dec 17 13:39:34 2020
+# Process ID: 12636
+# Log file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/pa.fromNetlist.tcl}
+set_property package_pin "" [get_ports [list  {alpha_mv_P5toP23[7]}]]
+set_property package_pin "" [get_ports [list  {alpha_mv_P5toP23[5]}]]
+startgroup
+set_property package_pin P5 [get_ports {alpha_mv_P5toP23[7]}]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports {alpha_mv_P5toP23[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {alpha_mv_P5toP23[4]}]]
+startgroup
+set_property package_pin P9 [get_ports {alpha_mv_P5toP23[5]}]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports {alpha_mv_P5toP23[4]}]
+endgroup
+startgroup
+set_property package_pin P14 [get_ports {alpha_mv_P5toP23[3]}]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports {alpha_mv_P5toP23[2]}]
+endgroup
+startgroup
+set_property package_pin P21 [get_ports {alpha_mv_P5toP23[1]}]
+endgroup
+startgroup
+set_property package_pin P23 [get_ports {alpha_mv_P5toP23[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {common_seg_FPGA[3]}]]
+set_property package_pin "" [get_ports [list  {common_seg_FPGA[3]}]]
+startgroup
+set_property package_pin P33 [get_ports {common_seg_FPGA[2]}]
+endgroup
+startgroup
+set_property package_pin P30 [get_ports {common_seg_FPGA[3]}]
+endgroup
+startgroup
+set_property package_pin P43 [get_ports {common_seg_FPGA[1]}]
+endgroup
+startgroup
+set_property package_pin P44 [get_ports {common_seg_FPGA[0]}]
+endgroup
+startgroup
+set_property package_pin P1 [get_ports {cs_SW_P1_P142[1]}]
+endgroup
+startgroup
+set_property package_pin P142 [get_ports {cs_SW_P1_P142[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {error_LED[1]}]]
+startgroup
+set_property package_pin P74 [get_ports {error_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports {error_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P6 [get_ports {num_mv_P6toP24[7]}]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports {num_mv_P6toP24[6]}]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports {num_mv_P6toP24[5]}]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports {num_mv_P6toP24[4]}]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports {num_mv_P6toP24[3]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {num_mv_P6toP24[2]}]
+endgroup
+startgroup
+set_property package_pin P22 [get_ports {num_mv_P6toP24[1]}]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports {num_mv_P6toP24[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {promote_LED[3]}]]
+set_property package_pin "" [get_ports [list  {promote_LED[2]}]]
+startgroup
+set_property package_pin P75 [get_ports {promote_LED[3]}]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports {promote_LED[2]}]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports {promote_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P80 [get_ports {promote_LED[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {promote_sw[3]}]]
+startgroup
+set_property package_pin P120 [get_ports {promote_sw[3]}]
+endgroup
+startgroup
+set_property package_pin P119 [get_ports {promote_sw[2]}]
+endgroup
+startgroup
+set_property package_pin P118 [get_ports {promote_sw[1]}]
+endgroup
+startgroup
+set_property package_pin P117 [get_ports {promote_sw[0]}]
+endgroup
+startgroup
+set_property package_pin P41 [get_ports {seg7_FPGA[6]}]
+endgroup
+startgroup
+set_property package_pin P40 [get_ports {seg7_FPGA[5]}]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports {seg7_FPGA[4]}]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports {seg7_FPGA[3]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {seg7_FPGA[2]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {seg7_FPGA[1]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {seg7_FPGA[0]}]
+endgroup
+startgroup
+set_property package_pin P140 [get_ports {up_down_P140_P138[1]}]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports {up_down_P140_P138[0]}]
+endgroup
+startgroup
+set_property package_pin P88 [get_ports {whoWin_P88_P92[1]}]
+endgroup
+startgroup
+set_property package_pin P92 [get_ports {whoWin_P88_P92[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {winTypeP80_P81[1]}]]
+startgroup
+set_property package_pin P80 [get_ports {promote_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports {promote_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports {promote_LED[3]}]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports {promote_LED[2]}]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports {promote_LED[3]}]
+endgroup
+startgroup
+set_property package_pin P80 [get_ports {promote_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports {winTypeP80_P81[1]}]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports {winTypeP80_P81[0]}]
+endgroup
+startgroup
+set_property package_pin P123 [get_ports clk_P123]
+endgroup
+startgroup
+set_property package_pin P121 [get_ports ng_SW_P121]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports rx_P97]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports tx_P98]
+endgroup
+set_property is_loc_fixed false [get_ports [list  tx_P98]]
+set_property is_loc_fixed true [get_ports [list  tx_P98]]
+save_constraints
+refresh_design
+refresh_design
+startgroup
+set_property package_pin P95 [get_ports MN0_P95]
+endgroup
+set_property is_loc_fixed false [get_ports [list  MN0_P95]]
+set_property is_loc_fixed true [get_ports [list  MN0_P95]]
+save_constraints

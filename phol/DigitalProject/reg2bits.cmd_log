@@ -1,0 +1,4 @@
+vhdtdtfi -lib work reg2bits.vhd -prj DigitalProject -o reg2bits.spl -module reg2bits -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 reg2bits.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.sym} 
+vhdtdtfi -lib work reg2bits.vhd -prj DigitalProject -o reg2bits.spl -module reg2bits -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 reg2bits.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.sym} 

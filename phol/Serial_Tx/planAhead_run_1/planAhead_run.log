@@ -1,0 +1,112 @@
+
+****** PlanAhead v14.7
+  **** Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/pa.fromHdl.tcl}
+# create_project -name Serial_Tx -dir "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/planAhead_run_1" -part xc6slx9tqg144-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "serial_gen.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {serial_gen_used.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top serial_gen $srcset
+# add_files [list {serial_gen.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-3
+Using Verific elaboration
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen_used.vhd" into library work
+Loading clock regions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 94ba23a3
+open_rtl_design: Time (s): elapsed = 00:00:13 . Memory (MB): peak = 550.414 ; gain = 119.531
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P123 [get_ports clock]
+endgroup
+set_property package_pin "" [get_ports [list  start]]
+startgroup
+set_property package_pin P123 [get_ports clock]
+endgroup
+startgroup
+set_property package_pin P45 [get_ports start]
+endgroup
+set_property package_pin "" [get_ports [list  tx]]
+set_property package_pin "" [get_ports [list  clear_Promote]]
+startgroup
+set_property package_pin P98 [get_ports tx]
+endgroup
+startgroup
+set_property package_pin P112 [get_ports {data[15]}]
+endgroup
+startgroup
+set_property package_pin P111 [get_ports {data[14]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {data[13]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {data[12]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {data[11]}]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports {data[10]}]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports {data[9]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {data[8]}]
+endgroup
+startgroup
+set_property package_pin P55 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports {data[6]}]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports {data[5]}]
+endgroup
+startgroup
+set_property package_pin P58 [get_ports {data[4]}]
+endgroup
+startgroup
+set_property package_pin P59 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin P66 [get_ports {data[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {data[0]}]]
+set_property is_loc_fixed true [get_ports [list  {data[0]}]]
+save_constraints
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Thu Dec 17 07:57:44 2020...
+INFO: [Common 17-83] Releasing license: PlanAhead

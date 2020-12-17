@@ -1,7 +1,0 @@
-select figure at 1473 1823 8 -branches -sn=1
-update symbols serial_rx
-select figure at 2840 1561 8 -branches -sn=1
-select figure at 2855 1878 8 -branches -sn=1
-select figure at 996 1557 8 -branches -sn=1
-delete selection -sn=1
-add instance serial_rx 608 1488 R0 -sn=1

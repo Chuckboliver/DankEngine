@@ -1,0 +1,8 @@
+[Inputs]
+clear
+=alp[7:0]=
+=num[7:0]=
+[Outputs]
+ready_move
+=move[11:0]=
+[BiDir]

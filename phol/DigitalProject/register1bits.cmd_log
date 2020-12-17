@@ -1,0 +1,2 @@
+vhdtdtfi -lib work register1bits.vhd -prj DigitalProject -o register1bits.spl -module register1bits -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 register1bits.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.sym} 

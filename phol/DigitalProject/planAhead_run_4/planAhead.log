@@ -1,0 +1,425 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Wed Dec 16 22:14:26 2020
+# Process ID: 9436
+# Log file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_4/planAhead.log
+# Journal file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/pa.fromHdl.tcl}
+# create_project -name DigitalProject -dir "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_4" -part xc6slx9tqg144-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "mainCircuit.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {debounceSwitch.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {switch_ng_sl_cl.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {switch_move_input.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {serial_rx_used.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {serial_gen_used.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {rnbq.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {reg_12bits.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {register1bits.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {reg2bits.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mux71.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {move_12bits_7seg_decoder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mergeData.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {levelDecoder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {encoder5to3_with_dataComp.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {demux1_3.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {decoder2to4_promote.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {debounceSwitch16input.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {tx.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {rx.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mainCircuit.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top mainCircuit $srcset
+# add_files [list {mainCircuit.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-3
+Using Verific elaboration
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_ng_sl_cl.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_rx_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_gen_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg_12bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mergeData.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/demux1_3.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch.vhd" into library work
+Loading clock regions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 664d23ea
+open_rtl_design: Time (s): elapsed = 00:00:16 . Memory (MB): peak = 513.426 ; gain = 93.348
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P30 [get_ports {common_move_FPGA[3]}]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports {common_move_FPGA[2]}]
+endgroup
+startgroup
+set_property package_pin P43 [get_ports {common_move_FPGA[1]}]
+endgroup
+startgroup
+set_property package_pin P44 [get_ports {common_move_FPGA[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {common_move_FPGA[0]}]]
+startgroup
+set_property package_pin P2 [get_ports {level_seg_ALT[6]}]
+endgroup
+startgroup
+set_property package_pin P143 [get_ports {level_seg_ALT[5]}]
+endgroup
+startgroup
+set_property package_pin P141 [get_ports {level_seg_ALT[4]}]
+endgroup
+startgroup
+set_property package_pin P139 [get_ports {level_seg_ALT[3]}]
+endgroup
+startgroup
+set_property package_pin P137 [get_ports {level_seg_ALT[2]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {level_seg_ALT[1]}]
+endgroup
+startgroup
+set_property package_pin P131 [get_ports {level_seg_ALT[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {level_seg_ALT[0]}]]
+startgroup
+set_property package_pin P111 [get_ports {promoteLED_ALT[3]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {promoteLED_ALT[2]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {promoteLED_ALT[1]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {promoteLED_ALT[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {promoteLED_ALT[0]}]]
+set_property is_loc_fixed true [get_ports [list  {promoteLED_ALT[0]}]]
+startgroup
+set_property package_pin P41 [get_ports {seg7_move_FPGA[6]}]
+endgroup
+startgroup
+set_property package_pin P40 [get_ports {seg7_move_FPGA[5]}]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports {seg7_move_FPGA[4]}]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports {seg7_move_FPGA[3]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {seg7_move_FPGA[2]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {seg7_move_FPGA[1]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {seg7_move_FPGA[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {switchForMove[15]}]]
+set_property package_pin "" [get_ports [list  {switchForMove[14]}]]
+startgroup
+set_property package_pin P5 [get_ports {switchForMove[15]}]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports {switchForMove[14]}]
+endgroup
+startgroup
+set_property package_pin P9 [get_ports {switchForMove[13]}]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports {switchForMove[12]}]
+endgroup
+startgroup
+set_property package_pin P14 [get_ports {switchForMove[11]}]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports {switchForMove[10]}]
+endgroup
+set_property package_pin "" [get_ports [list  {switchForMove[9]}]]
+startgroup
+set_property package_pin P23 [get_ports {switchForMove[8]}]
+endgroup
+startgroup
+set_property package_pin P21 [get_ports {switchForMove[9]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {switchForMove[9]}]]
+set_property is_loc_fixed true [get_ports [list  {switchForMove[9]}]]
+startgroup
+set_property package_pin P6 [get_ports {switchForMove[7]}]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports {switchForMove[6]}]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports {switchForMove[5]}]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports {switchForMove[4]}]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports {switchForMove[3]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {switchForMove[2]}]
+endgroup
+startgroup
+set_property package_pin P22 [get_ports {switchForMove[1]}]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports {switchForMove[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {switchForMove[0]}]]
+set_property is_loc_fixed true [get_ports [list  {switchForMove[0]}]]
+set_property package_pin "" [get_ports [list  bishop_PSW]]
+set_property is_loc_fixed true [get_ports [list  {level_seg_ALT[0]}]]
+startgroup
+set_property package_pin P127 [get_ports bishop_PSW]
+endgroup
+startgroup
+set_property package_pin P1 [get_ports blackSwitch]
+endgroup
+startgroup
+set_property package_pin P123 [get_ports clock_P123]
+endgroup
+startgroup
+set_property package_pin P126 [get_ports common_P126_ALT]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports downSwitch]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports ERR_MOV_ALT_LED]
+endgroup
+startgroup
+set_property package_pin P74 [get_ports ERR_PRO_LED_ALT]
+endgroup
+set_property is_loc_fixed false [get_ports [list  ERR_PRO_LED_ALT]]
+startgroup
+set_property package_pin P132 [get_ports knight_PSW]
+endgroup
+startgroup
+set_property package_pin P112 [get_ports newGame_Switch]
+endgroup
+startgroup
+set_property package_pin P124 [get_ports queen_PSW]
+endgroup
+set_property package_pin "" [get_ports [list  rook_PSW]]
+set_property package_pin "" [get_ports [list  RX_P97]]
+startgroup
+set_property package_pin P134 [get_ports rook_PSW]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports RX_P97]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports TX_P98]
+endgroup
+startgroup
+set_property package_pin P140 [get_ports upSwitch]
+endgroup
+startgroup
+set_property package_pin P142 [get_ports whiteSwitch]
+endgroup
+set_property package_pin "" [get_ports [list  winTypeLED_ALT]]
+startgroup
+set_property package_pin P144 [get_ports winTypeLED_ALT]
+endgroup
+update_compile_order -fileset sources_1
+save_constraints
+update_compile_order -fileset sources_1
+refresh_design
+Using Verific elaboration
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_ng_sl_cl.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_rx_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_gen_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg_12bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mergeData.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/demux1_3.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch.vhd" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'decoder1to2_winType' instantiated as 'XLXI_20' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.vf:206]
+Resolution: File names need to match cell names: an EDIF definition will be found in decoder1to2_winType.edf; an HDL definition may be placed in any Verilog/VHDL file.
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:05 . Memory (MB): peak = 554.504 ; gain = 3.543
+startgroup
+set_property package_pin P44 [get_ports {common_move_FPGA[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {common_move_FPGA[0]}]]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+Using Verific elaboration
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_ng_sl_cl.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_rx_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_gen_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg_12bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mergeData.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/demux1_3.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch.vhd" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'decoder1to2_winType' instantiated as 'XLXI_20' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.vf:206]
+Resolution: File names need to match cell names: an EDIF definition will be found in decoder1to2_winType.edf; an HDL definition may be placed in any Verilog/VHDL file.
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'winTypeLED_ALT' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf:55]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+refresh_design: Time (s): elapsed = 00:00:05 . Memory (MB): peak = 573.293 ; gain = 0.000
+startgroup
+set_property package_pin P74 [get_ports ERR_PRO_LED_ALT]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports downSwitch]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports {winTypeLED_ALT[1]}]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports {winTypeLED_ALT[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {whoWin_ALT_LED[1]}]]
+startgroup
+set_property package_pin P80 [get_ports {whoWin_ALT_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports {whoWin_ALT_LED[1]}]
+endgroup
+save_constraints
+refresh_design
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:05 . Memory (MB): peak = 573.293 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+Using Verific elaboration
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_ng_sl_cl.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_rx_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_gen_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg_12bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mergeData.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/demux1_3.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch.vhd" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'decoder1to2_winType' instantiated as 'XLXI_20' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.vf:206]
+Resolution: File names need to match cell names: an EDIF definition will be found in decoder1to2_winType.edf; an HDL definition may be placed in any Verilog/VHDL file.
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:09 . Memory (MB): peak = 573.293 ; gain = 0.000
+refresh_design
+Using Verific elaboration
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_ng_sl_cl.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_rx_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_gen_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg_12bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mergeData.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/demux1_3.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch.vhd" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'decoder1to2_winType' instantiated as 'XLXI_20' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.vf:206]
+Resolution: File names need to match cell names: an EDIF definition will be found in decoder1to2_winType.edf; an HDL definition may be placed in any Verilog/VHDL file.
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:12 . Memory (MB): peak = 573.293 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

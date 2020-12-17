@@ -1,34 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="demux1_3">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2020-12-15T10:47:22</timestamp>
-    <pin polarity="Input" x="0" y="-224" name="S0" />
-    <pin polarity="Input" x="0" y="-160" name="S1" />
-    <pin polarity="Input" x="0" y="-96" name="S2" />
+    <timestamp>2020-12-16T12:21:9</timestamp>
+    <pin polarity="Input" x="0" y="32" name="data_done" />
     <pin polarity="Input" x="0" y="-32" name="demux_in(11:0)" />
+    <pin polarity="Input" x="0" y="224" name="Selector(2:0)" />
+    <pin polarity="Output" x="448" y="32" name="clk_Move_reg" />
+    <pin polarity="Output" x="448" y="160" name="clk_Promote_reg" />
     <pin polarity="Output" x="448" y="-224" name="Move(11:0)" />
-    <pin polarity="Output" x="448" y="-128" name="Error(5:0)" />
-    <pin polarity="Output" x="448" y="-32" name="Promote(4:0)" />
+    <pin polarity="Output" x="448" y="-32" name="Promote(1:0)" />
+    <pin polarity="Output" x="448" y="288" name="clk_whoWin_reg" />
+    <pin polarity="Output" x="448" y="352" name="clk_winType_reg" />
+    <pin polarity="Output" x="448" y="416" name="clk_Error_Move_reg" />
+    <pin polarity="Output" x="448" y="480" name="clk_Error_Promote_reg" />
+    <pin polarity="Output" x="448" y="544" name="winType" />
+    <pin polarity="Output" x="448" y="608" name="Error_Move" />
+    <pin polarity="Output" x="448" y="672" name="Error_Promote" />
+    <pin polarity="Output" x="448" y="736" name="whoWin(1:0)" />
     <graph>
-        <rect width="320" x="64" y="-256" height="256" />
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="224" y="-264" type="symbol" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin S0" />
-        <line x2="0" y1="-224" y2="-224" x1="64" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin S1" />
-        <line x2="0" y1="-160" y2="-160" x1="64" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin S2" />
-        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="32" type="pin data_done" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin demux_in(11:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="224" type="pin Selector(2:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="32" type="pin clk_Move_reg" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="160" type="pin clk_Promote_reg" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-224" type="pin Move(11:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-32" type="pin Promote(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="288" type="pin clk_whoWin_reg" />
+        <line x2="448" y1="288" y2="288" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="352" type="pin clk_winType_reg" />
+        <line x2="448" y1="352" y2="352" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="416" type="pin clk_Error_Move_reg" />
+        <line x2="448" y1="416" y2="416" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="480" type="pin clk_Error_Promote_reg" />
+        <line x2="448" y1="480" y2="480" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="544" type="pin winType" />
+        <line x2="448" y1="544" y2="544" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="608" type="pin Error_Move" />
+        <line x2="448" y1="608" y2="608" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="672" type="pin Error_Promote" />
+        <line x2="448" y1="672" y2="672" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="736" type="pin whoWin(1:0)" />
+        <rect width="64" x="384" y="724" height="24" />
+        <line x2="448" y1="736" y2="736" x1="384" />
+        <rect width="64" x="0" y="212" height="24" />
+        <line x2="0" y1="224" y2="224" x1="64" />
+        <line x2="0" y1="32" y2="32" x1="64" />
+        <line x2="448" y1="32" y2="32" x1="384" />
+        <line x2="448" y1="160" y2="160" x1="384" />
         <rect width="64" x="0" y="-44" height="24" />
         <line x2="0" y1="-32" y2="-32" x1="64" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-224" type="pin Move(11:0)" />
         <rect width="64" x="384" y="-236" height="24" />
         <line x2="448" y1="-224" y2="-224" x1="384" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-128" type="pin Error(5:0)" />
-        <rect width="64" x="384" y="-140" height="24" />
-        <line x2="448" y1="-128" y2="-128" x1="384" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-32" type="pin Promote(4:0)" />
         <rect width="64" x="384" y="-44" height="24" />
         <line x2="448" y1="-32" y2="-32" x1="384" />
+        <rect width="320" x="64" y="-256" height="1024" />
     </graph>
 </symbol>

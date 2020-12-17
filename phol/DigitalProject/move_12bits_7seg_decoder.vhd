@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity move_12bits_to_7seg is
     generic(
-        CLKS_PER_Round:integer:= 305
+        CLKS_PER_Round:integer:= 2083
     );
     Port(
         first_Move_IN:in STD_LOGIC_VECTOR (2 downto 0);
@@ -61,21 +61,21 @@ begin
                 common<="1011";
                 case second_Move_IN is
                     when "000"=> 
-                    out_7seg<="1110111";
+                    out_7seg<="0110000";
                     when "001"=> 
-                    out_7seg<="0011111";
+                    out_7seg<="1101101";
                     when "010"=> 
-                    out_7seg<="1001110";
+                    out_7seg<="1111001";
                     when "011"=> 
-                    out_7seg<="0111101";
+                    out_7seg<="0110011";
                     when "100"=> 
-                    out_7seg<="1001111";
+                    out_7seg<="1011011";
                     when "101"=> 
-                    out_7seg<="1000111";
+                    out_7seg<="1011111";
                     when "110"=> 
-                    out_7seg<="1111011";
+                    out_7seg<="1110000";
                     when "111"=> 
-                    out_7seg<="0110111";
+                    out_7seg<="1111111";
 						  	when others=>
 									out_7seg<="0000000";
                     end case;
@@ -87,7 +87,7 @@ begin
                 if Clk_Count<CLKS_PER_Round-1 then
                     Clk_Count<=Clk_Count+1;
                     common<="1101";
-                    case second_Move_IN is
+                    case third_Move_IN is
                         when "000"=> 
                         out_7seg<="1110111";
                         when "001"=> 
@@ -115,26 +115,26 @@ begin
                     if Clk_Count<CLKS_PER_Round-1 then
                         Clk_Count<=Clk_Count+1;
                         common<="1110";
-                        case second_Move_IN is
-                            when "000"=> 
-                            out_7seg<="1110111";
-                            when "001"=> 
-                            out_7seg<="0011111";
-                            when "010"=> 
-                            out_7seg<="1001110";
-                            when "011"=> 
-                            out_7seg<="0111101";
-                            when "100"=> 
-                            out_7seg<="1001111";
-                            when "101"=> 
-                            out_7seg<="1000111";
-                            when "110"=> 
-                            out_7seg<="1111011";
-                            when "111"=> 
-                            out_7seg<="0110111";
-									when others=>
-									out_7seg<="0000000";
-                            end case;
+                case forth_Move_IN is
+                    when "000"=> 
+                    out_7seg<="0110000";
+                    when "001"=> 
+                    out_7seg<="1101101";
+                    when "010"=> 
+                    out_7seg<="1111001";
+                    when "011"=> 
+                    out_7seg<="0110011";
+                    when "100"=> 
+                    out_7seg<="1011011";
+                    when "101"=> 
+                    out_7seg<="1011111";
+                    when "110"=> 
+                    out_7seg<="1110000";
+                    when "111"=> 
+                    out_7seg<="1111111";
+						when others=>
+							out_7seg<="0000000";
+                     end case;
                     else
                         Clk_Count<=0;
                         state<=first;

@@ -1,0 +1,436 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : mainCircuit.vf
+// /___/   /\     Timestamp : 12/17/2020 06:14:39
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.sch"
+//Design Name: mainCircuit
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module debounceSwitch16input_MUSER_mainCircuit(clk_P123, 
+                                               i_Switch, 
+                                               o_Switch);
+
+    input clk_P123;
+    input [15:0] i_Switch;
+   output [15:0] o_Switch;
+   
+   
+   Debounce_Switch  XLXI_1 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[15]), 
+                           .o_Switch(o_Switch[15]));
+   Debounce_Switch  XLXI_2 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[14]), 
+                           .o_Switch(o_Switch[14]));
+   Debounce_Switch  XLXI_3 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[13]), 
+                           .o_Switch(o_Switch[13]));
+   Debounce_Switch  XLXI_4 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[12]), 
+                           .o_Switch(o_Switch[12]));
+   Debounce_Switch  XLXI_5 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[11]), 
+                           .o_Switch(o_Switch[11]));
+   Debounce_Switch  XLXI_6 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[10]), 
+                           .o_Switch(o_Switch[10]));
+   Debounce_Switch  XLXI_18 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[9]), 
+                            .o_Switch(o_Switch[9]));
+   Debounce_Switch  XLXI_19 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[8]), 
+                            .o_Switch(o_Switch[8]));
+   Debounce_Switch  XLXI_20 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[7]), 
+                            .o_Switch(o_Switch[7]));
+   Debounce_Switch  XLXI_21 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[6]), 
+                            .o_Switch(o_Switch[6]));
+   Debounce_Switch  XLXI_22 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[5]), 
+                            .o_Switch(o_Switch[5]));
+   Debounce_Switch  XLXI_23 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[4]), 
+                            .o_Switch(o_Switch[4]));
+   Debounce_Switch  XLXI_24 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[3]), 
+                            .o_Switch(o_Switch[3]));
+   Debounce_Switch  XLXI_25 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[2]), 
+                            .o_Switch(o_Switch[2]));
+   Debounce_Switch  XLXI_26 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[1]), 
+                            .o_Switch(o_Switch[1]));
+   Debounce_Switch  XLXI_27 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[0]), 
+                            .o_Switch(o_Switch[0]));
+endmodule
+`timescale 1ns / 1ps
+
+module tx_MUSER_mainCircuit(bishop_sw, 
+                            blackSwitch, 
+                            clock_P123, 
+                            downSwitch, 
+                            knight_sw, 
+                            newgame_switch, 
+                            queen_sw, 
+                            rook_sw, 
+                            switch_Move, 
+                            upSwitch, 
+                            whiteSwitch, 
+                            level_common, 
+                            level_seg, 
+                            L0_P82, 
+                            TX_P98);
+
+    input bishop_sw;
+    input blackSwitch;
+    input clock_P123;
+    input downSwitch;
+    input knight_sw;
+    input newgame_switch;
+    input queen_sw;
+    input rook_sw;
+    input [15:0] switch_Move;
+    input upSwitch;
+    input whiteSwitch;
+   output level_common;
+   output [6:0] level_seg;
+   output L0_P82;
+   output TX_P98;
+   
+   wire [3:0] a;
+   wire [15:0] switch;
+   wire XLXN_236;
+   wire XLXN_242;
+   wire XLXN_243;
+   wire XLXN_244;
+   wire XLXN_245;
+   wire XLXN_263;
+   wire XLXN_265;
+   wire XLXN_266;
+   wire XLXN_267;
+   wire XLXN_268;
+   wire [2:0] XLXN_269;
+   wire [1:0] XLXN_270;
+   wire [11:0] XLXN_272;
+   wire XLXN_273;
+   wire XLXN_274;
+   wire XLXN_275;
+   wire [15:0] XLXN_276;
+   wire [2:0] XLXN_278;
+   wire XLXN_292;
+   wire [11:0] XLXN_310;
+   wire XLXN_311;
+   wire XLXN_321;
+   wire L0_P82_DUMMY;
+   
+   assign L0_P82 = L0_P82_DUMMY;
+   ProjectDigital  XLXI_3 (.a(a[3:0]), 
+                          .black_switch(XLXN_242), 
+                          .clear_out1(XLXN_321), 
+                          .clear_out2(L0_P82_DUMMY), 
+                          .clear_out3(L0_P82_DUMMY), 
+                          .clear_out4(L0_P82_DUMMY), 
+                          .clear_ready_out1(XLXN_321), 
+                          .clear_ready_out2(L0_P82_DUMMY), 
+                          .clear_ready_out3(L0_P82_DUMMY), 
+                          .clear_ready_out4(L0_P82_DUMMY), 
+                          .down_switch(XLXN_245), 
+                          .newgame_switch(L0_P82_DUMMY), 
+                          .up_switch(XLXN_244), 
+                          .white_switch(XLXN_243), 
+                          .LED_NEW_GAME_SW(), 
+                          .out1(XLXN_273), 
+                          .out2(XLXN_274), 
+                          .out3(XLXN_269[2:0]), 
+                          .out4(XLXN_270[1:0]), 
+                          .ready_out1(XLXN_263), 
+                          .ready_out2(XLXN_265), 
+                          .ready_out3(XLXN_266), 
+                          .ready_out4(XLXN_267));
+   serial_gen  XLXI_5 (.clock(clock_P123), 
+                      .data(XLXN_276[15:0]), 
+                      .start(XLXN_311), 
+                      .clear_Color(), 
+                      .clear_level(), 
+                      .clear_Move(), 
+                      .clear_NewGame(), 
+                      .clear_Promote(), 
+                      .tx(TX_P98));
+   debounceSwitch16input_MUSER_mainCircuit  XLXI_12 (.clk_P123(clock_P123), 
+                                                    
+         .i_Switch(switch_Move[15:0]), 
+                                                    .o_Switch(switch[15:0]));
+   Debounce_Switch  XLXI_13 (.i_Clk(XLXN_236), 
+                            .i_Switch(newgame_switch), 
+                            .o_Switch(XLXN_292));
+   Debounce_Switch  XLXI_14 (.i_Clk(XLXN_236), 
+                            .i_Switch(blackSwitch), 
+                            .o_Switch(XLXN_242));
+   Debounce_Switch  XLXI_15 (.i_Clk(XLXN_236), 
+                            .i_Switch(whiteSwitch), 
+                            .o_Switch(XLXN_243));
+   Debounce_Switch  XLXI_16 (.i_Clk(XLXN_236), 
+                            .i_Switch(upSwitch), 
+                            .o_Switch(XLXN_244));
+   Debounce_Switch  XLXI_17 (.i_Clk(XLXN_236), 
+                            .i_Switch(downSwitch), 
+                            .o_Switch(XLXN_245));
+   Debounce_Switch  XLXI_18 (.i_Clk(XLXN_236), 
+                            .i_Switch(rook_sw), 
+                            .o_Switch(a[3]));
+   Debounce_Switch  XLXI_19 (.i_Clk(XLXN_236), 
+                            .i_Switch(knight_sw), 
+                            .o_Switch(a[2]));
+   Debounce_Switch  XLXI_27 (.i_Clk(XLXN_236), 
+                            .i_Switch(bishop_sw), 
+                            .o_Switch(a[1]));
+   Debounce_Switch  XLXI_28 (.i_Clk(XLXN_236), 
+                            .i_Switch(queen_sw), 
+                            .o_Switch(a[0]));
+   mux71  XLXI_29 (.I0(XLXN_273), 
+                  .I1(XLXN_274), 
+                  .I2(XLXN_269[2:0]), 
+                  .I3(XLXN_272[11:0]), 
+                  .I4(XLXN_270[1:0]), 
+                  .I6(XLXN_275), 
+                  .S(XLXN_278[2:0]), 
+                  .data(XLXN_310[11:0]));
+   levelDecoder  XLXI_30 (.inp(), 
+                         .common(level_common), 
+                         .seg(level_seg[6:0]));
+   mergeData  XLXI_37 (.data_in(XLXN_310[11:0]), 
+                      .SEL(XLXN_278[2:0]), 
+                      .data_out(XLXN_276[15:0]));
+   counter0_1  XLXI_85 (.alp(switch[15:8]), 
+                       .clear(L0_P82_DUMMY), 
+                       .num(switch[7:0]), 
+                       .move(XLXN_272[11:0]), 
+                       .ready_move(XLXN_268));
+   encoder5to3  XLXI_86 (.A(XLXN_263), 
+                        .B(XLXN_265), 
+                        .C(XLXN_266), 
+                        .D(XLXN_268), 
+                        .E(XLXN_267), 
+                        .sel(XLXN_278[2:0]));
+   GND  XLXI_89 (.G(XLXN_275));
+   BUF  XLXI_91 (.I(XLXN_292), 
+                .O(L0_P82_DUMMY));
+   VCC  XLXI_93 (.P(XLXN_311));
+   GND  XLXI_94 (.G(XLXN_321));
+endmodule
+`timescale 1ns / 1ps
+
+module rx_MUSER_mainCircuit(clear_error_move, 
+                            clear_Error_Promote, 
+                            clear_Promote, 
+                            clear_whoWin, 
+                            clear_winType, 
+                            clk_P123, 
+                            rx_P97, 
+                            common_move, 
+                            error_move_LED, 
+                            error_promote_LED, 
+                            promote_LED, 
+                            seg7_move, 
+                            whoWin_LED, 
+                            winTypeLED_ALT);
+
+    input clear_error_move;
+    input clear_Error_Promote;
+    input clear_Promote;
+    input clear_whoWin;
+    input clear_winType;
+    input clk_P123;
+    input rx_P97;
+   output [3:0] common_move;
+   output error_move_LED;
+   output error_promote_LED;
+   output [3:0] promote_LED;
+   output [6:0] seg7_move;
+   output [1:0] whoWin_LED;
+   output [1:0] winTypeLED_ALT;
+   
+   wire [1:0] promote;
+   wire XLXN_20;
+   wire XLXN_22;
+   wire [11:0] XLXN_23;
+   wire XLXN_25;
+   wire [2:0] XLXN_59;
+   wire [11:0] XLXN_60;
+   wire [2:0] XLXN_61;
+   wire [2:0] XLXN_62;
+   wire [2:0] XLXN_63;
+   wire [2:0] XLXN_64;
+   wire XLXN_74;
+   wire XLXN_75;
+   wire XLXN_76;
+   wire XLXN_86;
+   wire XLXN_87;
+   wire XLXN_88;
+   wire [1:0] XLXN_112;
+   wire XLXN_113;
+   wire XLXN_115;
+   wire [1:0] XLXN_116;
+   wire [1:0] XLXN_117;
+   wire XLXN_119;
+   
+   serial_rx  XLXI_1 (.clock(clk_P123), 
+                     .rx(rx_P97), 
+                     .data(XLXN_60[11:0]), 
+                     .data_done(XLXN_20), 
+                     .header(XLXN_59[2:0]));
+   shift_register12  XLXI_3 (.CLK(XLXN_25), 
+                            .CLR(XLXN_22), 
+                            .reg_in(XLXN_23[11:0]), 
+                            .first_reg_out(XLXN_61[2:0]), 
+                            .forth_reg_out(XLXN_64[2:0]), 
+                            .second_reg_out(XLXN_62[2:0]), 
+                            .third_reg_out(XLXN_63[2:0]));
+   GND  XLXI_5 (.G(XLXN_22));
+   demux1_3  XLXI_6 (.data_done(XLXN_20), 
+                    .demux_in(XLXN_60[11:0]), 
+                    .Selector(XLXN_59[2:0]), 
+                    .clk_Error_Move_reg(XLXN_87), 
+                    .clk_Error_Promote_reg(XLXN_88), 
+                    .clk_Move_reg(XLXN_25), 
+                    .clk_Promote_reg(XLXN_113), 
+                    .clk_whoWin_reg(XLXN_115), 
+                    .clk_winType_reg(XLXN_86), 
+                    .Error_Move(XLXN_75), 
+                    .Error_Promote(XLXN_76), 
+                    .Move(XLXN_23[11:0]), 
+                    .Promote(promote[1:0]), 
+                    .whoWin(XLXN_116[1:0]), 
+                    .winType(XLXN_74));
+   move_12bits_to_7seg  XLXI_7 (.clock(clk_P123), 
+                               .first_Move_IN(XLXN_61[2:0]), 
+                               .forth_Move_IN(XLXN_64[2:0]), 
+                               .second_Move_IN(XLXN_62[2:0]), 
+                               .third_Move_IN(XLXN_63[2:0]), 
+                               .common(common_move[3:0]), 
+                               .out_7seg(seg7_move[6:0]));
+   register1bits  XLXI_10 (.CLK(XLXN_86), 
+                          .CLR(clear_winType), 
+                          .d_in(XLXN_74), 
+                          .d_out(XLXN_119));
+   register1bits  XLXI_11 (.CLK(XLXN_87), 
+                          .CLR(clear_error_move), 
+                          .d_in(XLXN_75), 
+                          .d_out(error_move_LED));
+   register1bits  XLXI_12 (.CLK(XLXN_88), 
+                          .CLR(clear_Error_Promote), 
+                          .d_in(XLXN_76), 
+                          .d_out(error_promote_LED));
+   decoder2to4_promote  XLXI_15 (.inp(XLXN_112[1:0]), 
+                                .seg(promote_LED[3:0]));
+   decoder2to2_whoWin  XLXI_17 (.inp(XLXN_117[1:0]), 
+                               .seg(whoWin_LED[1:0]));
+   reg2bits  XLXI_18 (.CLK(XLXN_113), 
+                     .CLR(clear_Promote), 
+                     .d_in(promote[1:0]), 
+                     .d_out(XLXN_112[1:0]));
+   reg2bits  XLXI_19 (.CLK(XLXN_115), 
+                     .CLR(clear_whoWin), 
+                     .d_in(XLXN_116[1:0]), 
+                     .d_out(XLXN_117[1:0]));
+   decoder1to2_winType  XLXI_20 (.inp(XLXN_119), 
+                                .seg(winTypeLED_ALT[1:0]));
+endmodule
+`timescale 1ns / 1ps
+
+module mainCircuit(bishop_PSW, 
+                   blackSwitch, 
+                   clock_P123, 
+                   downSwitch, 
+                   knight_PSW, 
+                   newGame_Switch, 
+                   queen_PSW, 
+                   rook_PSW, 
+                   RX_P97, 
+                   switchForMove, 
+                   upSwitch, 
+                   whiteSwitch, 
+                   common_move_FPGA, 
+                   common_P126_ALT, 
+                   ERR_MOV_ALT_LED, 
+                   ERR_PRO_LED_ALT, 
+                   level_seg_ALT, 
+                   L0_P82, 
+                   promoteLED_ALT, 
+                   seg7_move_FPGA, 
+                   TX_P98, 
+                   whoWin_ALT_LED, 
+                   winTypeLED_ALT);
+
+    input bishop_PSW;
+    input blackSwitch;
+    input clock_P123;
+    input downSwitch;
+    input knight_PSW;
+    input newGame_Switch;
+    input queen_PSW;
+    input rook_PSW;
+    input RX_P97;
+    input [15:0] switchForMove;
+    input upSwitch;
+    input whiteSwitch;
+   output [3:0] common_move_FPGA;
+   output common_P126_ALT;
+   output ERR_MOV_ALT_LED;
+   output ERR_PRO_LED_ALT;
+   output [6:0] level_seg_ALT;
+   output L0_P82;
+   output [3:0] promoteLED_ALT;
+   output [6:0] seg7_move_FPGA;
+   output TX_P98;
+   output [1:0] whoWin_ALT_LED;
+   output [1:0] winTypeLED_ALT;
+   
+   wire XLXN_28;
+   
+   tx_MUSER_mainCircuit  XLXI_2 (.bishop_sw(bishop_PSW), 
+                                .blackSwitch(blackSwitch), 
+                                .clock_P123(clock_P123), 
+                                .downSwitch(downSwitch), 
+                                .knight_sw(knight_PSW), 
+                                .newgame_switch(newGame_Switch), 
+                                .queen_sw(queen_PSW), 
+                                .rook_sw(rook_PSW), 
+                                .switch_Move(switchForMove[15:0]), 
+                                .upSwitch(upSwitch), 
+                                .whiteSwitch(whiteSwitch), 
+                                .level_common(common_P126_ALT), 
+                                .level_seg(level_seg_ALT[6:0]), 
+                                .L0_P82(L0_P82), 
+                                .TX_P98(TX_P98));
+   rx_MUSER_mainCircuit  XLXI_3 (.clear_error_move(XLXN_28), 
+                                .clear_Error_Promote(XLXN_28), 
+                                .clear_Promote(XLXN_28), 
+                                .clear_whoWin(XLXN_28), 
+                                .clear_winType(XLXN_28), 
+                                .clk_P123(clock_P123), 
+                                .rx_P97(RX_P97), 
+                                .common_move(common_move_FPGA[3:0]), 
+                                .error_move_LED(ERR_MOV_ALT_LED), 
+                                .error_promote_LED(ERR_PRO_LED_ALT), 
+                                .promote_LED(promoteLED_ALT[3:0]), 
+                                .seg7_move(seg7_move_FPGA[6:0]), 
+                                .whoWin_LED(whoWin_ALT_LED[1:0]), 
+                                .winTypeLED_ALT(winTypeLED_ALT[1:0]));
+   GND  XLXI_4 (.G(XLXN_28));
+endmodule

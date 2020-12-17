@@ -1,0 +1,141 @@
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_2/XLXI_5/state[2]_state[2]_mux_91_OUT<3 : 1> on block mainCircuit is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 101176 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_2/XLXI_5/state[2]_state[2]_mux_91_OUT<3 : 1> on block mainCircuit is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 101180 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_2/XLXI_5/state[2]_state[2]_mux_91_OUT<3 : 1> on block mainCircuit is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 101244 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_277<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<14 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100220 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_277<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<14 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100476 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_277<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<14 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100028 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_310<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<15 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100540 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_310<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<15 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100540 kilobytes
+

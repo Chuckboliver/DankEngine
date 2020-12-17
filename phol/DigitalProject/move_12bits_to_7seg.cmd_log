@@ -1,2 +1,18 @@
 vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 
+vhdtdtfi -lib work move_12bits_7seg_decoder.vhd -prj DigitalProject -o move_12bits_to_7seg.spl -module move_12bits_to_7seg -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_12bits_to_7seg.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_to_7seg.sym} 

@@ -1,0 +1,2 @@
+vhdtdtfi -lib work encoder5to3.vhd -prj DigitalProject -o encoder5to3.spl -module encoder5to3 -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 encoder5to3.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/encoder5to3.sym} 

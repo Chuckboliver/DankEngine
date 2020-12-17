@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Tue Dec 15 22:12:49 2020
+# Process ID: 7052
+# Log file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P30 [get_ports {common[3]}]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports {common[2]}]
+endgroup
+startgroup
+set_property package_pin P43 [get_ports {common[1]}]
+endgroup
+startgroup
+set_property package_pin P44 [get_ports {common[0]}]
+endgroup
+startgroup
+set_property package_pin P41 [get_ports {out_7seg[6]}]
+endgroup
+startgroup
+set_property package_pin P40 [get_ports {out_7seg[5]}]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports {out_7seg[4]}]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports {out_7seg[3]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {out_7seg[2]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {out_7seg[1]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {out_7seg[0]}]
+endgroup
+startgroup
+set_property package_pin P123 [get_ports clock]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports rx]
+endgroup
+set_property is_loc_fixed false [get_ports [list  rx]]
+set_property is_loc_fixed true [get_ports [list  rx]]
+save_constraints
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

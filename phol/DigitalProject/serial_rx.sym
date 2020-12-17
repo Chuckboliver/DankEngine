@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="serial_rx">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2020-12-15T11:10:14</timestamp>
+    <timestamp>2020-12-15T19:42:54</timestamp>
     <pin polarity="Input" x="0" y="-96" name="clock" />
     <pin polarity="Input" x="0" y="-32" name="rx" />
-    <pin polarity="BiDirectional" x="384" y="-32" name="data(15:0)" />
     <pin polarity="Output" x="384" y="-96" name="data_done" />
+    <pin polarity="Output" x="384" y="32" name="header(2:0)" />
+    <pin polarity="Output" x="384" y="-32" name="data(11:0)" />
     <graph>
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-136" type="symbol" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin clock" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin rx" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-32" type="pin data(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-96" type="pin data_done" />
-        <rect width="256" x="64" y="-128" height="128" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="32" type="pin header(2:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-32" type="pin data(11:0)" />
+        <rect width="64" x="320" y="20" height="24" />
+        <line x2="384" y1="32" y2="32" x1="320" />
         <line x2="0" y1="-96" y2="-96" x1="64" />
         <line x2="0" y1="-32" y2="-32" x1="64" />
         <line x2="384" y1="-96" y2="-96" x1="320" />
         <rect width="64" x="320" y="-44" height="24" />
         <line x2="384" y1="-32" y2="-32" x1="320" />
+        <rect width="256" x="64" y="-128" height="256" />
     </graph>
 </symbol>

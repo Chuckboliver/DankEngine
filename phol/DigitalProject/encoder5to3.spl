@@ -1,0 +1,9 @@
+[Inputs]
+A
+B
+C
+D
+E
+[Outputs]
+=sel[2:0]=
+[BiDir]

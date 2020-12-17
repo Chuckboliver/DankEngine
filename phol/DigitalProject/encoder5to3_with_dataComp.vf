@@ -1,0 +1,138 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : encoder5to3_with_dataComp.vf
+// /___/   /\     Timestamp : 12/16/2020 21:59:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/encoder5to3_with_dataComp.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/encoder5to3_with_dataComp.sch"
+//Design Name: encoder5to3_with_dataComp
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module COMP4_HXILINX_encoder5to3_with_dataComp (EQ, A0, A1, A2, A3, B0, B1, B2, B3);
+    
+
+   output EQ;
+
+   input A0;
+   input A1;
+   input A2;
+   input A3;
+   input B0;
+   input B1;
+   input B2;
+   input B3;
+
+   assign EQ = ((A0==B0) && (A1==B1) && (A2==B2) && (A3==B3)) ;
+
+endmodule
+`timescale 1ns / 1ps
+
+module encoder5to3_with_dataComp(A, 
+                                 B, 
+                                 C, 
+                                 D, 
+                                 data_comp, 
+                                 E, 
+                                 NOT_EQ, 
+                                 SEL);
+
+    input A;
+    input B;
+    input C;
+    input D;
+    input [11:0] data_comp;
+    input E;
+   output NOT_EQ;
+   output [2:0] SEL;
+   
+   wire XLXN_17;
+   wire XLXN_18;
+   wire XLXN_58;
+   wire XLXN_62;
+   wire XLXN_73;
+   wire XLXN_83;
+   wire XLXN_89;
+   wire XLXN_91;
+   wire XLXN_95;
+   wire XLXN_96;
+   wire XLXN_97;
+   wire XLXN_98;
+   
+   AND2  XLXI_5 (.I0(XLXN_18), 
+                .I1(XLXN_17), 
+                .O(SEL[2]));
+   INV  XLXI_6 (.I(A), 
+               .O(XLXN_17));
+   OR3B1  XLXI_23 (.I0(E), 
+                  .I1(D), 
+                  .I2(C), 
+                  .O(XLXN_58));
+   AND3  XLXI_24 (.I0(XLXN_58), 
+                 .I1(XLXN_62), 
+                 .I2(XLXN_17), 
+                 .O(SEL[1]));
+   INV  XLXI_25 (.I(B), 
+                .O(XLXN_62));
+   OR2  XLXI_27 (.I0(XLXN_73), 
+                .I1(B), 
+                .O(XLXN_83));
+   AND2B1  XLXI_28 (.I0(C), 
+                   .I1(D), 
+                   .O(XLXN_73));
+   AND3B3  XLXI_29 (.I0(D), 
+                   .I1(C), 
+                   .I2(B), 
+                   .O(XLXN_18));
+   AND2  XLXI_30 (.I0(XLXN_83), 
+                 .I1(XLXN_17), 
+                 .O(SEL[0]));
+   (* HU_SET = "XLXI_35_12" *) 
+   COMP4_HXILINX_encoder5to3_with_dataComp  XLXI_35 (.A0(data_comp[11]), 
+                                                    .A1(data_comp[10]), 
+                                                    .A2(data_comp[9]), 
+                                                    .A3(data_comp[8]), 
+                                                    .B0(XLXN_95), 
+                                                    .B1(XLXN_95), 
+                                                    .B2(XLXN_95), 
+                                                    .B3(XLXN_95), 
+                                                    .EQ(XLXN_97));
+   (* HU_SET = "XLXI_37_13" *) 
+   COMP4_HXILINX_encoder5to3_with_dataComp  XLXI_37 (.A0(data_comp[7]), 
+                                                    .A1(data_comp[6]), 
+                                                    .A2(data_comp[5]), 
+                                                    .A3(data_comp[4]), 
+                                                    .B0(XLXN_91), 
+                                                    .B1(XLXN_91), 
+                                                    .B2(XLXN_91), 
+                                                    .B3(XLXN_91), 
+                                                    .EQ(XLXN_98));
+   (* HU_SET = "XLXI_40_14" *) 
+   COMP4_HXILINX_encoder5to3_with_dataComp  XLXI_40 (.A0(data_comp[3]), 
+                                                    .A1(data_comp[2]), 
+                                                    .A2(data_comp[1]), 
+                                                    .A3(data_comp[0]), 
+                                                    .B0(XLXN_89), 
+                                                    .B1(XLXN_89), 
+                                                    .B2(XLXN_89), 
+                                                    .B3(XLXN_89), 
+                                                    .EQ(XLXN_96));
+   GND  XLXI_41 (.G(XLXN_89));
+   GND  XLXI_42 (.G(XLXN_91));
+   GND  XLXI_44 (.G(XLXN_95));
+   OR3B3  XLXI_45 (.I0(XLXN_96), 
+                  .I1(XLXN_98), 
+                  .I2(XLXN_97), 
+                  .O(NOT_EQ));
+endmodule

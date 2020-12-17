@@ -1,0 +1,66 @@
+
+
+NET "common_move_FPGA[3]" LOC = P30;
+NET "common_move_FPGA[2]" LOC = P33;
+NET "common_move_FPGA[1]" LOC = P43;
+NET "level_seg_ALT[6]" LOC = P2;
+NET "level_seg_ALT[5]" LOC = P143;
+NET "level_seg_ALT[4]" LOC = P141;
+NET "level_seg_ALT[3]" LOC = P139;
+NET "level_seg_ALT[2]" LOC = P137;
+NET "level_seg_ALT[1]" LOC = P133;
+NET "promoteLED_ALT[3]" LOC = P111;
+NET "promoteLED_ALT[2]" LOC = P105;
+NET "promoteLED_ALT[1]" LOC = P104;
+NET "promoteLED_ALT[0]" LOC = P102;
+NET "seg7_move_FPGA[6]" LOC = P41;
+NET "seg7_move_FPGA[5]" LOC = P40;
+NET "seg7_move_FPGA[4]" LOC = P35;
+NET "seg7_move_FPGA[3]" LOC = P34;
+NET "seg7_move_FPGA[2]" LOC = P32;
+NET "seg7_move_FPGA[1]" LOC = P29;
+NET "seg7_move_FPGA[0]" LOC = P27;
+NET "switchForMove[15]" LOC = P5;
+NET "switchForMove[14]" LOC = P7;
+NET "switchForMove[13]" LOC = P9;
+NET "switchForMove[12]" LOC = P11;
+NET "switchForMove[11]" LOC = P14;
+NET "switchForMove[10]" LOC = P16;
+NET "switchForMove[8]" LOC = P23;
+NET "switchForMove[9]" LOC = P21;
+NET "switchForMove[7]" LOC = P6;
+NET "switchForMove[6]" LOC = P8;
+NET "switchForMove[5]" LOC = P10;
+NET "switchForMove[4]" LOC = P12;
+NET "switchForMove[3]" LOC = P15;
+NET "switchForMove[2]" LOC = P17;
+NET "switchForMove[1]" LOC = P22;
+NET "switchForMove[0]" LOC = P24;
+NET "level_seg_ALT[0]" LOC = P131;
+NET "bishop_PSW" LOC = P127;
+NET "blackSwitch" LOC = P1;
+NET "clock_P123" LOC = P123;
+NET "common_P126_ALT" LOC = P126;
+NET "downSwitch" LOC = P138;
+NET "ERR_MOV_ALT_LED" LOC = P67;
+NET "knight_PSW" LOC = P132;
+NET "newGame_Switch" LOC = P121;
+NET "queen_PSW" LOC = P124;
+NET "rook_PSW" LOC = P134;
+NET "RX_P97" LOC = P97;
+NET "TX_P98" LOC = P98;
+NET "upSwitch" LOC = P140;
+NET "whiteSwitch" LOC = P142;
+
+
+NET "ERR_PRO_LED_ALT" LOC = P74;
+NET "winTypeLED_ALT[1]" LOC = P75;
+NET "winTypeLED_ALT[0]" LOC = P78;
+NET "whoWin_ALT_LED[0]" LOC = P70;
+NET "whoWin_ALT_LED[1]" LOC = P79;
+
+
+
+
+
+NET "L0_P82" LOC = P82;

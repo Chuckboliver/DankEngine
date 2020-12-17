@@ -1,0 +1,7 @@
+[Inputs]
+CLK
+CLR
+=d_in[1:0]=
+[Outputs]
+=d_out[1:0]=
+[BiDir]
