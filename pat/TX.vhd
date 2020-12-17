@@ -52,7 +52,7 @@ begin
         elsif set_level_switch(0) = '1' then
             debug_led <= '1';
             if set_level = "000" then
-                set_level <= "000";
+                set_level <= set_level;
                 trigger <= '0';
             else
                 set_level <= set_level - 1;
@@ -62,36 +62,36 @@ begin
         elsif set_level_switch(1) = '1' then
             debug_led <= '1';
             if set_level = "100" then
-                set_level <= "100";
+                set_level <= set_level;
                 trigger <= '0';
             else
                 set_level <= set_level + 1;
                 data <= "010" & set_level & "0000000000";
                 trigger <= '1';
             end if;
-        elsif alp /= "00000000" or num /= "00000000"then
-            debug_led <= '1';
-            if alp /= "00000000" then
-                case(alp) is
-                    when "10000000" => 
-                        temp <= "000";
-                    when "01000000" =>
-                        temp <= "001";
-                    when "00100000" =>
-                        temp <= "010";
-                    when "00010000" =>
-                        temp <= "011";
-                    when "00001000" =>
-                        temp <= "100";
-                    when "00000100" =>
-                        temp <= "101";
-                    when "00000010" =>
-                        temp <= "110";
-                    when "00000001" =>
-                        temp <= "111";
-                    when others =>
-                        temp <= "000";
-                end case;
+        -- elsif alp /= "00000000" or num /= "00000000"then
+        --     debug_led <= '1';
+        --     if alp /= "00000000" then
+        --         case(alp) is
+        --             when "10000000" => 
+        --                 temp <= "000";
+        --             when "01000000" =>
+        --                 temp <= "001";
+        --             when "00100000" =>
+        --                 temp <= "010";
+        --             when "00010000" =>
+        --                 temp <= "011";
+        --             when "00001000" =>
+        --                 temp <= "100";
+        --             when "00000100" =>
+        --                 temp <= "101";
+        --             when "00000010" =>
+        --                 temp <= "110";
+        --             when "00000001" =>
+        --                 temp <= "111";
+        --             when others =>
+        --                 temp <= "000";
+        --         end case;
             else
                 case(num) is
                     when "10000000" => 
