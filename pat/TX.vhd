@@ -22,7 +22,7 @@ end addHeader
 
 architecture Behavioral of addHeader is
     signal set_level : STD_LOGIC_VECTOR(2 downto 0);
-    signal move_count : integer range 0 to 4 := 0;
+    signal count : integer range 0 to 4 := 0;
     
     -- move --
     signal temp : STD_LOGIC_VECTOR(2 downto 0);
@@ -35,56 +35,57 @@ begin
     -- new game --
     NEW_GAME_PROC : process(newgame_switch)
     begin
-        if NEW_GAME_PROC = "1" then
-            debug_led <= "1";
+        if newgame_switch = '1' then
+            debug_led <= '1';
             data <= "0001000000000000";
-            trigger <= "1";
+            trigger <= '1';
         else
-            debug_led <= "0";
-            trigger <= "0";
+            debug_led <= '0';
+            trigger <= '0';
         end if;
     end process;
     -- choose side --
     CHOOSE_SIDE_PROC : process(choose_side_switch)
     begin
-        if choose_side_switch(0) = "1" then
-            debug_led <= "1";
+        if choose_side_switch(0) = '1' then
+            debug_led <= '1';
             data <= "0010000000000000";
             choose_side_LED <= "10";
-            trigger <= "1";
-        elsif choose_side_switch(1) = "1" then
-            debug_led <= "1";
+            trigger <= '1';
+        elsif choose_side_switch(1) = '1' then
+            debug_led <= '1';
             data <= "0011000000000000";
             choose_side_LED <= "01";
-            trigger <= "1";
+            trigger <= '1';
         else
-            debug_led <= "0";
-            trigger <= "0";
+            debug_led <= '0';
+            trigger <= '0';
         end if;
     end process;
     --set level --
     SET_LEVEL_PROC : process(set_level_switch)
     begin
-        if set_level_switch(0) = "1" then
-            debug_led <= "1";
+        if set_level_switch(0) = '1' then
+            debug_led <= '1';
             if set_level = "000" then
                 set_level <= "000";
-                trigger <= "0";
+                trigger <= '0';
             else
                 set_level <= set_level - 1;
-                trigger <= "1";
+                trigger <= '1';
             end if;
-        elsif set_level_switch(1) = "1" then
-            debug_led <= "1";
+        elsif set_level_switch(1) = '1' then
+            debug_led <= '1';
             if set_level = "100" then
                 set_level <= "100";
-                trigger <= "0";
+                trigger <= '0';
             else
                 set_level <= set_level + 1;
-                trigger <= "1";
+                trigger <= '1';
+            end if;
         else
-            debug_led <= "0";
-            trigger <= "0";
+            debug_led <= '0';
+            trigger <= '0';
         end if;
     end process;
     -----display set_level-----
@@ -108,43 +109,50 @@ begin
     begin
         -- alp is pressed or num is pressed--
         if alp /= "00000000" or num /= "00000000"then
-            debug_led <= "1";
-            case(alp) is
-                when "10000000" => 
-                    temp <= "000";
-                when "01000000" =>
-                    temp <= "001";
-                when "00100000" =>
-                    temp <= "010";
-                when "00010000" =>
-                    temp <= "011";
-                when "00001000" =>
-                    temp <= "100";
-                when "00000100" =>
-                    temp <= "101";
-                when "00000010" =>
-                    temp <= "110";
-                when "00000001" =>
-                    temp <= "111";
-            end case;
-            case(num) is
-                when "10000000" => 
-                    temp <= "000";
-                when "01000000" =>
-                    temp <= "001";
-                when "00100000" =>
-                    temp <= "010";
-                when "00010000" =>
-                    temp <= "011";
-                when "00001000" =>
-                    temp <= "100";
-                when "00000100" =>
-                    temp <= "101";
-                when "00000010" =>
-                    temp <= "110";
-                when "00000001" =>
-                    temp <= "111";
-            end case;
+            debug_led <= '1';
+            if alp /= "00000000" then
+                case(alp) is
+                    when "10000000" => 
+                        temp <= "000";
+                    when "01000000" =>
+                        temp <= "001";
+                    when "00100000" =>
+                        temp <= "010";
+                    when "00010000" =>
+                        temp <= "011";
+                    when "00001000" =>
+                        temp <= "100";
+                    when "00000100" =>
+                        temp <= "101";
+                    when "00000010" =>
+                        temp <= "110";
+                    when "00000001" =>
+                        temp <= "111";
+                    when others =>
+                        temp <= "000";
+                end case;
+            else
+                case(num) is
+                    when "10000000" => 
+                        temp <= "000";
+                    when "01000000" =>
+                        temp <= "001";
+                    when "00100000" =>
+                        temp <= "010";
+                    when "00010000" =>
+                        temp <= "011";
+                    when "00001000" =>
+                        temp <= "100";
+                    when "00000100" =>
+                        temp <= "101";
+                    when "00000010" =>
+                        temp <= "110";
+                    when "00000001" =>
+                        temp <= "111";
+                    when others =>
+                        temp <= "000";
+                end case;
+            end if;
             count <= count + 1;
             if count = 1 then
                 from_file <= temp;
@@ -155,12 +163,12 @@ begin
             elsif count = 4 then
                 to_rank <= temp;
                 count <= 0;
-                data <= "011" & from_file & from_rank & to_file & to_rank & "0";
-                trigger <= "1";
+                data <= "011" & from_file & from_rank & to_file & to_rank & '0';
+                trigger <= '1';
             end if;
         else
-            debug_led <= "0";
-            trigger <= "0";
+            debug_led <= '0';
+            trigger <= '0';
         end if;
     end process;
     ------------------------- move---------------------
@@ -168,7 +176,7 @@ begin
     PIECE_PROC : process(piece_switch)
     begin
         if piece_switch /= "0000" then
-            debug_led <= "1";
+            debug_led <= '1';
             case(piece_switch) is
                 when "1000" =>
                     data <= "10000000";
@@ -179,13 +187,13 @@ begin
                 when "0001" =>
                     data <= "10011000";
             end case;
-            trigger <= "1";
+            trigger <= '1';
         else
-            debug_led <= "0";
-            trigger <= "0";
+            debug_led <= '0';
+            trigger <= '0';
         end if;
     end process;
-    -------------------------piece--------------------        
-
+    -------------------------piece--------------------       
+end Behavioral;
                     
             
