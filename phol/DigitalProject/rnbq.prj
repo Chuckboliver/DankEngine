@@ -1,0 +1,2 @@
+vhdl work "demux1_3.vhd"
+vhdl work "decoder2to4_promote.vhd"

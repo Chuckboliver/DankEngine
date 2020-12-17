@@ -1,0 +1,5 @@
+[Inputs]
+=A[11:0]=
+[Outputs]
+send
+[BiDir]

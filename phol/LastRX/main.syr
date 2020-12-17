@@ -1,0 +1,1197 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\rx_To_Display.vf" into library work
+Parsing module <rx_To_Display>.
+Analyzing Verilog file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\main.vf" into library work
+Parsing module <rx_To_Display_MUSER_main>.
+Parsing module <main>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_rx_used.vhd" into library work
+Parsing entity <serial_rx>.
+Parsing architecture <Behavioral> of entity <serial_rx>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\register16bits.vhd" into library work
+Parsing entity <register16bits>.
+Parsing architecture <Behavioral> of entity <register16bits>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\promote_Decoder_LED.vhd" into library work
+Parsing entity <promote_Decoder_LED>.
+Parsing architecture <Behavioral> of entity <promote_decoder_led>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" into library work
+Parsing entity <move_7seg_decoder>.
+Parsing architecture <Behavioral> of entity <move_7seg_decoder>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Error_Decoder_LED.vhd" into library work
+Parsing entity <Error_Decoder_LED>.
+Parsing architecture <Behavioral> of entity <error_decoder_led>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" into library work
+Parsing entity <EndGame_Decoder_LED>.
+Parsing architecture <Behavioral> of entity <endgame_decoder_led>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\demux1to4.vhd" into library work
+Parsing entity <demux1to4>.
+Parsing architecture <Behavioral> of entity <demux1to4>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\checkEmptyRegister16bits.vhd" into library work
+Parsing entity <checkEmptyRegister16bits>.
+Parsing architecture <Behavioral> of entity <checkemptyregister16bits>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_gen_used.vhd" into library work
+Parsing entity <serial_gen>.
+Parsing architecture <Behavioral> of entity <serial_gen>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" into library work
+Parsing entity <Mux5to1>.
+Parsing architecture <Behavioral> of entity <mux5to1>.
+Parsing VHDL file "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" into library work
+Parsing entity <addHeader>.
+Parsing architecture <Behavioral> of entity <addheader>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <main>.
+
+Elaborating module <rx_To_Display_MUSER_main>.
+Going to vhdl side to elaborate module serial_rx
+
+Elaborating entity <serial_rx> (architecture <Behavioral>) with generics from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_rx_used.vhd" Line 102. Case statement is complete. others clause is never selected
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module demux1to4
+
+Elaborating entity <demux1to4> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\demux1to4.vhd" Line 22: Using initial value ('.','.','.') for header since it is never assigned
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\demux1to4.vhd" Line 29: header should be on the sensitivity list of the process
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module register16bits
+
+Elaborating entity <register16bits> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module register16bits
+
+Elaborating entity <register16bits> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:758 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\register16bits.vhd" Line 32: Replacing existing netlist register16bits(Behavioral)
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module register16bits
+
+Elaborating entity <register16bits> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module register16bits
+
+Elaborating entity <register16bits> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module checkEmptyRegister16bits
+
+Elaborating entity <checkEmptyRegister16bits> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module checkEmptyRegister16bits
+
+Elaborating entity <checkEmptyRegister16bits> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:758 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\checkEmptyRegister16bits.vhd" Line 5: Replacing existing netlist checkEmptyRegister16bits(Behavioral)
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module checkEmptyRegister16bits
+
+Elaborating entity <checkEmptyRegister16bits> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module checkEmptyRegister16bits
+
+Elaborating entity <checkEmptyRegister16bits> (architecture <Behavioral>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module move_7seg_decoder
+
+Elaborating entity <move_7seg_decoder> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 25: Using initial value ('.','.','.') for first_move_in since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 26: Using initial value ('.','.','.') for second_move_in since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 27: Using initial value ('.','.','.') for third_move_in since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 28: Using initial value ('.','.','.') for forth_move_in since it is never assigned
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 60. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 88. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 116. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd" Line 144. Case statement is complete. others clause is never selected
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module Error_Decoder_LED
+
+Elaborating entity <Error_Decoder_LED> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Error_Decoder_LED.vhd" Line 15: Using initial value ('.','.','.') for realdata since it is never assigned
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Error_Decoder_LED.vhd" Line 20: nodata should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Error_Decoder_LED.vhd" Line 23: realdata should be on the sensitivity list of the process
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module promote_Decoder_LED
+
+Elaborating entity <promote_Decoder_LED> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\promote_Decoder_LED.vhd" Line 14: Using initial value ('.','.') for realdata since it is never assigned
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\promote_Decoder_LED.vhd" Line 19: nodata should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\promote_Decoder_LED.vhd" Line 22: realdata should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\promote_Decoder_LED.vhd" Line 27. Case statement is complete. others clause is never selected
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module EndGame_Decoder_LED
+
+Elaborating entity <EndGame_Decoder_LED> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" Line 45: Using initial value '.' for wintype since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" Line 46: Using initial value ('.','.') for whowin since it is never assigned
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" Line 51: nodata should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" Line 56: wintype should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" Line 59. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd" Line 61: whowin should be on the sensitivity list of the process
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module addHeader
+
+Elaborating entity <addHeader> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 57. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 140: sel_alp should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 146: sel_alp should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 179: sel_num should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 185: sel_num should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 198: alphabet_sent1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd" Line 215: rnbq should be on the sensitivity list of the process
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module serial_gen
+
+Elaborating entity <serial_gen> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_gen_used.vhd" Line 26: Using initial value ('.','.','.') for intruc_set since it is never assigned
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_gen_used.vhd" Line 102. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_gen_used.vhd" Line 162. Case statement is complete. others clause is never selected
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module Mux5to1
+
+Elaborating entity <Mux5to1> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 21: Using initial value ('.','.','.') for ng_header since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 22: Using initial value ('.','.','.') for cs_header since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 23: Using initial value ('.','.','.') for sl_header since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 24: Using initial value ('.','.','.') for mv_header since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 25: Using initial value ('.','.','.') for pi_header since it is never assigned
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 31: ng_header should be on the sensitivity list of the process
+WARNING:HDLCompiler:321 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 31: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 36: cs_header should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 40: sl_header should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 44: mv_header should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd" Line 48: pi_header should be on the sensitivity list of the process
+Back to verilog to continue elaboration
+
+Elaborating module <GND>.
+
+Elaborating module <VCC>.
+
+Elaborating module <BUF>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <main>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\main.vf".
+INFO:Xst:3210 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\main.vf" line 170: Output port <LED> of the instance <XLXI_2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\main.vf" line 170: Output port <segment_sl> of the instance <XLXI_2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\main.vf" line 189: Output port <ready> of the instance <XLXI_4> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <main> synthesized.
+
+Synthesizing Unit <rx_To_Display_MUSER_main>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\main.vf".
+    Summary:
+	no macro.
+Unit <rx_To_Display_MUSER_main> synthesized.
+
+Synthesizing Unit <serial_rx>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_rx_used.vhd".
+        CLKS_PER_BIT = 2083
+    Found 1-bit register for signal <RX_Data>.
+    Found 1-bit register for signal <rx_data_done>.
+    Found 12-bit register for signal <Clk_Count>.
+    Found 4-bit register for signal <Bit_Index>.
+    Found 3-bit register for signal <state>.
+    Found 16-bit register for signal <RX_Data_Output>.
+    Found 1-bit register for signal <RX_Data_R>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clock (rising_edge)                            |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <Bit_Index[3]_GND_6_o_add_16_OUT> created at line 81.
+    Found 12-bit adder for signal <Clk_Count[11]_GND_6_o_add_28_OUT> created at line 90.
+    Found 12-bit comparator greater for signal <n0009> created at line 68
+    Found 4-bit comparator greater for signal <Bit_Index[3]_GND_6_o_LessThan_11_o> created at line 74
+    Found 4-bit comparator greater for signal <GND_6_o_Bit_Index[3]_LessThan_15_o> created at line 80
+    Found 4-bit comparator greater for signal <Bit_Index[3]_PWR_6_o_LessThan_16_o> created at line 80
+    Found 12-bit comparator greater for signal <Clk_Count[11]_PWR_6_o_LessThan_28_o> created at line 89
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred  26 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <serial_rx> synthesized.
+
+Synthesizing Unit <demux1to4>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\demux1to4.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error_Out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <promote_Out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <end_Game_Out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bot_Move_Out<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred  64 Latch(s).
+	inferred  64 Multiplexer(s).
+Unit <demux1to4> synthesized.
+
+Synthesizing Unit <register16bits>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\register16bits.vhd".
+    Found 16-bit register for signal <para_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <register16bits> synthesized.
+
+Synthesizing Unit <checkEmptyRegister16bits>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\checkEmptyRegister16bits.vhd".
+    Summary:
+	no macro.
+Unit <checkEmptyRegister16bits> synthesized.
+
+Synthesizing Unit <move_7seg_decoder>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\move_7seg_decoder.vhd".
+        CLKS_PER_Round = 2083
+WARNING:Xst:647 - Input <data_move<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <data_move<15:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 7-bit register for signal <out_7seg>.
+    Found 12-bit register for signal <Clk_Count>.
+    Found 2-bit register for signal <state>.
+    Found 4-bit register for signal <common_7seg_FPGA>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clock (rising_edge)                            |
+    | Power Up State     | first                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 12-bit adder for signal <Clk_Count[11]_GND_80_o_add_22_OUT> created at line 125.
+    Found 7-bit 4-to-1 multiplexer for signal <_n0066> created at line 38.
+    Found 12-bit comparator greater for signal <Clk_Count[11]_PWR_81_o_LessThan_22_o> created at line 124
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <move_7seg_decoder> synthesized.
+
+Synthesizing Unit <Error_Decoder_LED>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Error_Decoder_LED.vhd".
+WARNING:Xst:647 - Input <inp<9:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <inp<15:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <Error_Decoder_LED> synthesized.
+
+Synthesizing Unit <promote_Decoder_LED>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\promote_Decoder_LED.vhd".
+WARNING:Xst:647 - Input <inp<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <inp<15:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <promote_Decoder_LED> synthesized.
+
+Synthesizing Unit <EndGame_Decoder_LED>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\EndGame_Decoder_LED.vhd".
+WARNING:Xst:647 - Input <inp<9:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <inp<15:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <EndGame_Decoder_LED> synthesized.
+
+Synthesizing Unit <addHeader>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\addHeader.vhd".
+    Found 1-bit register for signal <sel_alp>.
+    Found 1-bit register for signal <sel_num>.
+    Found 3-bit register for signal <COUNT>.
+    Found 3-bit register for signal <alphabet_sent1>.
+    Found 3-bit register for signal <alphabet_sent2>.
+    Found 3-bit register for signal <number_sent1>.
+    Found 3-bit register for signal <number_sent2>.
+    Found 3-bit register for signal <setLevel>.
+    Found 3-bit adder for signal <setLevel[2]_GND_86_o_add_6_OUT> created at line 73.
+    Found 3-bit adder for signal <COUNT[2]_GND_86_o_add_17_OUT> created at line 111.
+    Found 3-bit subtractor for signal <GND_86_o_GND_86_o_sub_10_OUT<2:0>> created at line 80.
+    Found 8x7-bit Read Only RAM for signal <segment_sl>
+    Found 16x2-bit Read Only RAM for signal <rnbq>
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <move_head<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred  14 Latch(s).
+	inferred   6 Multiplexer(s).
+Unit <addHeader> synthesized.
+
+Synthesizing Unit <serial_gen>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\serial_gen_used.vhd".
+        CLKS_PER_BIT = 2083
+        CLKS_BUTTON = 100
+    Found 12-bit register for signal <Clk_Count>.
+    Found 4-bit register for signal <Bit_Index>.
+    Found 16-bit register for signal <TX_Data>.
+    Found 3-bit register for signal <state>.
+    Found 7-bit register for signal <ClkCountFor_Button>.
+    Found 1-bit register for signal <tx>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clock (rising_edge)                            |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit adder for signal <ClkCountFor_Button[6]_GND_104_o_add_40_OUT> created at line 118.
+    Found 4-bit adder for signal <Bit_Index[3]_GND_104_o_add_54_OUT> created at line 142.
+    Found 12-bit adder for signal <Clk_Count[11]_GND_104_o_add_61_OUT> created at line 153.
+    Found 1-bit 16-to-1 multiplexer for signal <Bit_Index[3]_TX_Data[15]_Mux_50_o> created at line 135.
+    Found 4-bit comparator greater for signal <Bit_Index[3]_PWR_89_o_LessThan_17_o> created at line 76
+    Found 4-bit comparator greater for signal <Bit_Index[3]_GND_104_o_LessThan_54_o> created at line 141
+    Found 12-bit comparator greater for signal <Clk_Count[11]_PWR_89_o_LessThan_61_o> created at line 152
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred  14 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <serial_gen> synthesized.
+
+Synthesizing Unit <Mux5to1>.
+    Related source file is "C:\Users\Ken\OneDrive - KMITL\Digital System Fundamentals\githubDigitalAssign\phol\LastRX\Mux5to1.vhd".
+WARNING:Xst:647 - Input <newGame_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out_data<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred  16 Latch(s).
+	inferred  51 Multiplexer(s).
+Unit <Mux5to1> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x2-bit single-port Read Only RAM                    : 1
+ 8x7-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 8
+ 12-bit adder                                          : 3
+ 3-bit adder                                           : 1
+ 3-bit addsub                                          : 1
+ 4-bit adder                                           : 2
+ 7-bit adder                                           : 1
+# Registers                                            : 26
+ 1-bit register                                        : 6
+ 12-bit register                                       : 3
+ 16-bit register                                       : 6
+ 3-bit register                                        : 6
+ 4-bit register                                        : 3
+ 7-bit register                                        : 2
+# Latches                                              : 94
+ 1-bit latch                                           : 94
+# Comparators                                          : 9
+ 12-bit comparator greater                             : 4
+ 4-bit comparator greater                              : 5
+# Multiplexers                                         : 166
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 133
+ 12-bit 2-to-1 multiplexer                             : 9
+ 2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 6
+ 4-bit 2-to-1 multiplexer                              : 11
+ 7-bit 2-to-1 multiplexer                              : 2
+ 7-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 3
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <move_head_0> (without init value) has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <move_head_14> (without init value) has a constant value of 1 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1294 - Latch <out_data_15> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_14> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_13> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_12> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_11> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_10> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_9> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_8> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_7> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_6> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_5> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_4> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_3> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_2> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_1> is equivalent to a wire in block <XLXI_4>.
+WARNING:Xst:1294 - Latch <out_data_0> is equivalent to a wire in block <XLXI_4>.
+
+Synthesizing (advanced) Unit <addHeader>.
+The following registers are absorbed into counter <COUNT>: 1 register on signal <COUNT>.
+INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <setLevel> prevents it from being combined with the RAM <Mram_segment_sl> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 7-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <setLevel>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <segment_sl>    |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_rnbq> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 2-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <piece>         |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <rnbq>          |          |
+    -----------------------------------------------------------------------
+Unit <addHeader> synthesized (advanced).
+
+Synthesizing (advanced) Unit <move_7seg_decoder>.
+The following registers are absorbed into counter <Clk_Count>: 1 register on signal <Clk_Count>.
+Unit <move_7seg_decoder> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x2-bit single-port distributed Read Only RAM        : 1
+ 8x7-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 6
+ 12-bit adder                                          : 2
+ 3-bit addsub                                          : 1
+ 4-bit adder                                           : 2
+ 7-bit adder                                           : 1
+# Counters                                             : 2
+ 12-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 167
+ Flip-Flops                                            : 167
+# Comparators                                          : 9
+ 12-bit comparator greater                             : 4
+ 4-bit comparator greater                              : 5
+# Multiplexers                                         : 165
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 133
+ 12-bit 2-to-1 multiplexer                             : 9
+ 2-bit 2-to-1 multiplexer                              : 2
+ 3-bit 2-to-1 multiplexer                              : 6
+ 4-bit 2-to-1 multiplexer                              : 11
+ 7-bit 2-to-1 multiplexer                              : 2
+ 7-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <move_head_0> (without init value) has a constant value of 0 in block <addHeader>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <move_head_14> (without init value) has a constant value of 1 in block <addHeader>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_1/XLXI_1/FSM_0> on signal <state[1:3]> with user encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ idle         | 000
+ rx_start_bit | 001
+ rx_data_bits | 010
+ rx_stop_bit  | 011
+ cleanup      | 100
+--------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_1/XLXI_11/FSM_1> on signal <state[1:2]> with user encoding.
+--------------------
+ State  | Encoding
+--------------------
+ first  | 00
+ second | 01
+ third  | 10
+ forth  | 11
+--------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_3/FSM_2> on signal <state[1:3]> with user encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ idle         | 000
+ tx_start_bit | 001
+ tx_data_bits | 010
+ tx_stop_bit  | 011
+ cleanup      | 100
+--------------------------
+
+Optimizing unit <main> ...
+
+Optimizing unit <register16bits> ...
+
+Optimizing unit <addHeader> ...
+
+Optimizing unit <rx_To_Display_MUSER_main> ...
+
+Optimizing unit <serial_rx> ...
+
+Optimizing unit <move_7seg_decoder> ...
+
+Optimizing unit <demux1to4> ...
+WARNING:Xst:1710 - FF/Latch <bot_Move_Out_15> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_Out_14> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <promote_Out_14> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <end_Game_Out_13> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <bot_Move_Out_15> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_Out_14> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <promote_Out_14> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <end_Game_Out_13> (without init value) has a constant value of 0 in block <demux1to4>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <bot_Move_Out_14> in Unit <demux1to4> is equivalent to the following FF/Latch, which will be removed : <bot_Move_Out_13> 
+
+Optimizing unit <serial_gen> ...
+
+Optimizing unit <Mux5to1> ...
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_3/TX_Data_13 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_15> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_14> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_13> (without init value) has a constant value of 1 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_11> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_10> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_9> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_8> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_7> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_6> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_5> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_4> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_3> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_2> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_1> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_4/out_data_0> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_0> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_1/XLXI_4/para_out_14> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_1/XLXI_6/para_out_15> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_1/XLXI_3/para_out_13> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/Bit_Index_3> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_15> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_14> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_11> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_10> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_9> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_8> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_5> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_4> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_3> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_2> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_3/TX_Data_1> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_15> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_14> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_13> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_5/para_out_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_13> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_1/XLXI_2/error_Out_15> of sequential type is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/alphabet_sent1_0> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_10> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/alphabet_sent1_1> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_11> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/number_sent1_2> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_9> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/number_sent1_1> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_8> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/alphabet_sent2_2> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_6> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/number_sent1_0> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_7> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/alphabet_sent2_1> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_5> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/alphabet_sent2_0> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_4> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/number_sent2_1> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_2> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/number_sent2_2> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_3> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/number_sent2_0> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/move_head_1> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_3/TX_Data_13> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_4/out_data_12> is unconnected in block <main>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_3/TX_Data_12> is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/COUNT_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/COUNT_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/COUNT_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/setLevel_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/setLevel_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/setLevel_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/move_head_12> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/alphabet_sent1_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/sel_num> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <XLXI_2/sel_alp> of sequential type is unconnected in block <main>.
+INFO:Xst:2261 - The FF/Latch <XLXI_1/XLXI_1/state_FSM_FFd1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <XLXI_1/XLXI_1/rx_data_done> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 5.
+INFO:Xst:2260 - The FF/Latch <XLXI_1/XLXI_2/bot_Move_Out_13> in Unit <main> is equivalent to the following FF/Latch : <XLXI_1/XLXI_2/bot_Move_Out_14> 
+INFO:Xst:2261 - The FF/Latch <XLXI_1/XLXI_2/bot_Move_Out_13> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <XLXI_1/XLXI_2/bot_Move_Out_14> 
+INFO:Xst:2261 - The FF/Latch <XLXI_1/XLXI_6/para_out_14> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <XLXI_1/XLXI_6/para_out_13> 
+FlipFlop XLXI_1/XLXI_3/para_out_12 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+Processing Unit <main> :
+	Found 2-bit shift register for signal <XLXI_1/XLXI_1/RX_Data>.
+Unit <main> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 134
+ Flip-Flops                                            : 134
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 328
+#      BUF                         : 1
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 33
+#      LUT2                        : 19
+#      LUT3                        : 66
+#      LUT4                        : 48
+#      LUT5                        : 24
+#      LUT6                        : 57
+#      MUXCY                       : 33
+#      MUXF7                       : 5
+#      VCC                         : 1
+#      XORCY                       : 36
+# FlipFlops/Latches                : 182
+#      FD                          : 32
+#      FDC                         : 48
+#      FDE                         : 44
+#      FDRE                        : 7
+#      FDSE                        : 4
+#      LD                          : 47
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 25
+#      IBUF                        : 2
+#      OBUF                        : 23
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             181  out of  11440     1%  
+ Number of Slice LUTs:                  252  out of   5720     4%  
+    Number used as Logic:               251  out of   5720     4%  
+    Number used as Memory:                1  out of   1440     0%  
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    279
+   Number with an unused Flip Flop:      98  out of    279    35%  
+   Number with an unused LUT:            27  out of    279     9%  
+   Number of fully used LUT-FF pairs:   154  out of    279    55%  
+   Number of unique control sets:        13
+
+IO Utilization: 
+ Number of IOs:                          50
+ Number of bonded IOBs:                  26  out of    102    25%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------+--------------------------------------+-------+
+Clock Signal                                       | Clock buffer(FF name)                | Load  |
+---------------------------------------------------+--------------------------------------+-------+
+clk_P123                                           | BUFGP                                | 88    |
+XLXI_1/XLXI_1/state_FSM_FFd1                       | BUFG                                 | 48    |
+XLXI_1/XLXI_2/_n0145<3>(XLXI_1/XLXI_2/_n0145<0>1:O)| NONE(*)(XLXI_1/XLXI_2/end_Game_Out_0)| 15    |
+XLXI_1/XLXI_2/_n0145<2>(XLXI_1/XLXI_2/_n0145<1>1:O)| NONE(*)(XLXI_1/XLXI_2/promote_Out_0) | 15    |
+XLXI_1/XLXI_2/_n0145<0>(XLXI_1/XLXI_2/_n0145<3>1:O)| NONE(*)(XLXI_1/XLXI_2/bot_Move_Out_0)| 14    |
+XLXI_1/XLXI_2/_n0145<1>(XLXI_1/XLXI_2/_n0145<2>1:O)| NONE(*)(XLXI_1/XLXI_2/error_Out_10)  | 3     |
+---------------------------------------------------+--------------------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.941ns (Maximum Frequency: 202.407MHz)
+   Minimum input arrival time before clock: 3.185ns
+   Maximum output required time after clock: 5.737ns
+   Maximum combinational path delay: 6.473ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_P123'
+  Clock period: 4.941ns (frequency: 202.407MHz)
+  Total number of paths / destination ports: 2298 / 141
+-------------------------------------------------------------------------
+Delay:               4.941ns (Levels of Logic = 4)
+  Source:            XLXI_1/XLXI_1/Clk_Count_9 (FF)
+  Destination:       XLXI_1/XLXI_1/Clk_Count_11 (FF)
+  Source Clock:      clk_P123 rising
+  Destination Clock: clk_P123 rising
+
+  Data Path: XLXI_1/XLXI_1/Clk_Count_9 to XLXI_1/XLXI_1/Clk_Count_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.447   1.079  XLXI_1/XLXI_1/Clk_Count_9 (XLXI_1/XLXI_1/Clk_Count_9)
+     LUT6:I0->O            1   0.203   0.580  XLXI_1/XLXI_1/Clk_Count[11]_PWR_6_o_LessThan_28_o11 (XLXI_1/XLXI_1/Clk_Count[11]_PWR_6_o_LessThan_28_o1)
+     LUT6:I5->O           16   0.205   1.233  XLXI_1/XLXI_1/Clk_Count[11]_PWR_6_o_LessThan_28_o12 (XLXI_1/XLXI_1/Clk_Count[11]_PWR_6_o_LessThan_28_o)
+     LUT6:I3->O            1   0.205   0.684  XLXI_1/XLXI_1/Mmux__n011813 (XLXI_1/XLXI_1/_n0118<10>)
+     LUT3:I1->O            1   0.203   0.000  XLXI_1/XLXI_1/Clk_Count_2_rstpot (XLXI_1/XLXI_1/Clk_Count_2_rstpot)
+     FD:D                      0.102          XLXI_1/XLXI_1/Clk_Count_2
+    ----------------------------------------
+    Total                      4.941ns (1.365ns logic, 3.576ns route)
+                                       (27.6% logic, 72.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_1/XLXI_1/state_FSM_FFd1'
+  Total number of paths / destination ports: 48 / 48
+-------------------------------------------------------------------------
+Offset:              3.185ns (Levels of Logic = 1)
+  Source:            ng_SW_P121 (PAD)
+  Destination:       XLXI_1/XLXI_4/para_out_15 (FF)
+  Destination Clock: XLXI_1/XLXI_1/state_FSM_FFd1 rising
+
+  Data Path: ng_SW_P121 to XLXI_1/XLXI_4/para_out_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            49   1.222   1.533  ng_SW_P121_IBUF (ng_SW_P121_IBUF)
+     FDC:CLR                   0.430          XLXI_1/XLXI_4/para_out_0
+    ----------------------------------------
+    Total                      3.185ns (1.652ns logic, 1.533ns route)
+                                       (51.9% logic, 48.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_P123'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.801ns (Levels of Logic = 1)
+  Source:            rx_P97 (PAD)
+  Destination:       XLXI_1/XLXI_1/Mshreg_RX_Data (FF)
+  Destination Clock: clk_P123 rising
+
+  Data Path: rx_P97 to XLXI_1/XLXI_1/Mshreg_RX_Data
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  rx_P97_IBUF (rx_P97_IBUF)
+     SRLC16E:D                -0.060          XLXI_1/XLXI_1/Mshreg_RX_Data
+    ----------------------------------------
+    Total                      1.801ns (1.222ns logic, 0.579ns route)
+                                       (67.9% logic, 32.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_P123'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            XLXI_1/XLXI_11/common_7seg_FPGA_3 (FF)
+  Destination:       common_seg_FPGA<3> (PAD)
+  Source Clock:      clk_P123 rising
+
+  Data Path: XLXI_1/XLXI_11/common_7seg_FPGA_3 to common_seg_FPGA<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q             1   0.447   0.579  XLXI_1/XLXI_11/common_7seg_FPGA_3 (XLXI_1/XLXI_11/common_7seg_FPGA_3)
+     OBUF:I->O                 2.571          common_seg_FPGA_3_OBUF (common_seg_FPGA<3>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_1/XLXI_1/state_FSM_FFd1'
+  Total number of paths / destination ports: 47 / 10
+-------------------------------------------------------------------------
+Offset:              5.737ns (Levels of Logic = 3)
+  Source:            XLXI_1/XLXI_4/para_out_15 (FF)
+  Destination:       promote_LED<3> (PAD)
+  Source Clock:      XLXI_1/XLXI_1/state_FSM_FFd1 rising
+
+  Data Path: XLXI_1/XLXI_4/para_out_15 to promote_LED<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.447   0.924  XLXI_1/XLXI_4/para_out_15 (XLXI_1/XLXI_4/para_out_15)
+     LUT5:I0->O            1   0.203   0.808  XLXI_1/XLXI_13/Mmux_LED42 (XLXI_1/XLXI_13/Mmux_LED41)
+     LUT6:I3->O            1   0.205   0.579  XLXI_1/XLXI_13/Mmux_LED43 (promote_LED_3_OBUF)
+     OBUF:I->O                 2.571          promote_LED_3_OBUF (promote_LED<3>)
+    ----------------------------------------
+    Total                      5.737ns (3.426ns logic, 2.311ns route)
+                                       (59.7% logic, 40.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               6.473ns (Levels of Logic = 3)
+  Source:            ng_SW_P121 (PAD)
+  Destination:       MN0_P95 (PAD)
+
+  Data Path: ng_SW_P121 to MN0_P95
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            49   1.222   1.533  ng_SW_P121_IBUF (ng_SW_P121_IBUF)
+     BUF:I->O              1   0.568   0.579  XLXI_7 (MN0_P95_OBUF)
+     OBUF:I->O                 2.571          MN0_P95_OBUF (MN0_P95)
+    ----------------------------------------
+    Total                      6.473ns (4.361ns logic, 2.112ns route)
+                                       (67.4% logic, 32.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock XLXI_1/XLXI_1/state_FSM_FFd1
+-----------------------+---------+---------+---------+---------+
+                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------+---------+---------+---------+---------+
+XLXI_1/XLXI_2/_n0145<0>|         |    1.179|         |         |
+XLXI_1/XLXI_2/_n0145<1>|         |    1.179|         |         |
+XLXI_1/XLXI_2/_n0145<2>|         |    1.179|         |         |
+XLXI_1/XLXI_2/_n0145<3>|         |    1.216|         |         |
+-----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_1/XLXI_2/_n0145<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_P123       |         |         |    2.325|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_1/XLXI_2/_n0145<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_P123       |         |         |    2.451|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_1/XLXI_2/_n0145<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_P123       |         |         |    2.451|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_1/XLXI_2/_n0145<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_P123       |         |         |    2.451|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_P123
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+XLXI_1/XLXI_1/state_FSM_FFd1|    4.992|         |         |         |
+clk_P123                    |    4.941|         |         |         |
+----------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.69 secs
+ 
+--> 
+
+Total memory usage is 4515636 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  262 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
+

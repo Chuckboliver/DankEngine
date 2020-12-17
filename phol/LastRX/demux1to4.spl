@@ -1,0 +1,8 @@
+[Inputs]
+=rx_in[15:0]=
+[Outputs]
+=bot_Move_Out[15:0]=
+=error_Out[15:0]=
+=promote_Out[15:0]=
+=end_Game_Out[15:0]=
+[BiDir]

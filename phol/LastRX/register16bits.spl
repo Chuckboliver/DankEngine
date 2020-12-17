@@ -1,0 +1,7 @@
+[Inputs]
+clk
+reset
+=para_in[15:0]=
+[Outputs]
+=para_out[15:0]=
+[BiDir]

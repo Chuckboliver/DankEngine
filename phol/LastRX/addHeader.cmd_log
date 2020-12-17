@@ -1,0 +1,2 @@
+vhdtdtfi -lib work addHeader.vhd -prj LastRX -o addHeader.spl -module addHeader -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 addHeader.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/addHeader.sym} 

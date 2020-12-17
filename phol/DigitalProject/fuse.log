@@ -1,0 +1,77 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit_isim_beh.exe" -prj "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit_beh.prj" "work.mainCircuit" "work.glbl" 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_move_input.vf" into library work
+Analyzing Verilog file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/encoder5to3_with_dataComp.vf" into library work
+Analyzing Verilog file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch16input.vf" into library work
+Analyzing Verilog file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/tx.vf" into library work
+Analyzing Verilog file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rx.vf" into library work
+Analyzing Verilog file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.vf" into library work
+Analyzing Verilog file "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_ng_sl_cl.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_rx_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/serial_gen_used.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg_12bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/register1bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/reg2bits.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/move_12bits_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mergeData.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/demux1_3.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder2to4_promote.vhd" into library work
+Parsing VHDL file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/decoder1to2_winType.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module AND2
+Compiling module INV
+Compiling module OR3B1
+Compiling module AND3
+Compiling module OR2
+Compiling module AND2B1
+Compiling module AND3B3
+Compiling module COMP4_HXILINX_mainCircuit
+Compiling module GND
+Compiling module OR3B3
+Compiling module encoder5to3_with_dataComp_MUSER_...
+Compiling module OR8_HXILINX_mainCircuit
+Compiling module OR4
+Compiling module FD4CE_HXILINX_mainCircuit
+Compiling module switch_move_input_MUSER_mainCirc...
+Compiling module debounceSwitch16input_MUSER_main...
+Compiling module VCC
+Compiling module tx_MUSER_mainCircuit
+Compiling module rx_MUSER_mainCircuit
+Compiling module mainCircuit
+Compiling module glbl
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity ProjectDigital [projectdigital_default]
+Compiling architecture behavioral of entity serial_gen [serial_gen_default]
+Compiling architecture rtl of entity Debounce_Switch [debounce_switch_default]
+Compiling architecture behavioral of entity mux71 [mux71_default]
+Compiling architecture behavioral of entity levelDecoder [leveldecoder_default]
+Compiling architecture behavioral of entity mergeData [mergedata_default]
+Compiling architecture behavioral of entity serial_rx [serial_rx_default]
+Compiling architecture behavioral of entity shift_register12 [shift_register12_default]
+Compiling architecture bhv of entity demux1_3 [demux1_3_default]
+Compiling architecture behavioral of entity move_12bits_to_7seg [move_12bits_to_7seg_default]
+Compiling architecture behavioral of entity register1bits [register1bits_default]
+Compiling architecture behavioral of entity decoder2to4_promote [decoder2to4_promote_default]
+Compiling architecture behavioral of entity decoder2to2_whoWin [decoder2to2_whowin_default]
+Compiling architecture behavioral of entity reg2bits [reg2bits_default]
+Compiling architecture behavioral of entity decoder1to2_winType [decoder1to2_wintype_default]
+Time Resolution for simulation is 1ps.
+Waiting for 12 sub-compilation(s) to finish...
+Compiled 35 VHDL Units
+Compiled 21 Verilog Units
+Built simulation executable C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit_isim_beh.exe
+Fuse Memory Usage: 42364 KB
+Fuse CPU Usage: 5624 ms

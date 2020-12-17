@@ -1,0 +1,228 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Wed Dec 16 22:14:26 2020
+# Process ID: 9436
+# Log file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_4/planAhead.log
+# Journal file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P30 [get_ports {common_move_FPGA[3]}]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports {common_move_FPGA[2]}]
+endgroup
+startgroup
+set_property package_pin P43 [get_ports {common_move_FPGA[1]}]
+endgroup
+startgroup
+set_property package_pin P44 [get_ports {common_move_FPGA[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {common_move_FPGA[0]}]]
+startgroup
+set_property package_pin P2 [get_ports {level_seg_ALT[6]}]
+endgroup
+startgroup
+set_property package_pin P143 [get_ports {level_seg_ALT[5]}]
+endgroup
+startgroup
+set_property package_pin P141 [get_ports {level_seg_ALT[4]}]
+endgroup
+startgroup
+set_property package_pin P139 [get_ports {level_seg_ALT[3]}]
+endgroup
+startgroup
+set_property package_pin P137 [get_ports {level_seg_ALT[2]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {level_seg_ALT[1]}]
+endgroup
+startgroup
+set_property package_pin P131 [get_ports {level_seg_ALT[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {level_seg_ALT[0]}]]
+startgroup
+set_property package_pin P111 [get_ports {promoteLED_ALT[3]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {promoteLED_ALT[2]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {promoteLED_ALT[1]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {promoteLED_ALT[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {promoteLED_ALT[0]}]]
+set_property is_loc_fixed true [get_ports [list  {promoteLED_ALT[0]}]]
+startgroup
+set_property package_pin P41 [get_ports {seg7_move_FPGA[6]}]
+endgroup
+startgroup
+set_property package_pin P40 [get_ports {seg7_move_FPGA[5]}]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports {seg7_move_FPGA[4]}]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports {seg7_move_FPGA[3]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {seg7_move_FPGA[2]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {seg7_move_FPGA[1]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {seg7_move_FPGA[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {switchForMove[15]}]]
+set_property package_pin "" [get_ports [list  {switchForMove[14]}]]
+startgroup
+set_property package_pin P5 [get_ports {switchForMove[15]}]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports {switchForMove[14]}]
+endgroup
+startgroup
+set_property package_pin P9 [get_ports {switchForMove[13]}]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports {switchForMove[12]}]
+endgroup
+startgroup
+set_property package_pin P14 [get_ports {switchForMove[11]}]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports {switchForMove[10]}]
+endgroup
+set_property package_pin "" [get_ports [list  {switchForMove[9]}]]
+startgroup
+set_property package_pin P23 [get_ports {switchForMove[8]}]
+endgroup
+startgroup
+set_property package_pin P21 [get_ports {switchForMove[9]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {switchForMove[9]}]]
+set_property is_loc_fixed true [get_ports [list  {switchForMove[9]}]]
+startgroup
+set_property package_pin P6 [get_ports {switchForMove[7]}]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports {switchForMove[6]}]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports {switchForMove[5]}]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports {switchForMove[4]}]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports {switchForMove[3]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {switchForMove[2]}]
+endgroup
+startgroup
+set_property package_pin P22 [get_ports {switchForMove[1]}]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports {switchForMove[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {switchForMove[0]}]]
+set_property is_loc_fixed true [get_ports [list  {switchForMove[0]}]]
+set_property package_pin "" [get_ports [list  bishop_PSW]]
+set_property is_loc_fixed true [get_ports [list  {level_seg_ALT[0]}]]
+startgroup
+set_property package_pin P127 [get_ports bishop_PSW]
+endgroup
+startgroup
+set_property package_pin P1 [get_ports blackSwitch]
+endgroup
+startgroup
+set_property package_pin P123 [get_ports clock_P123]
+endgroup
+startgroup
+set_property package_pin P126 [get_ports common_P126_ALT]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports downSwitch]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports ERR_MOV_ALT_LED]
+endgroup
+startgroup
+set_property package_pin P74 [get_ports ERR_PRO_LED_ALT]
+endgroup
+set_property is_loc_fixed false [get_ports [list  ERR_PRO_LED_ALT]]
+startgroup
+set_property package_pin P132 [get_ports knight_PSW]
+endgroup
+startgroup
+set_property package_pin P112 [get_ports newGame_Switch]
+endgroup
+startgroup
+set_property package_pin P124 [get_ports queen_PSW]
+endgroup
+set_property package_pin "" [get_ports [list  rook_PSW]]
+set_property package_pin "" [get_ports [list  RX_P97]]
+startgroup
+set_property package_pin P134 [get_ports rook_PSW]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports RX_P97]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports TX_P98]
+endgroup
+startgroup
+set_property package_pin P140 [get_ports upSwitch]
+endgroup
+startgroup
+set_property package_pin P142 [get_ports whiteSwitch]
+endgroup
+set_property package_pin "" [get_ports [list  winTypeLED_ALT]]
+startgroup
+set_property package_pin P144 [get_ports winTypeLED_ALT]
+endgroup
+update_compile_order -fileset sources_1
+save_constraints
+update_compile_order -fileset sources_1
+refresh_design
+startgroup
+set_property package_pin P44 [get_ports {common_move_FPGA[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {common_move_FPGA[0]}]]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+startgroup
+set_property package_pin P74 [get_ports ERR_PRO_LED_ALT]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports downSwitch]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports {winTypeLED_ALT[1]}]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports {winTypeLED_ALT[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {whoWin_ALT_LED[1]}]]
+startgroup
+set_property package_pin P80 [get_ports {whoWin_ALT_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports {whoWin_ALT_LED[1]}]
+endgroup
+save_constraints
+refresh_design
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+refresh_design
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

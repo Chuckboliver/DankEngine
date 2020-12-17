@@ -1,0 +1,7 @@
+[Inputs]
+CLK
+CLR
+d_in
+[Outputs]
+d_out
+[BiDir]

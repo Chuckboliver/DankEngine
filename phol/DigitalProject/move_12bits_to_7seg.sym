@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="move_12bits_to_7seg">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2020-12-15T17:49:37</timestamp>
+    <timestamp>2020-12-16T18:47:5</timestamp>
     <pin polarity="Input" x="0" y="-288" name="clock" />
     <pin polarity="Input" x="0" y="-224" name="first_Move_IN(2:0)" />
     <pin polarity="Input" x="0" y="-160" name="second_Move_IN(2:0)" />

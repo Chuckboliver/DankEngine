@@ -1,0 +1,2 @@
+vhdtdtfi -lib work Mux5to1.vhd -prj LastRX -o Mux5to1.spl -module Mux5to1 -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 Mux5to1.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/Mux5to1.sym} 

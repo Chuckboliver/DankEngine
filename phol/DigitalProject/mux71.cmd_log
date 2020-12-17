@@ -1,0 +1,2 @@
+vhdtdtfi -lib work mux71.vhd -prj DigitalProject -o mux71.spl -module mux71 -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 mux71.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mux71.sym} 

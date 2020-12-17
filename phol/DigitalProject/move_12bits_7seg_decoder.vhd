@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity move_12bits_to_7seg is
     generic(
-        CLKS_PER_Round:integer:= 305
+        CLKS_PER_Round:integer:= 2083
     );
     Port(
         first_Move_IN:in STD_LOGIC_VECTOR (2 downto 0);
@@ -132,9 +132,9 @@ begin
                     out_7seg<="1110000";
                     when "111"=> 
                     out_7seg<="1111111";
-									when others=>
-									out_7seg<="0000000";
-                            end case;
+						when others=>
+							out_7seg<="0000000";
+                     end case;
                     else
                         Clk_Count<=0;
                         state<=first;

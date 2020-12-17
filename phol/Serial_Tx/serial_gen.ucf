@@ -1,0 +1,22 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "clock" LOC = P123;
+NET "start" LOC = P45;
+NET "tx" LOC = P98;
+NET "data[15]" LOC = P112;
+NET "data[14]" LOC = P111;
+NET "data[13]" LOC = P105;
+NET "data[12]" LOC = P104;
+NET "data[11]" LOC = P102;
+NET "data[10]" LOC = P101;
+NET "data[9]" LOC = P100;
+NET "data[8]" LOC = P99;
+NET "data[7]" LOC = P55;
+NET "data[6]" LOC = P56;
+NET "data[5]" LOC = P57;
+NET "data[4]" LOC = P58;
+NET "data[3]" LOC = P59;
+NET "data[2]" LOC = P61;
+NET "data[1]" LOC = P62;
+NET "data[0]" LOC = P66;
