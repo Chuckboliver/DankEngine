@@ -33,21 +33,13 @@ architecture Behavioral of addHeader is
     -- move --
 begin
     -- new game --
-    NEW_GAME_PROC : process(newgame_switch)
+    PROC : process(newgame_switch, choose_side_switch, set_level_switch, alp, num, piece_switch)
     begin
         if newgame_switch = '1' then
             debug_led <= '1';
             data <= "0001000000000000";
             trigger <= '1';
-        else
-            debug_led <= '0';
-            trigger <= '0';
-        end if;
-    end process;
-    -- choose side --
-    CHOOSE_SIDE_PROC : process(choose_side_switch)
-    begin
-        if choose_side_switch(0) = '1' then
+        elsif choose_side_switch(0) = '1' then
             debug_led <= '1';
             data <= "0010000000000000";
             choose_side_LED <= "10";
@@ -57,15 +49,7 @@ begin
             data <= "0011000000000000";
             choose_side_LED <= "01";
             trigger <= '1';
-        else
-            debug_led <= '0';
-            trigger <= '0';
-        end if;
-    end process;
-    --set level --
-    SET_LEVEL_PROC : process(set_level_switch)
-    begin
-        if set_level_switch(0) = '1' then
+        elsif set_level_switch(0) = '1' then
             debug_led <= '1';
             if set_level = "000" then
                 set_level <= "000";
@@ -73,7 +57,6 @@ begin
             else
                 set_level <= set_level - 1;
                 trigger <= '1';
-            end if;
         elsif set_level_switch(1) = '1' then
             debug_led <= '1';
             if set_level = "100" then
@@ -82,33 +65,8 @@ begin
             else
                 set_level <= set_level + 1;
                 trigger <= '1';
-            end if;
-        else
-            debug_led <= '0';
-            trigger <= '0';
-        end if;
-    end process;
-    -----display set_level-----
-    DISPLAY_SET_LEVEL : process(set_level)
-    begin
-        case(set_level) is
-            when "000" =>
-                set_level_LED <= "0110000";
-            when "001" =>
-                set_level_LED <= "1101101";
-            when "010" =>
-                set_level_LED <= "1111001";
-            when "011" =>
-                set_level_LED <= "0110011";
-            when "100" => 
-                set_level_LED <= "1011011";
-        end case;
-    end process;
-    ------------------------- move--------------------
-    MOVE_PROC : process(alp, num)
-    begin
-        -- alp is pressed or num is pressed--
-        if alp /= "00000000" or num /= "00000000"then
+        
+        elsif alp /= "00000000" or num /= "00000000"then
             debug_led <= '1';
             if alp /= "00000000" then
                 case(alp) is
@@ -166,16 +124,7 @@ begin
                 data <= "011" & from_file & from_rank & to_file & to_rank & '0';
                 trigger <= '1';
             end if;
-        else
-            debug_led <= '0';
-            trigger <= '0';
-        end if;
-    end process;
-    ------------------------- move---------------------
-    -------------------------piece--------------------
-    PIECE_PROC : process(piece_switch)
-    begin
-        if piece_switch /= "0000" then
+        elsif piece_switch /= "0000" then
             debug_led <= '1';
             case(piece_switch) is
                 when "1000" =>
@@ -186,6 +135,8 @@ begin
                     data <= "10010000";
                 when "0001" =>
                     data <= "10011000";
+                when others => 
+                   data <= "10000000";
             end case;
             trigger <= '1';
         else
@@ -193,7 +144,24 @@ begin
             trigger <= '0';
         end if;
     end process;
-    -------------------------piece--------------------       
+  
+    -----display set_level-----
+    DISPLAY_SET_LEVEL : process(set_level)
+    begin
+        case(set_level) is
+            when "000" =>
+                set_level_LED <= "0110000";
+            when "001" =>
+                set_level_LED <= "1101101";
+            when "010" =>
+                set_level_LED <= "1111001";
+            when "011" =>
+                set_level_LED <= "0110011";
+            when "100" => 
+                set_level_LED <= "1011011";
+        end case;
+    end process;
+       
 end Behavioral;
                     
             
