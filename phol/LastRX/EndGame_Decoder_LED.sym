@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="EndGame_Decoder_LED">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2020-12-17T6:29:33</timestamp>
+    <timestamp>2020-12-17T10:3:54</timestamp>
     <pin polarity="Input" x="0" y="-96" name="nodata" />
     <pin polarity="Input" x="0" y="-32" name="inp(15:0)" />
     <pin polarity="Output" x="384" y="32" name="whoWin_LED(1:0)" />

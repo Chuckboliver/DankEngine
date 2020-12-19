@@ -1,0 +1,2 @@
+vhdtdtfi -lib work ../LastRX/move_7seg_decoder.vhd -prj LastTime -o move_7seg_decoder.spl -module move_7seg_decoder -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 move_7seg_decoder.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastTime/move_7seg_decoder.sym} 

@@ -1,0 +1,2 @@
+verilog work "main.vf"
+vhdl work "serial_gen.vhd"

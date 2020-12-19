@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : main.vf
-// /___/   /\     Timestamp : 12/17/2020 14:09:41
+// /___/   /\     Timestamp : 12/17/2020 17:58:09
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -122,9 +122,12 @@ module main(alpha_mv_P5toP23,
             up_down_P140_P138, 
             common_seg_FPGA, 
             error_LED, 
-            MN0_P95, 
+            L0_P82, 
+            L2_L1_P80_P81, 
+            L7_P67, 
             promote_LED, 
             seg7_FPGA, 
+            seg7_setlevel_alt, 
             tx_P98, 
             whoWin_P88_P92, 
             winTypeP80_P81);
@@ -139,22 +142,20 @@ module main(alpha_mv_P5toP23,
     input [1:0] up_down_P140_P138;
    output [3:0] common_seg_FPGA;
    output [1:0] error_LED;
-   output MN0_P95;
+   output L0_P82;
+   output [1:0] L2_L1_P80_P81;
+   output L7_P67;
    output [3:0] promote_LED;
    output [6:0] seg7_FPGA;
+   output [6:0] seg7_setlevel_alt;
    output tx_P98;
    output [1:0] whoWin_P88_P92;
    output [1:0] winTypeP80_P81;
    
-   wire [15:0] XLXN_1;
-   wire [15:0] XLXN_2;
-   wire [15:0] XLXN_3;
-   wire [15:0] XLXN_4;
-   wire [15:0] XLXN_5;
-   wire [15:0] XLXN_6;
-   wire XLXN_16;
-   wire XLXN_30;
+   wire [15:0] XLXN_44;
+   wire L7_P67_DUMMY;
    
+   assign L7_P67 = L7_P67_DUMMY;
    rx_To_Display_MUSER_main  XLXI_1 (.clk_P123(clk_P123), 
                                     .rx_clear_endgame(ng_SW_P121), 
                                     .rx_clear_error(ng_SW_P121), 
@@ -167,34 +168,19 @@ module main(alpha_mv_P5toP23,
                                     .L7L6_P67P74(error_LED[1:0]), 
                                     .MN_P88_P92(whoWin_P88_P92[1:0]), 
                                     .move_7seg_FPGA(seg7_FPGA[6:0]));
-   addHeader  XLXI_2 (.alp(alpha_mv_P5toP23[7:0]), 
-                     .chooseSide(cs_SW_P1_P142[1:0]), 
-                     .clear_level(XLXN_16), 
-                     .clear_move(XLXN_16), 
-                     .newGame_switch(ng_SW_P121), 
-                     .num(num_mv_P6toP24[7:0]), 
-                     .piece(promote_sw[3:0]), 
-                     .updown_switch(up_down_P140_P138[1:0]), 
-                     .chooseSide_head(XLXN_2[15:0]), 
-                     .LED(), 
-                     .move_head(XLXN_4[15:0]), 
-                     .newGame_head(XLXN_1[15:0]), 
-                     .piece_out(XLXN_5[15:0]), 
-                     .segment_sl(), 
-                     .setLevel_head(XLXN_3[15:0]));
-   serial_gen  XLXI_3 (.clock(clk_P123), 
-                      .data(XLXN_6[15:0]), 
-                      .start(XLXN_30), 
+   serial_gen  XLXI_7 (.clock(clk_P123), 
+                      .data(XLXN_44[15:0]), 
+                      .start(L7_P67_DUMMY), 
                       .tx(tx_P98));
-   Mux5to1  XLXI_4 (.chooseSide_in(XLXN_2[15:0]), 
-                   .move_in(XLXN_4[15:0]), 
-                   .newGame_in(XLXN_1[15:0]), 
-                   .piece_in(XLXN_5[15:0]), 
-                   .set_level_in(XLXN_3[15:0]), 
-                   .out_data(XLXN_6[15:0]), 
-                   .ready());
-   GND  XLXI_5 (.G(XLXN_16));
-   VCC  XLXI_6 (.P(XLXN_30));
-   BUF  XLXI_7 (.I(ng_SW_P121), 
-               .O(MN0_P95));
+   addHeader  XLXI_8 (.alp(alpha_mv_P5toP23[7:0]), 
+                     .choose_side_switch(cs_SW_P1_P142[1:0]), 
+                     .newgame_switch(ng_SW_P121), 
+                     .num(num_mv_P6toP24[7:0]), 
+                     .piece_switch(promote_sw[3:0]), 
+                     .set_level_switch(up_down_P140_P138[1:0]), 
+                     .choose_side_LED(L2_L1_P80_P81[1:0]), 
+                     .data(XLXN_44[15:0]), 
+                     .debug_led(L0_P82), 
+                     .set_level_LED(seg7_setlevel_alt[6:0]), 
+                     .trigger(L7_P67_DUMMY));
 endmodule

@@ -22,14 +22,19 @@ architecture Behavioral of move_7seg_decoder is
     type all_States is(first, second,third,forth);
     signal state : all_States:=first;
     signal Clk_Count:integer range 0 to CLKS_PER_Round-1:=0;
-	   signal first_Move_IN: STD_LOGIC_VECTOR (2 downto 0):=data_move(12)&data_move(11)&data_move(10);
-     signal second_Move_IN: STD_LOGIC_VECTOR (2 downto 0):=data_move(9)&data_move(8)&data_move(7);
-       signal third_Move_IN: STD_LOGIC_VECTOR (2 downto 0):=data_move(6)&data_move(5)&data_move(4);
-       signal forth_Move_IN:STD_LOGIC_VECTOR (2 downto 0):=data_move(3)&data_move(2)&data_move(1);
+	   signal first_Move_IN: STD_LOGIC_VECTOR (2 downto 0):=(others=>'0');
+     signal second_Move_IN: STD_LOGIC_VECTOR (2 downto 0):=(others=>'0');
+       signal third_Move_IN: STD_LOGIC_VECTOR (2 downto 0):=(others=>'0');
+       signal forth_Move_IN:STD_LOGIC_VECTOR (2 downto 0):=(others=>'0');
 
 begin
 process(clock)
  begin
+ 
+ first_Move_IN<=data_move(12)&data_move(11)&data_move(10);
+ second_Move_IN<=data_move(9)&data_move(8)&data_move(7);
+ third_Move_IN<=data_move(6)&data_move(5)&data_move(4);
+ forth_Move_IN<=data_move(3)&data_move(2)&data_move(1);
         if rising_edge(clock) then
 		  if nodata='1' then
 		  common_7seg_FPGA<="1111";

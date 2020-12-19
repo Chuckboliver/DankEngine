@@ -31,13 +31,7 @@
         <signal name="L7L6_P67P74(1:0)" />
         <signal name="L5L4L3_P75_P78_P79(3:0)" />
         <signal name="L2L1_P80P81(1:0)" />
-        <signal name="XLXN_46(1:0)" />
         <signal name="MN_P88_P92(1:0)" />
-        <signal name="XLXN_48">
-        </signal>
-        <signal name="XLXN_49" />
-        <signal name="XLXN_50" />
-        <signal name="XLXN_51" />
         <port polarity="Input" name="clk_P123" />
         <port polarity="Input" name="rx_P97" />
         <port polarity="Input" name="rx_clear_move" />
@@ -51,7 +45,7 @@
         <port polarity="Output" name="L2L1_P80P81(1:0)" />
         <port polarity="Output" name="MN_P88_P92(1:0)" />
         <blockdef name="serial_rx">
-            <timestamp>2020-12-17T3:17:10</timestamp>
+            <timestamp>2020-12-17T10:6:4</timestamp>
             <rect width="256" x="64" y="-192" height="192" />
             <line x2="0" y1="-160" y2="-160" x1="64" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
@@ -60,7 +54,7 @@
             <line x2="384" y1="-32" y2="-32" x1="320" />
         </blockdef>
         <blockdef name="demux1to4">
-            <timestamp>2020-12-17T3:8:47</timestamp>
+            <timestamp>2020-12-17T10:5:54</timestamp>
             <rect width="352" x="64" y="-256" height="256" />
             <rect width="64" x="0" y="-236" height="24" />
             <line x2="0" y1="-224" y2="-224" x1="64" />
@@ -74,7 +68,7 @@
             <line x2="480" y1="-32" y2="-32" x1="416" />
         </blockdef>
         <blockdef name="register16bits">
-            <timestamp>2020-12-17T3:10:8</timestamp>
+            <timestamp>2020-12-17T10:5:44</timestamp>
             <rect width="320" x="64" y="-192" height="192" />
             <line x2="0" y1="-160" y2="-160" x1="64" />
             <line x2="0" y1="-96" y2="-96" x1="64" />
@@ -84,14 +78,14 @@
             <line x2="448" y1="-160" y2="-160" x1="384" />
         </blockdef>
         <blockdef name="checkEmptyRegister16bits">
-            <timestamp>2020-12-17T3:8:39</timestamp>
+            <timestamp>2020-12-17T10:5:32</timestamp>
             <rect width="256" x="64" y="-64" height="64" />
             <rect width="64" x="0" y="-44" height="24" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
         </blockdef>
         <blockdef name="move_7seg_decoder">
-            <timestamp>2020-12-17T3:30:21</timestamp>
+            <timestamp>2020-12-17T10:5:23</timestamp>
             <rect width="64" x="0" y="20" height="24" />
             <line x2="0" y1="32" y2="32" x1="64" />
             <rect width="64" x="448" y="20" height="24" />
@@ -103,7 +97,7 @@
             <rect width="384" x="64" y="-384" height="448" />
         </blockdef>
         <blockdef name="Error_Decoder_LED">
-            <timestamp>2020-12-17T3:8:27</timestamp>
+            <timestamp>2020-12-17T10:5:10</timestamp>
             <rect width="256" x="64" y="-128" height="128" />
             <line x2="0" y1="-96" y2="-96" x1="64" />
             <rect width="64" x="0" y="-44" height="24" />
@@ -112,7 +106,7 @@
             <line x2="384" y1="-96" y2="-96" x1="320" />
         </blockdef>
         <blockdef name="promote_Decoder_LED">
-            <timestamp>2020-12-17T3:9:49</timestamp>
+            <timestamp>2020-12-17T10:4:4</timestamp>
             <rect width="256" x="64" y="-128" height="128" />
             <line x2="0" y1="-96" y2="-96" x1="64" />
             <rect width="64" x="0" y="-44" height="24" />
@@ -121,7 +115,7 @@
             <line x2="384" y1="-96" y2="-96" x1="320" />
         </blockdef>
         <blockdef name="EndGame_Decoder_LED">
-            <timestamp>2020-12-17T6:29:33</timestamp>
+            <timestamp>2020-12-17T10:3:54</timestamp>
             <rect width="64" x="320" y="20" height="24" />
             <line x2="384" y1="32" y2="32" x1="320" />
             <rect width="64" x="320" y="84" height="24" />
@@ -187,8 +181,8 @@
         <block symbolname="move_7seg_decoder" name="XLXI_11">
             <blockpin signalname="clk_P123" name="clock" />
             <blockpin signalname="XLXN_15" name="nodata" />
-            <blockpin signalname="move_7seg_FPGA(6:0)" name="out_7seg(6:0)" />
             <blockpin signalname="XLXN_16(15:0)" name="data_move(15:0)" />
+            <blockpin signalname="move_7seg_FPGA(6:0)" name="out_7seg(6:0)" />
             <blockpin signalname="common_7seg_FPGA(3:0)" name="common_7seg_FPGA(3:0)" />
         </block>
         <block symbolname="Error_Decoder_LED" name="XLXI_12">

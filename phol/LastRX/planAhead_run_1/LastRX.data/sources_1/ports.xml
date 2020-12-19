@@ -45,6 +45,10 @@
 			<Port Id="1" Dir="OUT"/>
 			<Port Id="0" Dir="OUT"/>
 		</Bus>
+		<Bus Id="L2_L1_P80_P81">
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
 		<Bus Id="promote_LED">
 			<Port Id="3" Dir="OUT"/>
 			<Port Id="2" Dir="OUT"/>
@@ -52,6 +56,15 @@
 			<Port Id="0" Dir="OUT"/>
 		</Bus>
 		<Bus Id="seg7_FPGA">
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="seg7_setlevel_alt">
 			<Port Id="6" Dir="OUT"/>
 			<Port Id="5" Dir="OUT"/>
 			<Port Id="4" Dir="OUT"/>
@@ -71,7 +84,8 @@
 		<Port Id="clk_P123" Dir="IN"/>
 		<Port Id="ng_SW_P121" Dir="IN"/>
 		<Port Id="rx_P97" Dir="IN"/>
-		<Port Id="MN0_P95" Dir="OUT"/>
+		<Port Id="L0_P82" Dir="OUT"/>
+		<Port Id="L7_P67" Dir="OUT"/>
 		<Port Id="tx_P98" Dir="OUT"/>
 	</Ifc>
 </Interface>

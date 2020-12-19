@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: Mux5to1.prj
 
@@ -44,8 +44,8 @@ Parsing entity <Mux5to1>.
 Parsing architecture <Behavioral> of entity <mux5to1>.
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.07 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.79 secs
  
 --> 
 

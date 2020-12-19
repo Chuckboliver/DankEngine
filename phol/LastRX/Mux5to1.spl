@@ -5,6 +5,5 @@
 =move_in[15:0]=
 =piece_in[15:0]=
 [Outputs]
-ready
 =out_data[15:0]=
 [BiDir]

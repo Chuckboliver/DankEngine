@@ -4,8 +4,8 @@ use ieee.numeric_std.all;
 
 entity serial_gen is 
     generic (
-        CLKS_PER_BIT : integer := 2083 ;   -- Needs to be set correctly
-		  CLKS_BUTTON: integer := 100
+        CLKS_PER_BIT : integer := 2048 ;   -- Needs to be set correctly
+		  CLKS_BUTTON: integer := 20000000
         );
     Port (
         data: in std_logic_vector(15 downto 0);
@@ -22,8 +22,8 @@ architecture Behavioral of serial_gen is
     signal Clk_Count : integer range 0 to CLKS_PER_BIT-1 := 0;
     signal Bit_Index : integer range 0 to 15 := 0;  -- 16 Bits Total
     signal TX_Data   : std_logic_vector(15 downto 0) := (others => '0');
-    signal SEL_CLR :std_logic_vector(2 downto 0):=data(7)&data(6)&data(5);
-	 signal intruc_set:std_logic_vector(2 downto 0):=data(7)&data(6)&data(5);
+    signal SEL_CLR :std_logic_vector(2 downto 0):=(others=>'0');
+	 signal intruc_set:std_logic_vector(2 downto 0):=(others=>'0');
 	 signal ClkCountFor_Button: integer range 0 to CLKS_BUTTON-1 := 0;
 	 
 	 
@@ -31,6 +31,9 @@ architecture Behavioral of serial_gen is
 begin
     UART_TX : process(clock)
     begin 
+	 	SEL_CLR<=data(7)&data(6)&data(5);
+		  intruc_set<=data(7)&data(6)&data(5);
+		  
         if rising_edge(clock) then
 				if intruc_set="011" then
             case state is

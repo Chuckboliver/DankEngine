@@ -42,12 +42,15 @@ end EndGame_Decoder_LED;
 
 architecture Behavioral of EndGame_Decoder_LED is
 
-signal winType:STD_LOGIC :=inp(12);
-signal whoWin:STD_LOGIC_VECTOR (1 downto 0):=inp(11)&inp(10);
+signal winType:STD_LOGIC :='0';
+signal whoWin:STD_LOGIC_VECTOR (1 downto 0):=(others=>'0');
 
 begin
 process(inp)
 	begin
+	whoWin<=inp(11)&inp(10);
+	winType<=inp(12);
+	
 	if nodata='1' then
 		winType_LED<="00";
 		whoWin_LED<="00";

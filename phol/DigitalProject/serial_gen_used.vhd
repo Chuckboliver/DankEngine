@@ -5,12 +5,13 @@ use ieee.numeric_std.all;
 entity serial_gen is 
     generic (
         CLKS_PER_BIT : integer := 2083 ;   -- Needs to be set correctly
-		  CLKS_BUTTON: integer := 100
+		  CLKS_BUTTON: integer := 2
         );
+		  
     Port (
         data: in std_logic_vector(15 downto 0);
         start,clock: in std_logic;
-        tx,clear_NewGame,clear_Color,clear_Move,clear_level,clear_Promote: out std_logic
+        tx: out std_logic
     );
 end serial_gen;
 
@@ -32,11 +33,7 @@ begin
 				if intruc_set="011" then
             case state is
                 when Idle=>
-                    clear_Promote<='0';
-                    clear_Move<='0';
-                    clear_level<='0';
-                    clear_Color<='0';
-                    clear_NewGame<='0';
+               
                     tx<='1';
                     Clk_Count<=0;
                     Bit_Index<=0;
@@ -90,20 +87,11 @@ begin
                         state<=TX_Stop_Bit;
                     else
                         Clk_Count<=0;
-								state<=Cleanup;
 								if Bit_Index=7 then
 									state<=TX_Start_Bit;
 									Bit_Index<=Bit_Index+1;
-                        elsif (SEL_CLR="000") then
-                            clear_NewGame<='1';
-                        elsif (SEL_CLR="001") then
-                            clear_Color<='1';
-                        elsif (SEL_CLR="010") then
-                            clear_level<='1';
-                        elsif (SEL_CLR="011") then
-                            clear_Move<='1';
-                        elsif (SEL_CLR="100") then
-                            clear_Promote<='1';
+								else
+									state<=Cleanup;
                         end if;
                     end if;
 						when Cleanup =>

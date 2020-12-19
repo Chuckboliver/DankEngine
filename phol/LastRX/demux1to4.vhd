@@ -19,13 +19,13 @@ end demux1to4;
 
 architecture Behavioral of demux1to4 is
 
-signal header :std_logic_vector(2 downto 0):=rx_in(15)&rx_in(14)&rx_in(13);
+signal header :std_logic_vector(2 downto 0):=(others=>'0');
 
 begin
 
 process(rx_in) is
 begin 
-
+header<=rx_in(15)&rx_in(14)&rx_in(13);
 case header is
 	when "011"=>
 		bot_Move_Out<=rx_in;

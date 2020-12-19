@@ -12,11 +12,16 @@ end Error_Decoder_LED;
 
 architecture Behavioral of Error_Decoder_LED is
 
-signal realdata:STD_LOGIC_VECTOR (2 downto 0):=inp(12)&inp(11)&inp(10);
+signal realdata:STD_LOGIC_VECTOR (2 downto 0):="000";
 
 begin
 process(inp)
+
+
 	begin
+	
+	
+	realdata<=inp(12)&inp(11)&inp(10);
 	if nodata='1' then
 	LED  <= "00";
 	else

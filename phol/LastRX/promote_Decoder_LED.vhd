@@ -11,11 +11,14 @@ end promote_Decoder_LED;
 
 architecture Behavioral of promote_Decoder_LED is
 
-signal realdata:STD_LOGIC_VECTOR (1 downto 0):=inp(12)&inp(11);
+signal realdata:STD_LOGIC_VECTOR (1 downto 0):=(others=>'0');
 
 begin
 process(inp)
 	begin
+	
+	
+	realdata<=inp(12)&inp(11);
 	if nodata='1' then
 		LED <="0000";
 	else

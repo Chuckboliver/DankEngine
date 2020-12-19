@@ -68,14 +68,14 @@ begin
 			-- up switch -- 
 			elsif (updown_switch(1) = '1') then
 				if(setLevel = "100") then
-					setLevel <= "100";
+					setLevel <= setLevel;
 				else 
 					setLevel <= setLevel + 1;
 				end if;
 			-- down switch --
 			elsif(updown_switch(0) = '1') then
 				if(setLevel = "000") then
-					setLevel <= "000";
+					setLevel <= setLevel;
 				else 
 					setLevel <= setLevel - 1;
 				end if;

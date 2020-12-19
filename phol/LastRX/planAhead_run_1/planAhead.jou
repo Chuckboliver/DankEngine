@@ -194,3 +194,173 @@ endgroup
 set_property is_loc_fixed false [get_ports [list  MN0_P95]]
 set_property is_loc_fixed true [get_ports [list  MN0_P95]]
 save_constraints
+refresh_design
+startgroup
+set_property package_pin P84 [get_ports {check[15]}]
+endgroup
+set_property package_pin "" [get_ports [list  {check[14]}]]
+startgroup
+set_property package_pin P84 [get_ports {check[15]}]
+endgroup
+startgroup
+set_property package_pin P2 [get_ports {error_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P74 [get_ports {error_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {error_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports {check[15]}]
+endgroup
+set_property package_pin "" [get_ports [list  {check[14]}]]
+startgroup
+set_property package_pin P112 [get_ports {error_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports {promote_LED[3]}]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports {promote_LED[2]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {promote_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {promote_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P74 [get_ports {check[14]}]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports {check[13]}]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports {check[12]}]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports {check[11]}]
+endgroup
+startgroup
+set_property package_pin P80 [get_ports {check[10]}]
+endgroup
+set_property package_pin "" [get_ports [list  {check[8]}]]
+set_property package_pin "" [get_ports [list  {check[9]}]]
+set_property package_pin "" [get_ports [list  {check[8]}]]
+set_property package_pin "" [get_ports [list  {check[9]}]]
+startgroup
+set_property package_pin P105 [get_ports {winTypeP80_P81[1]}]
+endgroup
+startgroup
+set_property package_pin P111 [get_ports {winTypeP80_P81[0]}]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports {check[9]}]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports {check[8]}]
+endgroup
+startgroup
+set_property package_pin P84 [get_ports {check[7]}]
+endgroup
+startgroup
+set_property package_pin P85 [get_ports {check[6]}]
+endgroup
+startgroup
+set_property package_pin P87 [get_ports {check[5]}]
+endgroup
+set_property package_pin "" [get_ports [list  {check[4]}]]
+startgroup
+set_property package_pin P88 [get_ports {whoWin_P88_P92[1]}]
+endgroup
+startgroup
+set_property package_pin P115 [get_ports {whoWin_P88_P92[0]}]
+endgroup
+startgroup
+set_property package_pin P114 [get_ports {whoWin_P88_P92[1]}]
+endgroup
+startgroup
+set_property package_pin P88 [get_ports {check[4]}]
+endgroup
+startgroup
+set_property package_pin P92 [get_ports {check[3]}]
+endgroup
+startgroup
+set_property package_pin P93 [get_ports {check[2]}]
+endgroup
+startgroup
+set_property package_pin P94 [get_ports {check[1]}]
+endgroup
+startgroup
+set_property package_pin P95 [get_ports {check[0]}]
+endgroup
+save_constraints
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+startgroup
+set_property package_pin P50 [get_ports {check[8]}]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports tx_P98]
+endgroup
+save_constraints -force
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+startgroup
+set_property package_pin P80 [get_ports {L2_L1_P80_P81[1]}]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports {L2_L1_P80_P81[0]}]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports {promote_LED[3]}]
+endgroup
+startgroup
+set_property package_pin P2 [get_ports {seg7_setlevel_alt[6]}]
+endgroup
+startgroup
+set_property package_pin P143 [get_ports {seg7_setlevel_alt[5]}]
+endgroup
+startgroup
+set_property package_pin P141 [get_ports {seg7_setlevel_alt[4]}]
+endgroup
+startgroup
+set_property package_pin P139 [get_ports {seg7_setlevel_alt[3]}]
+endgroup
+startgroup
+set_property package_pin P137 [get_ports {seg7_setlevel_alt[2]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {seg7_setlevel_alt[1]}]
+endgroup
+startgroup
+set_property package_pin P131 [get_ports {seg7_setlevel_alt[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  L0_P82]]
+startgroup
+set_property package_pin P123 [get_ports clk_P123]
+endgroup
+set_property package_pin "" [get_ports [list  L0_P82]]
+startgroup
+set_property package_pin P111 [get_ports {winTypeP80_P81[0]}]
+endgroup
+startgroup
+set_property package_pin P88 [get_ports {winTypeP80_P81[1]}]
+endgroup
+startgroup
+set_property package_pin P92 [get_ports {winTypeP80_P81[0]}]
+endgroup
+startgroup
+set_property package_pin P95 [get_ports L0_P82]
+endgroup
+save_constraints
+refresh_design
+startgroup
+set_property package_pin P67 [get_ports L7_P67]
+endgroup
+save_constraints
