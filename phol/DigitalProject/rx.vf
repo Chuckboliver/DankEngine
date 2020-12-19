@@ -1,0 +1,138 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : rx.vf
+// /___/   /\     Timestamp : 12/17/2020 01:49:48
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rx.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rx.sch"
+//Design Name: rx
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module rx(clear_error_move, 
+          clear_Error_Promote, 
+          clear_Promote, 
+          clear_whoWin, 
+          clear_winType, 
+          clk_P123, 
+          rx_P97, 
+          common_move, 
+          error_move_LED, 
+          error_promote_LED, 
+          promote_LED, 
+          seg7_move, 
+          whoWin_LED, 
+          winTypeLED_ALT);
+
+    input clear_error_move;
+    input clear_Error_Promote;
+    input clear_Promote;
+    input clear_whoWin;
+    input clear_winType;
+    input clk_P123;
+    input rx_P97;
+   output [3:0] common_move;
+   output error_move_LED;
+   output error_promote_LED;
+   output [3:0] promote_LED;
+   output [6:0] seg7_move;
+   output [1:0] whoWin_LED;
+   output [1:0] winTypeLED_ALT;
+   
+   wire [1:0] promote;
+   wire XLXN_20;
+   wire XLXN_22;
+   wire [11:0] XLXN_23;
+   wire XLXN_25;
+   wire [2:0] XLXN_59;
+   wire [11:0] XLXN_60;
+   wire [2:0] XLXN_61;
+   wire [2:0] XLXN_62;
+   wire [2:0] XLXN_63;
+   wire [2:0] XLXN_64;
+   wire XLXN_74;
+   wire XLXN_75;
+   wire XLXN_76;
+   wire XLXN_86;
+   wire XLXN_87;
+   wire XLXN_88;
+   wire [1:0] XLXN_112;
+   wire XLXN_113;
+   wire XLXN_115;
+   wire [1:0] XLXN_116;
+   wire [1:0] XLXN_117;
+   wire XLXN_119;
+   
+   serial_rx  XLXI_1 (.clock(clk_P123), 
+                     .rx(rx_P97), 
+                     .data(XLXN_60[11:0]), 
+                     .data_done(XLXN_20), 
+                     .header(XLXN_59[2:0]));
+   shift_register12  XLXI_3 (.CLK(XLXN_25), 
+                            .CLR(XLXN_22), 
+                            .reg_in(XLXN_23[11:0]), 
+                            .first_reg_out(XLXN_61[2:0]), 
+                            .forth_reg_out(XLXN_64[2:0]), 
+                            .second_reg_out(XLXN_62[2:0]), 
+                            .third_reg_out(XLXN_63[2:0]));
+   GND  XLXI_5 (.G(XLXN_22));
+   demux1_3  XLXI_6 (.data_done(XLXN_20), 
+                    .demux_in(XLXN_60[11:0]), 
+                    .Selector(XLXN_59[2:0]), 
+                    .clk_Error_Move_reg(XLXN_87), 
+                    .clk_Error_Promote_reg(XLXN_88), 
+                    .clk_Move_reg(XLXN_25), 
+                    .clk_Promote_reg(XLXN_113), 
+                    .clk_whoWin_reg(XLXN_115), 
+                    .clk_winType_reg(XLXN_86), 
+                    .Error_Move(XLXN_75), 
+                    .Error_Promote(XLXN_76), 
+                    .Move(XLXN_23[11:0]), 
+                    .Promote(promote[1:0]), 
+                    .whoWin(XLXN_116[1:0]), 
+                    .winType(XLXN_74));
+   move_12bits_to_7seg  XLXI_7 (.clock(clk_P123), 
+                               .first_Move_IN(XLXN_61[2:0]), 
+                               .forth_Move_IN(XLXN_64[2:0]), 
+                               .second_Move_IN(XLXN_62[2:0]), 
+                               .third_Move_IN(XLXN_63[2:0]), 
+                               .common(common_move[3:0]), 
+                               .out_7seg(seg7_move[6:0]));
+   register1bits  XLXI_10 (.CLK(XLXN_86), 
+                          .CLR(clear_winType), 
+                          .d_in(XLXN_74), 
+                          .d_out(XLXN_119));
+   register1bits  XLXI_11 (.CLK(XLXN_87), 
+                          .CLR(clear_error_move), 
+                          .d_in(XLXN_75), 
+                          .d_out(error_move_LED));
+   register1bits  XLXI_12 (.CLK(XLXN_88), 
+                          .CLR(clear_Error_Promote), 
+                          .d_in(XLXN_76), 
+                          .d_out(error_promote_LED));
+   decoder2to4_promote  XLXI_15 (.inp(XLXN_112[1:0]), 
+                                .seg(promote_LED[3:0]));
+   decoder2to2_whoWin  XLXI_17 (.inp(XLXN_117[1:0]), 
+                               .seg(whoWin_LED[1:0]));
+   reg2bits  XLXI_18 (.CLK(XLXN_113), 
+                     .CLR(clear_Promote), 
+                     .d_in(promote[1:0]), 
+                     .d_out(XLXN_112[1:0]));
+   reg2bits  XLXI_19 (.CLK(XLXN_115), 
+                     .CLR(clear_whoWin), 
+                     .d_in(XLXN_116[1:0]), 
+                     .d_out(XLXN_117[1:0]));
+   decoder1to2_winType  XLXI_20 (.inp(XLXN_119), 
+                                .seg(winTypeLED_ALT[1:0]));
+endmodule

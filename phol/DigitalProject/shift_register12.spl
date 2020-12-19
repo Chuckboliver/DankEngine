@@ -1,0 +1,10 @@
+[Inputs]
+CLR
+CLK
+=reg_in[11:0]=
+[Outputs]
+=first_reg_out[2:0]=
+=second_reg_out[2:0]=
+=third_reg_out[2:0]=
+=forth_reg_out[2:0]=
+[BiDir]

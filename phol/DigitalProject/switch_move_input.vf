@@ -1,0 +1,253 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : switch_move_input.vf
+// /___/   /\     Timestamp : 12/16/2020 21:59:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_move_input.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/switch_move_input.sch"
+//Design Name: switch_move_input
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module COMP4_HXILINX_switch_move_input (EQ, A0, A1, A2, A3, B0, B1, B2, B3);
+    
+
+   output EQ;
+
+   input A0;
+   input A1;
+   input A2;
+   input A3;
+   input B0;
+   input B1;
+   input B2;
+   input B3;
+
+   assign EQ = ((A0==B0) && (A1==B1) && (A2==B2) && (A3==B3)) ;
+
+endmodule
+`timescale  100 ps / 10 ps
+
+module OR8_HXILINX_switch_move_input (O, I0, I1, I2, I3, I4, I5, I6, I7);
+    
+
+   output O;
+
+   input I0;
+   input I1;
+   input I2;
+   input I3;
+   input I4;
+   input I5;
+   input I6;
+   input I7;
+
+assign O = (I0 || I1 || I2 || I3 || I4 || I5 || I6 || I7);
+
+endmodule
+`timescale 100 ps / 10 ps
+
+module FD4CE_HXILINX_switch_move_input(Q0, Q1, Q2, Q3, C, CE, CLR, D0, D1, D2, D3);
+   
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              D0;
+   input              D1;
+   input              D2;
+   input              D3;
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (CE)
+          {Q3, Q2, Q1, Q0} <= {D3, D2, D1, D0};
+     end
+   
+   
+endmodule
+`timescale 1ns / 1ps
+
+module switch_move_input(move_in, 
+                         RESET, 
+                         VCC, 
+                         EQUAL, 
+                         move_out);
+
+    input [15:0] move_in;
+    input RESET;
+    input VCC;
+   output EQUAL;
+   output [11:0] move_out;
+   
+   wire comp_1;
+   wire comp_2;
+   wire comp_3;
+   wire comp_4;
+   wire XLXN_352;
+   wire XLXN_353;
+   wire XLXN_354;
+   wire XLXN_355;
+   wire XLXN_360;
+   wire XLXN_511;
+   wire XLXN_519;
+   wire XLXN_521;
+   wire XLXN_522;
+   wire XLXN_523;
+   wire XLXN_526;
+   wire [11:0] move_out_DUMMY;
+   
+   assign move_out[11:0] = move_out_DUMMY[11:0];
+   (* HU_SET = "XLXI_57_15" *) 
+   OR8_HXILINX_switch_move_input  XLXI_57 (.I0(move_in[8]), 
+                                          .I1(move_in[9]), 
+                                          .I2(move_in[10]), 
+                                          .I3(move_in[11]), 
+                                          .I4(move_in[12]), 
+                                          .I5(move_in[13]), 
+                                          .I6(move_in[14]), 
+                                          .I7(move_in[15]), 
+                                          .O(XLXN_352));
+   OR4  XLXI_58 (.I0(move_in[8]), 
+                .I1(move_in[10]), 
+                .I2(move_in[12]), 
+                .I3(move_in[14]), 
+                .O(XLXN_353));
+   OR4  XLXI_59 (.I0(move_in[8]), 
+                .I1(move_in[9]), 
+                .I2(move_in[12]), 
+                .I3(move_in[13]), 
+                .O(XLXN_354));
+   OR4  XLXI_60 (.I0(move_in[8]), 
+                .I1(move_in[9]), 
+                .I2(move_in[10]), 
+                .I3(move_in[11]), 
+                .O(XLXN_355));
+   (* HU_SET = "XLXI_151_16" *) 
+   OR8_HXILINX_switch_move_input  XLXI_151 (.I0(move_in[8]), 
+                                           .I1(move_in[9]), 
+                                           .I2(move_in[10]), 
+                                           .I3(move_in[11]), 
+                                           .I4(move_in[12]), 
+                                           .I5(move_in[13]), 
+                                           .I6(move_in[14]), 
+                                           .I7(move_in[15]), 
+                                           .O(XLXN_360));
+   (* HU_SET = "XLXI_175_17" *) 
+   FD4CE_HXILINX_switch_move_input  XLXI_175 (.C(XLXN_360), 
+                                             .CE(VCC), 
+                                             .CLR(XLXN_519), 
+                                             .D0(XLXN_352), 
+                                             .D1(XLXN_353), 
+                                             .D2(XLXN_354), 
+                                             .D3(XLXN_355), 
+                                             .Q0(comp_1), 
+                                             .Q1(move_out_DUMMY[3]), 
+                                             .Q2(move_out_DUMMY[4]), 
+                                             .Q3(move_out_DUMMY[5]));
+   (* HU_SET = "XLXI_176_18" *) 
+   FD4CE_HXILINX_switch_move_input  XLXI_176 (.C(XLXN_360), 
+                                             .CE(VCC), 
+                                             .CLR(XLXN_519), 
+                                             .D0(comp_1), 
+                                             .D1(move_out_DUMMY[3]), 
+                                             .D2(move_out_DUMMY[4]), 
+                                             .D3(move_out_DUMMY[5]), 
+                                             .Q0(comp_2), 
+                                             .Q1(move_out_DUMMY[9]), 
+                                             .Q2(move_out_DUMMY[10]), 
+                                             .Q3(move_out_DUMMY[11]));
+   INV  XLXI_231 (.I(RESET), 
+                 .O(XLXN_519));
+   OR4  XLXI_232 (.I0(move_in[0]), 
+                 .I1(move_in[1]), 
+                 .I2(move_in[2]), 
+                 .I3(move_in[3]), 
+                 .O(XLXN_523));
+   OR4  XLXI_233 (.I0(move_in[0]), 
+                 .I1(move_in[1]), 
+                 .I2(move_in[4]), 
+                 .I3(move_in[5]), 
+                 .O(XLXN_522));
+   OR4  XLXI_234 (.I0(move_in[0]), 
+                 .I1(move_in[2]), 
+                 .I2(move_in[4]), 
+                 .I3(move_in[6]), 
+                 .O(XLXN_521));
+   (* HU_SET = "XLXI_235_19" *) 
+   OR8_HXILINX_switch_move_input  XLXI_235 (.I0(move_in[0]), 
+                                           .I1(move_in[1]), 
+                                           .I2(move_in[2]), 
+                                           .I3(move_in[3]), 
+                                           .I4(move_in[4]), 
+                                           .I5(move_in[5]), 
+                                           .I6(move_in[6]), 
+                                           .I7(move_in[7]), 
+                                           .O(XLXN_511));
+   (* HU_SET = "XLXI_236_20" *) 
+   OR8_HXILINX_switch_move_input  XLXI_236 (.I0(move_in[0]), 
+                                           .I1(move_in[1]), 
+                                           .I2(move_in[2]), 
+                                           .I3(move_in[3]), 
+                                           .I4(move_in[4]), 
+                                           .I5(move_in[5]), 
+                                           .I6(move_in[6]), 
+                                           .I7(move_in[7]), 
+                                           .O(XLXN_526));
+   (* HU_SET = "XLXI_237_22" *) 
+   FD4CE_HXILINX_switch_move_input  XLXI_237 (.C(XLXN_526), 
+                                             .CE(VCC), 
+                                             .CLR(XLXN_519), 
+                                             .D0(XLXN_511), 
+                                             .D1(XLXN_521), 
+                                             .D2(XLXN_522), 
+                                             .D3(XLXN_523), 
+                                             .Q0(comp_3), 
+                                             .Q1(move_out_DUMMY[0]), 
+                                             .Q2(move_out_DUMMY[1]), 
+                                             .Q3(move_out_DUMMY[2]));
+   (* HU_SET = "XLXI_238_21" *) 
+   FD4CE_HXILINX_switch_move_input  XLXI_238 (.C(XLXN_526), 
+                                             .CE(VCC), 
+                                             .CLR(XLXN_519), 
+                                             .D0(comp_3), 
+                                             .D1(move_out_DUMMY[0]), 
+                                             .D2(move_out_DUMMY[1]), 
+                                             .D3(move_out_DUMMY[2]), 
+                                             .Q0(comp_4), 
+                                             .Q1(move_out_DUMMY[6]), 
+                                             .Q2(move_out_DUMMY[7]), 
+                                             .Q3(move_out_DUMMY[8]));
+   (* HU_SET = "XLXI_248_23" *) 
+   COMP4_HXILINX_switch_move_input  XLXI_248 (.A0(comp_1), 
+                                             .A1(comp_2), 
+                                             .A2(comp_3), 
+                                             .A3(comp_4), 
+                                             .B0(VCC), 
+                                             .B1(VCC), 
+                                             .B2(VCC), 
+                                             .B3(VCC), 
+                                             .EQ(EQUAL));
+endmodule

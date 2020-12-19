@@ -1,0 +1,334 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Thu Dec 17 01:27:29 2020
+# Process ID: 3416
+# Log file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_5/planAhead.log
+# Journal file: C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_5/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/pa.fromNetlist.tcl}
+# create_project -name DigitalProject -dir "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/planAhead_run_5" -part xc6slx9tqg144-3
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "mainCircuit.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf' to fileset 'constrs_1'
+# add_files [list {mainCircuit.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx9tqg144-3
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_2/XLXI_5/state[2]_state[2]_mux_91_OUT<3 : 1> on block mainCircuit is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 101176 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'mainCircuit' is not ideal for floorplanning, since the cellview 'mainCircuit' defined in file 'mainCircuit.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  BUFGP => BUFGP (IBUF, BUFG): 1 instances
+
+Phase 0 | Netlist Checksum: 37af1c66
+link_design: Time (s): elapsed = 00:00:24 . Memory (MB): peak = 567.746 ; gain = 116.844
+startgroup
+set_property package_pin P99 [get_ports newGame_Switch]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P82 [get_ports L2_P82]
+endgroup
+save_constraints -force
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_2/XLXI_5/state[2]_state[2]_mux_91_OUT<3 : 1> on block mainCircuit is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 101180 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'mainCircuit' is not ideal for floorplanning, since the cellview 'mainCircuit' defined in file 'mainCircuit.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 655.973 ; gain = 15.391
+startgroup
+set_property package_pin P121 [get_ports newGame_Switch]
+endgroup
+save_constraints
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_2/XLXI_5/state[2]_state[2]_mux_91_OUT<3 : 1> on block mainCircuit is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 101244 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'mainCircuit' is not ideal for floorplanning, since the cellview 'mainCircuit' defined in file 'mainCircuit.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 663.801 ; gain = 0.000
+set_property package_pin "" [get_ports [list  {SEL_LED[2]}]]
+set_property package_pin "" [get_ports [list  {SEL_LED[1]}]]
+set_property package_pin "" [get_ports [list  {SEL_LED[2]}]]
+startgroup
+set_property package_pin P70 [get_ports {whoWin_ALT_LED[0]}]
+endgroup
+startgroup
+set_property package_pin P80 [get_ports {SEL_LED[2]}]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports {SEL_LED[1]}]
+endgroup
+startgroup
+set_property package_pin P88 [get_ports L2_P82]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports {SEL_LED[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {SEL_LED[0]}]]
+set_property is_loc_fixed true [get_ports [list  {SEL_LED[0]}]]
+save_constraints
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_277<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<14 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100220 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 708.559 ; gain = 0.000
+startgroup
+set_property package_pin P99 [get_ports newGame_Switch]
+endgroup
+save_constraints
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_277<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<14 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100476 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'L2_P82' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf:56]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SEL_LED[2]' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf:64]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SEL_LED[1]' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf:65]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SEL_LED[0]' [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf:66]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+refresh_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 708.559 ; gain = 0.000
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_277<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<14 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100028 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 708.559 ; gain = 0.000
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_310<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<15 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100540 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 708.559 ; gain = 0.000
+startgroup
+set_property package_pin P82 [get_ports L0_P82]
+endgroup
+set_property is_loc_fixed false [get_ports [list  L0_P82]]
+set_property is_loc_fixed true [get_ports [list  L0_P82]]
+set_property is_loc_fixed false [get_ports [list  L0_P82]]
+set_property is_loc_fixed true [get_ports [list  L0_P82]]
+save_constraints
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXN_310<11 : 3> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_2/XLXI_5/TX_Data<15 : 4> on block
+   mainCircuit is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_3/XLXI_1/RX_Data_Output<15 : 0> on
+   block mainCircuit is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 100540 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/mainCircuit.ucf]
+refresh_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 708.559 ; gain = 0.000
+startgroup
+set_property package_pin P121 [get_ports newGame_Switch]
+endgroup
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject\planAhead_pid3416.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Thu Dec 17 06:28:15 2020...
+INFO: [Common 17-83] Releasing license: PlanAhead

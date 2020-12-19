@@ -1,0 +1,7 @@
+vhdl work "serial_rx_used.vhd"
+vhdl work "reg_12bits.vhd"
+vhdl work "move_12bits_7seg_decoder.vhd"
+vhdl work "demux1_3.vhd"
+vhdl work "main.vhd"
+verilog work "encoder5to3_with_dataComp.vf"
+verilog work "switch_move_input.vf"

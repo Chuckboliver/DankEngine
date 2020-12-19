@@ -1,0 +1,186 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : main.vf
+// /___/   /\     Timestamp : 12/17/2020 17:58:09
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/main.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/main.sch"
+//Design Name: main
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module rx_To_Display_MUSER_main(clk_P123, 
+                                rx_clear_endgame, 
+                                rx_clear_error, 
+                                rx_clear_move, 
+                                rx_clear_promote, 
+                                rx_P97, 
+                                common_7seg_FPGA, 
+                                L2L1_P80P81, 
+                                L5L4L3_P75_P78_P79, 
+                                L7L6_P67P74, 
+                                MN_P88_P92, 
+                                move_7seg_FPGA);
+
+    input clk_P123;
+    input rx_clear_endgame;
+    input rx_clear_error;
+    input rx_clear_move;
+    input rx_clear_promote;
+    input rx_P97;
+   output [3:0] common_7seg_FPGA;
+   output [1:0] L2L1_P80P81;
+   output [3:0] L5L4L3_P75_P78_P79;
+   output [1:0] L7L6_P67P74;
+   output [1:0] MN_P88_P92;
+   output [6:0] move_7seg_FPGA;
+   
+   wire [15:0] XLXN_1;
+   wire [15:0] XLXN_5;
+   wire [15:0] XLXN_6;
+   wire [15:0] XLXN_8;
+   wire [15:0] XLXN_9;
+   wire XLXN_11;
+   wire XLXN_15;
+   wire [15:0] XLXN_16;
+   wire [15:0] XLXN_17;
+   wire XLXN_19;
+   wire [15:0] XLXN_21;
+   wire XLXN_22;
+   wire [15:0] XLXN_23;
+   wire XLXN_24;
+   
+   serial_rx  XLXI_1 (.clock(clk_P123), 
+                     .rx(rx_P97), 
+                     .data(XLXN_1[15:0]), 
+                     .data_done(XLXN_11));
+   demux1to4  XLXI_2 (.rx_in(XLXN_1[15:0]), 
+                     .bot_Move_Out(XLXN_5[15:0]), 
+                     .end_Game_Out(XLXN_9[15:0]), 
+                     .error_Out(XLXN_6[15:0]), 
+                     .promote_Out(XLXN_8[15:0]));
+   register16bits  XLXI_3 (.clk(XLXN_11), 
+                          .para_in(XLXN_9[15:0]), 
+                          .reset(rx_clear_endgame), 
+                          .para_out(XLXN_23[15:0]));
+   register16bits  XLXI_4 (.clk(XLXN_11), 
+                          .para_in(XLXN_8[15:0]), 
+                          .reset(rx_clear_promote), 
+                          .para_out(XLXN_21[15:0]));
+   register16bits  XLXI_5 (.clk(XLXN_11), 
+                          .para_in(XLXN_6[15:0]), 
+                          .reset(rx_clear_error), 
+                          .para_out(XLXN_17[15:0]));
+   register16bits  XLXI_6 (.clk(XLXN_11), 
+                          .para_in(XLXN_5[15:0]), 
+                          .reset(rx_clear_move), 
+                          .para_out(XLXN_16[15:0]));
+   checkEmptyRegister16bits  XLXI_7 (.para_in(XLXN_23[15:0]), 
+                                    .noData(XLXN_24));
+   checkEmptyRegister16bits  XLXI_8 (.para_in(XLXN_21[15:0]), 
+                                    .noData(XLXN_22));
+   checkEmptyRegister16bits  XLXI_9 (.para_in(XLXN_17[15:0]), 
+                                    .noData(XLXN_19));
+   checkEmptyRegister16bits  XLXI_10 (.para_in(XLXN_16[15:0]), 
+                                     .noData(XLXN_15));
+   move_7seg_decoder  XLXI_11 (.clock(clk_P123), 
+                              .data_move(XLXN_16[15:0]), 
+                              .nodata(XLXN_15), 
+                              .common_7seg_FPGA(common_7seg_FPGA[3:0]), 
+                              .out_7seg(move_7seg_FPGA[6:0]));
+   Error_Decoder_LED  XLXI_12 (.inp(XLXN_17[15:0]), 
+                              .nodata(XLXN_19), 
+                              .LED(L7L6_P67P74[1:0]));
+   promote_Decoder_LED  XLXI_13 (.inp(XLXN_21[15:0]), 
+                                .nodata(XLXN_22), 
+                                .LED(L5L4L3_P75_P78_P79[3:0]));
+   EndGame_Decoder_LED  XLXI_14 (.inp(XLXN_23[15:0]), 
+                                .nodata(XLXN_24), 
+                                .whoWin_LED(MN_P88_P92[1:0]), 
+                                .winType_LED(L2L1_P80P81[1:0]));
+endmodule
+`timescale 1ns / 1ps
+
+module main(alpha_mv_P5toP23, 
+            clk_P123, 
+            cs_SW_P1_P142, 
+            ng_SW_P121, 
+            num_mv_P6toP24, 
+            promote_sw, 
+            rx_P97, 
+            up_down_P140_P138, 
+            common_seg_FPGA, 
+            error_LED, 
+            L0_P82, 
+            L2_L1_P80_P81, 
+            L7_P67, 
+            promote_LED, 
+            seg7_FPGA, 
+            seg7_setlevel_alt, 
+            tx_P98, 
+            whoWin_P88_P92, 
+            winTypeP80_P81);
+
+    input [7:0] alpha_mv_P5toP23;
+    input clk_P123;
+    input [1:0] cs_SW_P1_P142;
+    input ng_SW_P121;
+    input [7:0] num_mv_P6toP24;
+    input [3:0] promote_sw;
+    input rx_P97;
+    input [1:0] up_down_P140_P138;
+   output [3:0] common_seg_FPGA;
+   output [1:0] error_LED;
+   output L0_P82;
+   output [1:0] L2_L1_P80_P81;
+   output L7_P67;
+   output [3:0] promote_LED;
+   output [6:0] seg7_FPGA;
+   output [6:0] seg7_setlevel_alt;
+   output tx_P98;
+   output [1:0] whoWin_P88_P92;
+   output [1:0] winTypeP80_P81;
+   
+   wire [15:0] XLXN_44;
+   wire L7_P67_DUMMY;
+   
+   assign L7_P67 = L7_P67_DUMMY;
+   rx_To_Display_MUSER_main  XLXI_1 (.clk_P123(clk_P123), 
+                                    .rx_clear_endgame(ng_SW_P121), 
+                                    .rx_clear_error(ng_SW_P121), 
+                                    .rx_clear_move(ng_SW_P121), 
+                                    .rx_clear_promote(ng_SW_P121), 
+                                    .rx_P97(rx_P97), 
+                                    .common_7seg_FPGA(common_seg_FPGA[3:0]), 
+                                    .L2L1_P80P81(winTypeP80_P81[1:0]), 
+                                    .L5L4L3_P75_P78_P79(promote_LED[3:0]), 
+                                    .L7L6_P67P74(error_LED[1:0]), 
+                                    .MN_P88_P92(whoWin_P88_P92[1:0]), 
+                                    .move_7seg_FPGA(seg7_FPGA[6:0]));
+   serial_gen  XLXI_7 (.clock(clk_P123), 
+                      .data(XLXN_44[15:0]), 
+                      .start(L7_P67_DUMMY), 
+                      .tx(tx_P98));
+   addHeader  XLXI_8 (.alp(alpha_mv_P5toP23[7:0]), 
+                     .choose_side_switch(cs_SW_P1_P142[1:0]), 
+                     .newgame_switch(ng_SW_P121), 
+                     .num(num_mv_P6toP24[7:0]), 
+                     .piece_switch(promote_sw[3:0]), 
+                     .set_level_switch(up_down_P140_P138[1:0]), 
+                     .choose_side_LED(L2_L1_P80_P81[1:0]), 
+                     .data(XLXN_44[15:0]), 
+                     .debug_led(L0_P82), 
+                     .set_level_LED(seg7_setlevel_alt[6:0]), 
+                     .trigger(L7_P67_DUMMY));
+endmodule

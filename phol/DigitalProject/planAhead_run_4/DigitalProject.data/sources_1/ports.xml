@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="switchForMove">
+			<Port Id="15" Dir="IN"/>
+			<Port Id="14" Dir="IN"/>
+			<Port Id="13" Dir="IN"/>
+			<Port Id="12" Dir="IN"/>
+			<Port Id="11" Dir="IN"/>
+			<Port Id="10" Dir="IN"/>
+			<Port Id="9" Dir="IN"/>
+			<Port Id="8" Dir="IN"/>
+			<Port Id="7" Dir="IN"/>
+			<Port Id="6" Dir="IN"/>
+			<Port Id="5" Dir="IN"/>
+			<Port Id="4" Dir="IN"/>
+			<Port Id="3" Dir="IN"/>
+			<Port Id="2" Dir="IN"/>
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="common_move_FPGA">
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="level_seg_ALT">
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="promoteLED_ALT">
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="seg7_move_FPGA">
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="whoWin_ALT_LED">
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="winTypeLED_ALT">
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="bishop_PSW" Dir="IN"/>
+		<Port Id="blackSwitch" Dir="IN"/>
+		<Port Id="clock_P123" Dir="IN"/>
+		<Port Id="downSwitch" Dir="IN"/>
+		<Port Id="knight_PSW" Dir="IN"/>
+		<Port Id="newGame_Switch" Dir="IN"/>
+		<Port Id="queen_PSW" Dir="IN"/>
+		<Port Id="rook_PSW" Dir="IN"/>
+		<Port Id="RX_P97" Dir="IN"/>
+		<Port Id="upSwitch" Dir="IN"/>
+		<Port Id="whiteSwitch" Dir="IN"/>
+		<Port Id="common_P126_ALT" Dir="OUT"/>
+		<Port Id="ERR_MOV_ALT_LED" Dir="OUT"/>
+		<Port Id="ERR_PRO_LED_ALT" Dir="OUT"/>
+		<Port Id="TX_P98" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

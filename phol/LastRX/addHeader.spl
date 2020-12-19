@@ -1,0 +1,14 @@
+[Inputs]
+newgame_switch
+=choose_side_switch[1:0]=
+=set_level_switch[1:0]=
+=alp[7:0]=
+=num[7:0]=
+=piece_switch[3:0]=
+[Outputs]
+debug_led
+trigger
+=data[15:0]=
+=choose_side_LED[1:0]=
+=set_level_LED[6:0]=
+[BiDir]

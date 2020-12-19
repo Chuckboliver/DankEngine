@@ -1,0 +1,46 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : main.vf
+// /___/   /\     Timestamp : 12/18/2020 19:24:09
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastTime/main.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastTime/main.sch"
+//Design Name: main
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module main(clock_P123, 
+            PB1_P45, 
+            SW_DIP, 
+            tx_P98, 
+            XLXN_12);
+
+    input clock_P123;
+    input PB1_P45;
+    input [7:0] SW_DIP;
+   output tx_P98;
+   output XLXN_12;
+   
+   wire tx_P98_DUMMY;
+   
+   assign tx_P98 = tx_P98_DUMMY;
+   BUF  XLXI_5 (.I(tx_P98_DUMMY), 
+               .O(XLXN_12));
+   UART_TX  XLXI_9 (.i_Clk(clock_P123), 
+                   .i_TX_Byte(SW_DIP[7:0]), 
+                   .i_TX_DV(PB1_P45), 
+                   .o_TX_Active(), 
+                   .o_TX_Done(), 
+                   .o_TX_Serial(tx_P98_DUMMY));
+endmodule

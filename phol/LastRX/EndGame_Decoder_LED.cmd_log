@@ -1,0 +1,15 @@
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 
+vhdtdtfi -lib work EndGame_Decoder_LED.vhd -prj LastRX -o EndGame_Decoder_LED.spl -module EndGame_Decoder_LED -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 EndGame_Decoder_LED.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/EndGame_Decoder_LED.sym} 

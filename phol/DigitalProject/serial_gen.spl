@@ -1,0 +1,12 @@
+[Inputs]
+start
+clock
+=data[15:0]=
+[Outputs]
+tx
+clear_NewGame
+clear_Color
+clear_Move
+clear_level
+clear_Promote
+[BiDir]

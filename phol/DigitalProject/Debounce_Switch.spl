@@ -1,0 +1,6 @@
+[Inputs]
+i_Clk
+i_Switch
+[Outputs]
+o_Switch
+[BiDir]

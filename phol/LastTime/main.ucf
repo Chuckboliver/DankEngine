@@ -1,0 +1,21 @@
+
+
+NET "SW_DIP[7]" LOC = P55;
+NET "SW_DIP[6]" LOC = P56;
+NET "SW_DIP[5]" LOC = P57;
+NET "SW_DIP[4]" LOC = P58;
+NET "SW_DIP[3]" LOC = P59;
+NET "SW_DIP[2]" LOC = P61;
+NET "SW_DIP[1]" LOC = P62;
+NET "SW_DIP[0]" LOC = P66;
+NET "clock_P123" LOC = P123;
+NET "PB1_P45" LOC = P45;
+NET "tx_P98" LOC = P98;
+
+
+
+
+
+NET "XLXN_12" LOC = P74;
+
+

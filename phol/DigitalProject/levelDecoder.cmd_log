@@ -1,0 +1,6 @@
+vhdtdtfi -lib work levelDecoder.vhd -prj DigitalProject -o levelDecoder.spl -module levelDecoder -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 levelDecoder.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.sym} 
+vhdtdtfi -lib work levelDecoder.vhd -prj DigitalProject -o levelDecoder.spl -module levelDecoder -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work levelDecoder.vhd -prj DigitalProject -o levelDecoder.spl -module levelDecoder -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work levelDecoder.vhd -prj DigitalProject -o levelDecoder.spl -module levelDecoder -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 levelDecoder.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/levelDecoder.sym} 

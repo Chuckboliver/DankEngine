@@ -1,0 +1,9 @@
+[Inputs]
+=newGame_in[15:0]=
+=chooseSide_in[15:0]=
+=set_level_in[15:0]=
+=move_in[15:0]=
+=piece_in[15:0]=
+[Outputs]
+=out_data[15:0]=
+[BiDir]

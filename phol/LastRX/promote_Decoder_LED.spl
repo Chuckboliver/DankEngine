@@ -1,0 +1,6 @@
+[Inputs]
+nodata
+=inp[15:0]=
+[Outputs]
+=LED[3:0]=
+[BiDir]

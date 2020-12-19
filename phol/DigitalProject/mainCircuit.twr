@@ -1,0 +1,97 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr
+mainCircuit.pcf -ucf mainCircuit.ucf
+
+Design file:              mainCircuit.ncd
+Physical constraint file: mainCircuit.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clock_P123
+-----------------+------------+------------+------------+------------+------------------+--------+
+                 |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source           | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+-----------------+------------+------------+------------+------------+------------------+--------+
+RX_P97           |    0.244(R)|      FAST  |    0.625(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<0> |    2.027(R)|      SLOW  |    0.084(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<1> |    2.105(R)|      SLOW  |    0.070(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<2> |    2.263(R)|      SLOW  |   -0.132(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<3> |    2.544(R)|      SLOW  |   -0.159(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<4> |    2.309(R)|      SLOW  |    0.011(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<5> |    2.228(R)|      SLOW  |    0.087(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<6> |    1.926(R)|      SLOW  |    0.072(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<7> |    2.566(R)|      SLOW  |   -0.428(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<8> |    2.074(R)|      SLOW  |    0.145(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<9> |    2.103(R)|      SLOW  |    0.004(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<10>|    2.016(R)|      SLOW  |    0.153(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<11>|    2.472(R)|      SLOW  |   -0.090(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<12>|    2.950(R)|      SLOW  |   -0.756(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<13>|    2.804(R)|      SLOW  |   -0.560(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<14>|    2.665(R)|      SLOW  |   -0.505(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+switchForMove<15>|    2.655(R)|      SLOW  |   -0.629(R)|      SLOW  |clock_P123_BUFGP  |   0.000|
+-----------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clock_P123 to Pad
+-------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                   |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination        |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+-------------------+-----------------+------------+-----------------+------------+------------------+--------+
+TX_P98             |         8.374(R)|      SLOW  |         4.409(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+common_move_FPGA<0>|        10.369(R)|      SLOW  |         5.718(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+common_move_FPGA<1>|         7.754(R)|      SLOW  |         4.055(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+common_move_FPGA<2>|         7.353(R)|      SLOW  |         3.779(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+common_move_FPGA<3>|         7.045(R)|      SLOW  |         3.586(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<0>  |         7.314(R)|      SLOW  |         3.785(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<1>  |         7.176(R)|      SLOW  |         3.727(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<2>  |         7.766(R)|      SLOW  |         4.083(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<3>  |         7.920(R)|      SLOW  |         4.141(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<4>  |         7.619(R)|      SLOW  |         3.953(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<5>  |         7.673(R)|      SLOW  |         4.020(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+seg7_move_FPGA<6>  |         7.866(R)|      SLOW  |         4.139(R)|      FAST  |clock_P123_BUFGP  |   0.000|
+-------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clock_P123
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock_P123     |    5.198|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Dec 17 06:18:57 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4593 MB
+
+
+

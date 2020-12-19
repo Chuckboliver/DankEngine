@@ -1,0 +1,7 @@
+vhdtdtfi -lib work rnbq.vhd -prj DigitalProject -o rnbq.spl -module rnbq -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 rnbq.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.sym} 
+vhdtdtfi -lib work rnbq.vhd -prj DigitalProject -o rnbq.spl -module rnbq -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 rnbq.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.sym} 
+vhdtdtfi -lib work rnbq.vhd -prj DigitalProject -o rnbq.spl -module rnbq -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 rnbq.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/rnbq.sym} 
+vhdtdtfi -lib work rnbq.vhd -prj DigitalProject -o rnbq.spl -module rnbq -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 

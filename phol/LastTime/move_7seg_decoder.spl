@@ -1,0 +1,8 @@
+[Inputs]
+clock
+nodata
+=data_move[15:0]=
+[Outputs]
+=out_7seg[6:0]=
+=common_7seg_FPGA[3:0]=
+[BiDir]

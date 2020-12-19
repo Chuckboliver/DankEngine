@@ -1,0 +1,6 @@
+[Inputs]
+=data_in[11:0]=
+=SEL[2:0]=
+[Outputs]
+=data_out[15:0]=
+[BiDir]

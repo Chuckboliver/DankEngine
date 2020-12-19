@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.xst" -ofn "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.syr" 
+xst -intstyle ise -ifn "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.xst" -ofn "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/Serial_Tx/serial_gen.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc serial_gen.ucf -p xc6slx9-tqg144-3 "serial_gen.ngc" serial_gen.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serial_gen_map.ncd serial_gen.ngd serial_gen.pcf 
+par -w -intstyle ise -ol high -mt off serial_gen_map.ncd serial_gen.ncd serial_gen.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serial_gen.twx serial_gen.ncd -o serial_gen.twr serial_gen.pcf -ucf serial_gen.ucf 
+bitgen -intstyle ise -f serial_gen.ut serial_gen.ncd 

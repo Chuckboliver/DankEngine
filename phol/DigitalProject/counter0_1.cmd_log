@@ -1,0 +1,4 @@
+vhdtdtfi -lib work counter0_1.vhd -prj DigitalProject -o counter0_1.spl -module counter0_1 -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 counter0_1.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/counter0_1.sym} 
+vhdtdtfi -lib work counter0_1.vhd -prj DigitalProject -o counter0_1.spl -module counter0_1 -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 counter0_1.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/counter0_1.sym} 

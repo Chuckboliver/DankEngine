@@ -1,0 +1,64 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Dec 17 06:18:34 2020
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "common_P126_ALT" LOCATE = SITE "P126" LEVEL 1;
+COMP "common_move_FPGA<1>" LOCATE = SITE "P43" LEVEL 1;
+COMP "common_move_FPGA<2>" LOCATE = SITE "P33" LEVEL 1;
+COMP "common_move_FPGA<3>" LOCATE = SITE "P30" LEVEL 1;
+COMP "newGame_Switch" LOCATE = SITE "P121" LEVEL 1;
+COMP "ERR_MOV_ALT_LED" LOCATE = SITE "P67" LEVEL 1;
+COMP "winTypeLED_ALT<0>" LOCATE = SITE "P78" LEVEL 1;
+COMP "winTypeLED_ALT<1>" LOCATE = SITE "P75" LEVEL 1;
+COMP "L0_P82" LOCATE = SITE "P82" LEVEL 1;
+COMP "whoWin_ALT_LED<0>" LOCATE = SITE "P70" LEVEL 1;
+COMP "whoWin_ALT_LED<1>" LOCATE = SITE "P79" LEVEL 1;
+COMP "clock_P123" LOCATE = SITE "P123" LEVEL 1;
+COMP "bishop_PSW" LOCATE = SITE "P127" LEVEL 1;
+COMP "RX_P97" LOCATE = SITE "P97" LEVEL 1;
+COMP "TX_P98" LOCATE = SITE "P98" LEVEL 1;
+COMP "switchForMove<10>" LOCATE = SITE "P16" LEVEL 1;
+COMP "switchForMove<11>" LOCATE = SITE "P14" LEVEL 1;
+COMP "switchForMove<12>" LOCATE = SITE "P11" LEVEL 1;
+COMP "switchForMove<13>" LOCATE = SITE "P9" LEVEL 1;
+COMP "switchForMove<14>" LOCATE = SITE "P7" LEVEL 1;
+COMP "switchForMove<15>" LOCATE = SITE "P5" LEVEL 1;
+COMP "level_seg_ALT<0>" LOCATE = SITE "P131" LEVEL 1;
+COMP "level_seg_ALT<1>" LOCATE = SITE "P133" LEVEL 1;
+COMP "level_seg_ALT<2>" LOCATE = SITE "P137" LEVEL 1;
+COMP "level_seg_ALT<3>" LOCATE = SITE "P139" LEVEL 1;
+COMP "level_seg_ALT<4>" LOCATE = SITE "P141" LEVEL 1;
+COMP "blackSwitch" LOCATE = SITE "P1" LEVEL 1;
+COMP "level_seg_ALT<5>" LOCATE = SITE "P143" LEVEL 1;
+COMP "level_seg_ALT<6>" LOCATE = SITE "P2" LEVEL 1;
+COMP "ERR_PRO_LED_ALT" LOCATE = SITE "P74" LEVEL 1;
+COMP "queen_PSW" LOCATE = SITE "P124" LEVEL 1;
+COMP "switchForMove<0>" LOCATE = SITE "P24" LEVEL 1;
+COMP "switchForMove<1>" LOCATE = SITE "P22" LEVEL 1;
+COMP "switchForMove<2>" LOCATE = SITE "P17" LEVEL 1;
+COMP "switchForMove<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "switchForMove<4>" LOCATE = SITE "P12" LEVEL 1;
+COMP "switchForMove<5>" LOCATE = SITE "P10" LEVEL 1;
+COMP "switchForMove<6>" LOCATE = SITE "P8" LEVEL 1;
+COMP "switchForMove<7>" LOCATE = SITE "P6" LEVEL 1;
+COMP "switchForMove<8>" LOCATE = SITE "P23" LEVEL 1;
+COMP "switchForMove<9>" LOCATE = SITE "P21" LEVEL 1;
+COMP "downSwitch" LOCATE = SITE "P138" LEVEL 1;
+COMP "seg7_move_FPGA<0>" LOCATE = SITE "P27" LEVEL 1;
+COMP "seg7_move_FPGA<1>" LOCATE = SITE "P29" LEVEL 1;
+COMP "seg7_move_FPGA<2>" LOCATE = SITE "P32" LEVEL 1;
+COMP "seg7_move_FPGA<3>" LOCATE = SITE "P34" LEVEL 1;
+COMP "seg7_move_FPGA<4>" LOCATE = SITE "P35" LEVEL 1;
+COMP "seg7_move_FPGA<5>" LOCATE = SITE "P40" LEVEL 1;
+COMP "seg7_move_FPGA<6>" LOCATE = SITE "P41" LEVEL 1;
+COMP "promoteLED_ALT<0>" LOCATE = SITE "P102" LEVEL 1;
+COMP "promoteLED_ALT<1>" LOCATE = SITE "P104" LEVEL 1;
+COMP "promoteLED_ALT<2>" LOCATE = SITE "P105" LEVEL 1;
+COMP "promoteLED_ALT<3>" LOCATE = SITE "P111" LEVEL 1;
+COMP "rook_PSW" LOCATE = SITE "P134" LEVEL 1;
+COMP "upSwitch" LOCATE = SITE "P140" LEVEL 1;
+COMP "whiteSwitch" LOCATE = SITE "P142" LEVEL 1;
+COMP "knight_PSW" LOCATE = SITE "P132" LEVEL 1;
+SCHEMATIC END;
+

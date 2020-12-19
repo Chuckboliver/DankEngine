@@ -1,0 +1,4 @@
+vhdtdtfi -lib work checkEmptyRegister16bits.vhd -prj LastRX -o checkEmptyRegister16bits.spl -module checkEmptyRegister16bits -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 checkEmptyRegister16bits.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/checkEmptyRegister16bits.sym} 
+vhdtdtfi -lib work checkEmptyRegister16bits.vhd -prj LastRX -o checkEmptyRegister16bits.spl -module checkEmptyRegister16bits -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 checkEmptyRegister16bits.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/checkEmptyRegister16bits.sym} 

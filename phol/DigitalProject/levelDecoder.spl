@@ -1,0 +1,6 @@
+[Inputs]
+=inp[2:0]=
+[Outputs]
+common
+=seg[6:0]=
+[BiDir]

@@ -1,0 +1,7 @@
+[Inputs]
+clock
+rx
+[Outputs]
+data_done
+=data[15:0]=
+[BiDir]

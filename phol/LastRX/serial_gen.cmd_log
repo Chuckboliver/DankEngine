@@ -1,0 +1,20 @@
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work serial_gen_used.vhd -prj LastRX -o serial_gen.spl -module serial_gen -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 serial_gen.spl {C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/LastRX/serial_gen.sym} 

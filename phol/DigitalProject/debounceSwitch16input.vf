@@ -1,0 +1,80 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : debounceSwitch16input.vf
+// /___/   /\     Timestamp : 12/16/2020 21:59:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch16input.vf" -w "C:/Users/Ken/OneDrive - KMITL/Digital System Fundamentals/githubDigitalAssign/phol/DigitalProject/debounceSwitch16input.sch"
+//Design Name: debounceSwitch16input
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module debounceSwitch16input(clk_P123, 
+                             i_Switch, 
+                             o_Switch);
+
+    input clk_P123;
+    input [15:0] i_Switch;
+   output [15:0] o_Switch;
+   
+   
+   Debounce_Switch  XLXI_1 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[15]), 
+                           .o_Switch(o_Switch[15]));
+   Debounce_Switch  XLXI_2 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[14]), 
+                           .o_Switch(o_Switch[14]));
+   Debounce_Switch  XLXI_3 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[13]), 
+                           .o_Switch(o_Switch[13]));
+   Debounce_Switch  XLXI_4 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[12]), 
+                           .o_Switch(o_Switch[12]));
+   Debounce_Switch  XLXI_5 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[11]), 
+                           .o_Switch(o_Switch[11]));
+   Debounce_Switch  XLXI_6 (.i_Clk(clk_P123), 
+                           .i_Switch(i_Switch[10]), 
+                           .o_Switch(o_Switch[10]));
+   Debounce_Switch  XLXI_18 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[9]), 
+                            .o_Switch(o_Switch[9]));
+   Debounce_Switch  XLXI_19 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[8]), 
+                            .o_Switch(o_Switch[8]));
+   Debounce_Switch  XLXI_20 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[7]), 
+                            .o_Switch(o_Switch[7]));
+   Debounce_Switch  XLXI_21 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[6]), 
+                            .o_Switch(o_Switch[6]));
+   Debounce_Switch  XLXI_22 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[5]), 
+                            .o_Switch(o_Switch[5]));
+   Debounce_Switch  XLXI_23 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[4]), 
+                            .o_Switch(o_Switch[4]));
+   Debounce_Switch  XLXI_24 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[3]), 
+                            .o_Switch(o_Switch[3]));
+   Debounce_Switch  XLXI_25 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[2]), 
+                            .o_Switch(o_Switch[2]));
+   Debounce_Switch  XLXI_26 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[1]), 
+                            .o_Switch(o_Switch[1]));
+   Debounce_Switch  XLXI_27 (.i_Clk(clk_P123), 
+                            .i_Switch(i_Switch[0]), 
+                            .o_Switch(o_Switch[0]));
+endmodule
