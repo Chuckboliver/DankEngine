@@ -84,7 +84,7 @@ class Stockfish:
 class Comm:
     def __init__(self) -> None:
         self.__ser = serial.Serial(
-                port = "/dev/ttyACM0",
+                port = "/dev/serial0",
                 baudrate = 9600,
                 bytesize = serial.EIGHTBITS,
                 parity = serial.PARITY_NONE,
